@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Icons } from "./icons";
+
+type IconColor =
+  | "primary"
+  | "secondary"
+  | "accent"
+  | "neutral"
+  | "info"
+  | "success"
+  | "warning"
+  | "error";
+
+interface Props {
+  icon: Icons;
+  size?: number;
+  class?: string;
+  color?: IconColor;
+}
+
+const { icon, size = 35, class: className = "", color } = Astro.props as Props;
+const colorClass = color ? `text-${color}` : "";
+const finalClass = [colorClass, className].filter(Boolean).join(" ");
+---
+
+<Icon name={icon} width={size} height={size} class={finalClass} />

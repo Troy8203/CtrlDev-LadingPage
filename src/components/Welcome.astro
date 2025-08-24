@@ -1,8 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
+import Iconify from "./iconify/iconify.astro";
+import { Icons } from "./iconify/icons";
 ---
 
 <div id="container">
   <h1 class="text-3xl font-bold underline">Hello world!</h1>
   <Icon name="solar:airbuds-bold-duotone" />
+  <Iconify icon={Icons.MENU} color="primary" />
 </div>
