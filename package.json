@@ -9,9 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/solar": "^1.2.4",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.3",
     "daisyui": "^5.0.50",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "astro-icon": "^1.1.5"
   }
 }
