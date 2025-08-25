@@ -1,0 +1,40 @@
+---
+import Logo from "../assets/logo-white.svg";
+import Iconify from "../components/iconify/iconify.astro";
+import { Icons } from "../components/iconify/icons";
+---
+
+<div
+  class="navbar bg-transparent backdrop-blur-sm shadow-2xl px-2 lg:px-28 z-10 absolute top-0"
+>
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <Iconify icon={Icons.MENU} />
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content backdrop-blur-sm rounded-box z-1 mt-5 ml-3 w-52 p-2 shadow-2xl"
+      >
+        <li><a>Inicio</a></li>
+        <li><a>Nosotros</a></li>
+        <li><a>Cursos</a></li>
+        <li><a>Proyectos</a></li>
+        <li><a>Únete</a></li>
+      </ul>
+    </div>
+    <Logo class="h-10 w-auto hidden lg:block" />
+  </div>
+  <div class="navbar-end flex">
+    <ul
+      class="menu menu-horizontal px-1 [&>li>a]:hover:bg-base-300 hidden lg:flex"
+    >
+      <li><a>Inicio</a></li>
+      <li><a>Nosotros</a></li>
+      <li><a>Cursos</a></li>
+      <li><a>Proyectos</a></li>
+      <li><a>Únete</a></li>
+    </ul>
+    <Logo class="h-10 w-auto mx-2 block lg:hidden" />
+  </div>
+</div>

@@ -19,7 +19,7 @@ interface Props {
   color?: IconColor;
 }
 
-const { icon, size = 35, class: className = "", color } = Astro.props as Props;
+const { icon, size = 25, class: className = "", color } = Astro.props as Props;
 const colorClass = color ? `text-${color}` : "";
 const finalClass = [colorClass, className].filter(Boolean).join(" ");
 ---

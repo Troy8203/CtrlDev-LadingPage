@@ -1,5 +1,5 @@
 export enum Icons {
-  MENU = "solar:hamburger-menu-bold-duotone",
+  MENU = "mingcute:menu-fill",
   SQUARE = "solar:three-squares-bold-duotone",
   FACEBOOK = "mingcute:facebook-fill",
 }
