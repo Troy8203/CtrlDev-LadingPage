@@ -21,6 +21,11 @@ export enum Icons {
   TERRAFORM = "skill-icons:terraform-light",
   KUBERNETES = "skill-icons:kubernetes",
   GITHUB_ACTIONS = "skill-icons:githubactions-light",
+
+  //LEVELS
+  BASIC = "mingcute:sick-fill",
+  INTERMEDIATE = "mingcute:emoji-2-fill",
+  ADVANCED = "mingcute:fitness-fill",
 }
 
 export type IconType = Icons;
