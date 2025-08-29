@@ -1,7 +1,6 @@
 export enum Icons {
   ASTRO = "mingcute:ai-fill",
   CHECK = "mingcute:check-circle-line",
-  FACEBOOK = "mingcute:facebook-fill",
   MENU = "mingcute:menu-fill",
   SQUARE = "solar:three-squares-bold-duotone",
 
@@ -26,6 +25,12 @@ export enum Icons {
   BASIC = "mingcute:sick-fill",
   INTERMEDIATE = "mingcute:emoji-2-fill",
   ADVANCED = "mingcute:fitness-fill",
+
+  //SOCIAL
+  TELEGRAM = "mingcute:telegram-fill",
+  INSTAGRAM = "mingcute:instagram-fill",
+  TIKTOK = "mingcute:tiktok-fill",
+  FACEBOOK = "mingcute:facebook-fill",
 }
 
 export type IconType = Icons;
