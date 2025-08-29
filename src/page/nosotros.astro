@@ -5,22 +5,27 @@ import Logo from "../assets/logo.svg";
 ---
 
 <div
-  class="h-svh md:h-screen w-full px-5 md:px-10 flex flex-col items-center justify-center"
+  class="h-svh md:h-screen w-full px-5 md:px-10 flex flex-col items-center justify-evenly"
 >
+  <div class="flex flex-col items-center justify-center gap-5">
+    <h2
+      class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold text-5xl md:text-6xl text-center"
+    >
+      Acerca de Nosotros
+    </h2>
+    <p class="max-w-2xl text-center text-accent/85">
+      Aprende Desarrollo Web desde cero con Nosotros. Un grupo de estudio donde
+      compartimos conocimientos, practicamos con proyectos reales y nos ayudamos
+      a crecer como desarrolladores.
+    </p>
+  </div>
   <div class="flex flex-col gap-9 w-full max-w-6xl">
-    <h2 class="text-4xl font-bold">Qué es Ctrl+Dev ?</h2>
+    <h3 class="text-4xl font-bold">Qué es Ctrl+Dev ?</h3>
     <div class="flex flex-col lg:flex-row gap-10">
       <div class="flex-1 flex-grow bg-white rounded-lg card min-h-[200px]">
         <Logo class="w-full h-full p-5" />
       </div>
       <div class="flex-1 flex-grow flex flex-col gap-5">
-        <p class="text-justify text-accent/90">
-          Ctrl+ es un grupo de estudio de desarrollo web creado para personas
-          que quieren aprender, practicar y mejorar sus habilidades en
-          programación de forma colaborativa. Aquí no hay profesores ni alumnos:
-          todos compartimos conocimientos, resolvemos dudas juntos y avanzamos
-          como comunidad.
-        </p>
         <p class="text-justify text-accent/90">
           Nuestro objetivo es que cada miembro pueda crecer en <span
             class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold"
@@ -39,20 +44,21 @@ import Logo from "../assets/logo.svg";
             class="[&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:w-full grid md:grid-cols-2 gap-2 w-full"
           >
             <li>
-              <Iconify icon={Icons.CHECK} color="secondary" size={15} />
-              Desarrollo web basico
-            </li>
-            <li>
-              <Iconify icon={Icons.CHECK} color="secondary" size={15} />
+              <Iconify
+                class="text-secondary"
+                icon={Icons.ASTRO}
+                color="secondary"
+                size={15}
+              />
               Buenas prácticas de código
             </li>
             <li>
-              <Iconify icon={Icons.CHECK} color="secondary" size={15} />
-              Aprendizaje continuo
+              <Iconify icon={Icons.ASTRO} color="secondary" size={15} />
+              Desarrollo web basico
             </li>
             <li>
-              <Iconify icon={Icons.CHECK} color="secondary" size={15} />
-              Colaboración entre estudiantes
+              <Iconify icon={Icons.ASTRO} color="secondary" size={15} />
+              Aprendizaje continuo
             </li>
           </ul>
         </div>
