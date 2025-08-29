@@ -27,93 +27,196 @@ import { Icon } from "astro-icon/components";
       <div class="flex-1 flex-grow card min-h-[200px]">
         <ul class="timeline timeline-vertical">
           <li>
-            <div class="timeline-start font-bold">Taller de Git</div>
+            <div class="timeline-start font-bold">Commit Master</div>
             <div class="timeline-middle">
               <CardIcon icon={Icons.GIT} />
             </div>
-            <div class="timeline-end timeline-box">9 de Septiembre</div>
-            <hr class="min-h-[20px]" />
-          </li>
-          <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold text-start">
-              Taller de Docker
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              9 de Septiembre
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Aprende a versionar y colaborar en proyectos de manera
+                eficiente.
+              </p>
             </div>
+            <hr class="min-h-[20px] bg-info" />
+          </li>
+
+          <li>
+            <hr class="min-h-[20px] bg-info" />
+            <div class="timeline-start font-bold text-start">Dock It</div>
             <div class="timeline-middle">
               <CardIcon icon={Icons.DOCKER} />
             </div>
-            <div class="timeline-end timeline-box">11 de Septiembre</div>
-            <hr class="min-h-[20px]" />
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              11 de Septiembre
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Empaqueta y despliega aplicaciones en contenedores.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-info" />
           </li>
+
           <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Curso web basico</div>
+            <hr class="min-h-[20px] bg-info" />
+            <div class="timeline-start font-bold">Web Starter</div>
             <div class="timeline-middle">
               <StackIcon
                 icons={[Icons.HTML, Icons.CSS, Icons.JAVASCRIPT]}
                 size={40}
               />
             </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
-          </li>
-          <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Curso web basico</div>
-            <div class="timeline-middle">
-              <StackIcon icons={[Icons.ASTRO_WEB, Icons.TAILWIND]} size={40} />
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Construye sitios web interactivos desde cero.
+              </p>
             </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
+            <hr class="min-h-[20px] bg-info" />
           </li>
+
           <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Astro</div>
-            <div class="timeline-middle">
-              <StackIcon icons={[Icons.TYPESCRIPT, Icons.REACT]} size={40} />
-            </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
-          </li>
-          <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Curso web basico</div>
+            <hr class="min-h-[20px] bg-info" />
+            <div class="timeline-start font-bold">FigMagic</div>
             <div class="timeline-middle">
               <CardIcon icon={Icons.FIGMA} />
             </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Diseña interfaces y prototipos de forma rápida y profesional.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-info" />
           </li>
+
           <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Curso web basico</div>
+            <hr class="min-h-[20px] bg-gradient-to-b from-info to-success" />
+            <div class="timeline-start font-bold">Frontend Turbo</div>
+            <div class="timeline-middle">
+              <StackIcon icons={[Icons.ASTRO_WEB, Icons.TAILWIND]} size={40} />
+            </div>
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Crea sitios web modernos, rápidos y estilizados con Astro y
+                Tailwind.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-success" />
+          </li>
+
+          <li>
+            <hr class="min-h-[20px] bg-success" />
+            <div class="timeline-start font-bold">Component Pro</div>
+            <div class="timeline-middle">
+              <StackIcon icons={[Icons.TYPESCRIPT, Icons.REACT]} size={40} />
+            </div>
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Desarrolla aplicaciones web robustas y tipadas con React y
+                TypeScript.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-success" />
+          </li>
+
+          <li>
+            <hr class="min-h-[20px] bg-success" />
+            <div class="timeline-start font-bold">Backend Boost</div>
             <div class="timeline-middle">
               <CardIcon icon={Icons.NESTJS} />
             </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Construye APIs y backends escalables con NestJS.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-success" />
           </li>
+
           <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Curso web basico</div>
+            <hr class="min-h-[20px] bg-success" />
+            <div class="timeline-start font-bold">CodeVelocity</div>
             <div class="timeline-middle">
               <CardIcon icon={Icons.FAST_API} />
             </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Desarrolla APIs rápidas y modernas con Python y FastAPI.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-success" />
           </li>
+
           <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Curso web basico</div>
+            <hr class="min-h-[20px] bg-success" />
+            <div class="timeline-start font-bold">SupraFlow</div>
             <div class="timeline-middle">
               <CardIcon icon={Icons.SUPABASE} />
             </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Gestiona bases de datos y autenticación en la nube de forma
+                sencilla.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-secondary" />
           </li>
+
           <li>
-            <hr class="min-h-[20px]" />
-            <div class="timeline-start font-bold">Curso web basico</div>
+            <hr
+              class="min-h-[20px] bg-gradient-to-b from-secondary to-primary"
+            />
+            <div class="timeline-start font-bold">DevUps</div>
             <div class="timeline-middle">
               <StackIcon
                 icons={[
@@ -124,8 +227,19 @@ import { Icon } from "astro-icon/components";
                 size={40}
               />
             </div>
-            <div class="timeline-end timeline-box">Proximamente</div>
-            <hr class="min-h-[20px]" />
+            <div
+              class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            >
+              Proximamente
+              <br />
+              <p
+                class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+              >
+                Automatiza, despliega y gestiona infraestructura en la nube
+                profesionalmente.
+              </p>
+            </div>
+            <hr class="min-h-[20px] bg-primary" />
           </li>
         </ul>
       </div>
