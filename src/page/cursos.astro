@@ -7,7 +7,7 @@ import StackIcon from "../components/card/stack-icon.astro";
 
 <div
   id="cursos"
-  class="snap-start w-full px-5 py-20 md:px-10 flex flex-col items-center justify-evenly gap-8"
+  class="h-svh md:h-screen snap-start w-full px-5 py-20 md:px-10 flex flex-col items-center justify-evenly gap-8"
 >
   <div class="flex flex-col items-center justify-center gap-5">
     <h2
@@ -21,43 +21,23 @@ import StackIcon from "../components/card/stack-icon.astro";
     </p>
   </div>
   <div class="flex flex-col gap-9 w-full max-w-6xl">
-    <h3 class="text-4xl font-bold">Roadmap</h3>
     <div class="flex flex-col-reverse lg:flex-row gap-10">
       <ul class="timeline timeline-vertical">
         <li>
-          <div class="timeline-start font-bold">Commit Master</div>
+          <div class="timeline-start font-bold">Commit Master & Dock It</div>
           <div class="timeline-middle">
-            <CardIcon icon={Icons.GIT} />
+            <StackIcon icons={[Icons.GIT, Icons.DOCKER]} size={40} />
           </div>
           <div
             class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
           >
-            9 de Septiembre
+            9 - 11 de Septiembre
             <br />
             <p
               class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
             >
-              Aprende a versionar y colaborar en proyectos de manera eficiente.
-            </p>
-          </div>
-          <hr class="min-h-[20px] bg-info" />
-        </li>
-
-        <li>
-          <hr class="min-h-[20px] bg-info" />
-          <div class="timeline-start font-bold text-start">Dock It</div>
-          <div class="timeline-middle">
-            <CardIcon icon={Icons.DOCKER} />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
-          >
-            11 de Septiembre
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Empaqueta y despliega aplicaciones en contenedores.
+              Aprende a versionar, empaqueta y despliega aplicaciones en
+              contenedores.
             </p>
           </div>
           <hr class="min-h-[20px] bg-info" />
@@ -152,7 +132,10 @@ import StackIcon from "../components/card/stack-icon.astro";
           <hr class="min-h-[20px] bg-success" />
           <div class="timeline-start font-bold">Backend Boost</div>
           <div class="timeline-middle">
-            <CardIcon icon={Icons.NESTJS} />
+            <StackIcon
+              icons={[Icons.NESTJS, Icons.FAST_API, Icons.SUPABASE]}
+              size={40}
+            />
           </div>
           <div
             class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
@@ -162,51 +145,11 @@ import StackIcon from "../components/card/stack-icon.astro";
             <p
               class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
             >
-              Construye APIs y backends escalables con NestJS.
+              Construye APIs y backends escalables con NestJS, FastAPI y
+              Supabase.
             </p>
           </div>
           <hr class="min-h-[20px] bg-success" />
-        </li>
-
-        <li>
-          <hr class="min-h-[20px] bg-success" />
-          <div class="timeline-start font-bold">CodeVelocity</div>
-          <div class="timeline-middle">
-            <CardIcon icon={Icons.FAST_API} />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Desarrolla APIs rápidas y modernas con Python y FastAPI.
-            </p>
-          </div>
-          <hr class="min-h-[20px] bg-success" />
-        </li>
-
-        <li>
-          <hr class="min-h-[20px] bg-success" />
-          <div class="timeline-start font-bold">SupraFlow</div>
-          <div class="timeline-middle">
-            <CardIcon icon={Icons.SUPABASE} />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Gestiona bases de datos y autenticación en la nube de forma
-              sencilla.
-            </p>
-          </div>
-          <hr class="min-h-[20px] bg-secondary" />
         </li>
 
         <li>
@@ -233,7 +176,7 @@ import StackIcon from "../components/card/stack-icon.astro";
           <hr class="min-h-[20px] bg-primary" />
         </li>
       </ul>
-      <div class="flex flex-col items-end gap-5 py-0 md:py-10">
+      <div class="hidden md:flex flex-col items-end gap-5 py-0 md:py-10">
         <p class="text-justify text-accent/90">
           Como grupo de estudio, hemos preparado un roadmap que te guiará en tu
           aprendizaje de desarrollo web. Si ya tienes conocimientos previos, no
