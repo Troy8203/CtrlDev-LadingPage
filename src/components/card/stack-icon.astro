@@ -1,0 +1,31 @@
+---
+import CardIcon from "./card-icon.astro";
+
+interface StackedIconsProps {
+  icons: string[];
+  size?: number;
+}
+
+const { icons = [], size = 40 } = Astro.props;
+
+const positions = icons.map((_: string, index: number) => ({
+  top: `${index * 2}px`,
+  left: `${index * 30}px`,
+  rotate: `${index * 9}deg`,
+}));
+
+const containerWidth = icons.length * 30 + 40;
+---
+
+<div class="relative h-16" style={`width: ${containerWidth}px;`}>
+  {
+    icons.map((icon: string, index: number) => (
+      <div
+        class="absolute"
+        style={`top: ${positions[index].top}; left: ${positions[index].left}; transform: rotate(${positions[index].rotate});`}
+      >
+        <CardIcon icon={icon} size={size} />
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,139 @@
+---
+import { Icons } from "../components/iconify/icons";
+import Iconify from "../components/iconify/iconify.astro";
+import Logo from "../assets/logo.svg";
+import CardIcon from "../components/card/card-icon.astro";
+import StackIcon from "../components/card/stack-icon.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<div
+  class="h-svh md:h-screen w-full px-5 md:px-10 flex flex-col items-center justify-evenly"
+>
+  <div class="flex flex-col items-center justify-center gap-5">
+    <h2
+      class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold text-5xl md:text-6xl text-center"
+    >
+      Nuestros Cursos
+    </h2>
+    <p class="max-w-2xl text-center text-accent/85">
+      Potencia tus habilidades y aprende lo esencial del desarrollo web paso a
+      paso.
+    </p>
+  </div>
+  <div class="flex flex-col gap-9 w-full max-w-6xl">
+    <h3 class="text-4xl font-bold">Roadmap</h3>
+    <div class="flex flex-col-reverse lg:flex-row gap-10">
+      <div class="flex-1 flex-grow card min-h-[200px]">
+        <ul class="timeline timeline-vertical">
+          <li>
+            <div class="timeline-start font-bold">Taller de Git</div>
+            <div class="timeline-middle">
+              <CardIcon icon={Icons.GIT} />
+            </div>
+            <div class="timeline-end timeline-box">9 de Septiembre</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold text-start">
+              Taller de Docker
+            </div>
+            <div class="timeline-middle">
+              <CardIcon icon={Icons.DOCKER} />
+            </div>
+            <div class="timeline-end timeline-box">11 de Septiembre</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Curso web basico</div>
+            <div class="timeline-middle">
+              <StackIcon
+                icons={[Icons.HTML, Icons.CSS, Icons.JAVASCRIPT]}
+                size={40}
+              />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Curso web basico</div>
+            <div class="timeline-middle">
+              <StackIcon icons={[Icons.ASTRO_WEB, Icons.TAILWIND]} size={40} />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Astro</div>
+            <div class="timeline-middle">
+              <StackIcon icons={[Icons.TYPESCRIPT, Icons.REACT]} size={40} />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Curso web basico</div>
+            <div class="timeline-middle">
+              <CardIcon icon={Icons.FIGMA} />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Curso web basico</div>
+            <div class="timeline-middle">
+              <CardIcon icon={Icons.NESTJS} />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Curso web basico</div>
+            <div class="timeline-middle">
+              <CardIcon icon={Icons.FAST_API} />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Curso web basico</div>
+            <div class="timeline-middle">
+              <CardIcon icon={Icons.SUPABASE} />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+          <li>
+            <hr class="min-h-[20px]" />
+            <div class="timeline-start font-bold">Curso web basico</div>
+            <div class="timeline-middle">
+              <StackIcon
+                icons={[
+                  Icons.GITHUB_ACTIONS,
+                  Icons.TERRAFORM,
+                  Icons.KUBERNETES,
+                ]}
+                size={40}
+              />
+            </div>
+            <div class="timeline-end timeline-box">Proximamente</div>
+            <hr class="min-h-[20px]" />
+          </li>
+        </ul>
+      </div>
+      <p class="flex-0 md:flex-1 text-justify text-accent/90">
+        Como grupo de estudio, hemos preparado un roadmap que te guiará en tu
+        aprendizaje de desarrollo web. Si ya tienes conocimientos previos, no te
+        preocupes: puedes unirte en la etapa que más te interese.
+      </p>
+    </div>
+  </div>
+</div>

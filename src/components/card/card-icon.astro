@@ -1,0 +1,15 @@
+---
+import Iconify from "../iconify/iconify.astro";
+
+const { icon, size = 40 } = Astro.props;
+---
+
+<div class="relative w-16 h-16">
+  <div class="absolute top-2 left-2 transform rotate-6">
+    <div
+      class="bg-white shadow-lg rounded-xl p-1 flex items-center justify-center"
+    >
+      <Iconify icon={icon} size={size} />
+    </div>
+  </div>
+</div>
