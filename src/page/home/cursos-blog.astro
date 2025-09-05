@@ -1,8 +1,5 @@
 ---
-const site = import.meta.env.PUBLIC_SITE;
-const base = import.meta.env.PUBLIC_BASE;
-const site2 = Astro.site;
-const path = Astro.site?.pathname;
+import CardImg from "@components/card/card-img.astro";
 ---
 
 <div
@@ -19,34 +16,23 @@ const path = Astro.site?.pathname;
     </p>
   </div>
   <div class="flex flex-col gap-9 w-full max-w-6xl">
-    <div class="card bg-base-100 w-96 shadow-sm">
-      <div class="card-body">
-        <h2 class="card-title">Card Title</h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
-      </div>
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
-      </figure>
-    </div>
-    <ul>
-      <li><a class="link" href="dogs/clifford">Link1</a></li>
-      <li><a class="link" href="dogs/rover">Link2</a></li>
-      <li><a class="link" href="dogs/spot">Link3</a></li>
-      <li><a class="link" href="dogs/curso-d">Link4</a></li>
-      <li><a class="link" href="dogs/curso-e">Link5</a></li>
-      <li><a class="link" href="dogs/curso-f">Link6</a></li>
-      <li><a class="link" href="dogs/curso-g">Link7</a></li>
-      <li><a class="link" href="dogs/curso-h">Link8</a></li>
-    </ul>
-    <p>Site: {site}</p>
-    <p>Base: {base}</p>
-    <p>Site2: {site2}</p>
-    <p>Path: {path}</p>
+    <CardImg
+      title="Curso Git"
+      description="Aprende los fundamentos de Git"
+      imageUri="https://matteus.dev/wp-content/uploads/git.webp"
+      link="/cursos/git"
+    />
+    <CardImg
+      title="Taller de Docker"
+      description="Docker la herraje de desarrollo que necesitas."
+      imageUri="https://news.sophos.com/wp-content/uploads/2020/05/Docker-Logo-White-RGB_Vertical-BG_0.png?w=1200"
+      link="/cursos/docker"
+    />
+    <CardImg
+      title="Curso Web Basic"
+      description="Aprende los fundamentos de HTML, CSS y JavaScript."
+      imageUri="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/272582230/original/db660ff88bdedbfeb008a322c8bdba52f6beb44a/code-custom-html-css-javascript-for-responsive-websites.png"
+      link="/cursos/web-basic"
+    />
   </div>
 </div>

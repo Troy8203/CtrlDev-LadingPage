@@ -1,0 +1,25 @@
+---
+type Props = {
+  title: string;
+  description: string;
+  imageUri: string;
+  link: string;
+};
+
+const { title, description, imageUri, link }: Props = Astro.props;
+---
+
+<div class="card image-full w-96 card-md h-48">
+  <figure class="w-full">
+    <img class="w-full h-full" src={imageUri} alt={`curso-${title}`} />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>
+      {description}
+    </p>
+    <div class="card-actions justify-end">
+      <a class="btn btn-active" href={link}>Ver Curso</a>
+    </div>
+  </div>
+</div>
