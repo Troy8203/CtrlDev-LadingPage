@@ -1,5 +1,7 @@
 ---
 import CardImg from "@components/card/card-img.astro";
+import Iconify from "@components/iconify/iconify.astro";
+import { Icons } from "@components/iconify/icons";
 import Layout from "@layouts/layout.astro";
 import type { Curso } from "@schema/models/curso";
 
@@ -44,26 +46,60 @@ const coursesAvailable: Curso[] = [
       "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/272582230/original/db660ff88bdedbfeb008a322c8bdba52f6beb44a/code-custom-html-css-javascript-for-responsive-websites.png",
     link: "/cursos/web-basic",
   },
+  {
+    title: "Curso Web Basic",
+    description: "Aprende los fundamentos de HTML, CSS y JavaScript.",
+    imageUri:
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/272582230/original/db660ff88bdedbfeb008a322c8bdba52f6beb44a/code-custom-html-css-javascript-for-responsive-websites.png",
+    link: "/cursos/web-basic",
+  },
+  {
+    title: "Curso Web Basic",
+    description: "Aprende los fundamentos de HTML, CSS y JavaScript.",
+    imageUri:
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/272582230/original/db660ff88bdedbfeb008a322c8bdba52f6beb44a/code-custom-html-css-javascript-for-responsive-websites.png",
+    link: "/cursos/web-basic",
+  },
+  {
+    title: "Curso Web Basic",
+    description: "Aprende los fundamentos de HTML, CSS y JavaScript.",
+    imageUri:
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/272582230/original/db660ff88bdedbfeb008a322c8bdba52f6beb44a/code-custom-html-css-javascript-for-responsive-websites.png",
+    link: "/cursos/web-basic",
+  },
+  {
+    title: "Curso Web Basic",
+    description: "Aprende los fundamentos de HTML, CSS y JavaScript.",
+    imageUri:
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/272582230/original/db660ff88bdedbfeb008a322c8bdba52f6beb44a/code-custom-html-css-javascript-for-responsive-websites.png",
+    link: "/cursos/web-basic",
+  },
 ];
 ---
 
 <Layout>
   <div
-    class="h-svh md:h-screen snap-start w-full px-5 py-20 md:px-10 flex flex-col items-center justify-evenly gap-8"
+    class="min-h-svh md:min-h-screen bg-[url(/assets/banner.svg)] bg-no-repeat bg-size-[auto_600px] md:bg-size-[auto_800px] lg:bg-contain bg-top w-full py-20 md:px-10 flex flex-col items-center justify-evenly gap-10"
   >
-    <div class="flex flex-col items-center justify-center gap-5">
-      <h2
-        class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold text-5xl md:text-6xl text-center"
-      >
+    <div class="flex flex-col items-center justify-center gap-5 min-h-56">
+      <h2 class="text-accent font-bold text-5xl md:text-6xl text-center">
         Cursos Publicados
       </h2>
       <p class="max-w-2xl text-center text-accent/85">
         Aquí puedes ver los cursos que hemos publicado en nuestro blog.
       </p>
     </div>
-    <div class="w-full max-w-6xl flex justify-center">
+    <div
+      class="w-full max-w-6xl flex flex-col items-center justify-center gap-10"
+    >
+      <label class="input input-lg w-full max-w-2xl">
+        <Iconify icon={Icons.SEARCH} />
+        <input type="search" required placeholder="Search" />
+        <kbd class="kbd kbd-sm">⌘</kbd>
+        <kbd class="kbd kbd-sm">K</kbd>
+      </label>
       <div
-        class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 gap-y-4"
+        class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-10 gap-y-10"
       >
         {
           coursesAvailable.map((item) => (

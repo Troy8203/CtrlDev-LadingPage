@@ -31,6 +31,9 @@ export enum Icons {
   INSTAGRAM = "mingcute:instagram-fill",
   TIKTOK = "mingcute:tiktok-fill",
   FACEBOOK = "mingcute:facebook-fill",
+
+  //INPUT
+  SEARCH = "mingcute:search-3-line",
 }
 
 export type IconType = Icons;
