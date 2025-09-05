@@ -3,10 +3,10 @@ type Props = {
   title: string;
   description: string;
   imageUri: string;
-  link: string;
+  link?: string;
 };
 
-const { title, description, imageUri, link }: Props = Astro.props;
+const { title, description, imageUri, link = "" }: Props = Astro.props;
 ---
 
 <div class="card card-xs bg-base-200 md:image-none w-96 h-48 md:h-auto">
@@ -22,8 +22,14 @@ const { title, description, imageUri, link }: Props = Astro.props;
     <p>
       {description}
     </p>
-    <div class="card-actions justify-end">
-      <a class="btn btn-active" href={link}>Ver Curso</a>
-    </div>
+    {
+      link && (
+        <div class="card-actions justify-end">
+          <a class="btn btn-active" href={link}>
+            Ver Curso
+          </a>
+        </div>
+      )
+    }
   </div>
 </div>
