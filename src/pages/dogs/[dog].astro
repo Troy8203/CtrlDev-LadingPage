@@ -10,8 +10,12 @@ export function getStaticPaths() {
 }
 
 const { dog } = Astro.params;
+
+const base = Astro.site?.pathname;
+const site: URL | string = Astro.site ? Astro.site : "";
 ---
 
 <Layout>
   <div>Good dog, {dog}!</div>
+  <div>{base} {JSON.stringify(site)}</div>
 </Layout>

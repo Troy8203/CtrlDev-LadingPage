@@ -3,7 +3,7 @@ import "../styles/global.css";
 import Navbar from "./navbar.astro";
 
 //Favicons
-const base = Astro.site ? `${Astro.url}` : "";
+const base = Astro.site ? Astro.site : "";
 
 const favicon96x96 = `${base}assets/favicon/favicon-96x96.png`;
 const faviconSvg = `${base}assets/favicon/favicon.svg`;
