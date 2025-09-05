@@ -1,5 +1,8 @@
 ---
-
+const site = import.meta.env.PUBLIC_SITE;
+const base = import.meta.env.PUBLIC_BASE;
+const site2 = Astro.site;
+const path = Astro.site?.pathname;
 ---
 
 <div>
@@ -13,4 +16,8 @@
     <li><a class="link" href="dogs/curso-g">Link7</a></li>
     <li><a class="link" href="dogs/curso-h">Link8</a></li>
   </ul>
+  <p>Site: {site}</p>
+  <p>Base: {base}</p>
+  <p>Site2: {site2}</p>
+  <p>Path: {path}</p>
 </div>

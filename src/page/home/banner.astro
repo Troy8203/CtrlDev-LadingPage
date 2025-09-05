@@ -1,5 +1,5 @@
 ---
-const base = Astro.site?.pathname ? "" : "/";
+const base = Astro.site ? Astro.url.pathname : "";
 const bannerSvg = `${base}assets/banner.svg`;
 const bannerBlob = `${base}assets/blob.svg`;
 ---
@@ -23,7 +23,9 @@ const bannerBlob = `${base}assets/blob.svg`;
         proyectos reales y nos ayudamos a crecer como desarrolladores.
       </p>
     </div>
-    <a href="#unete" class="btn btn-outline btn-secondary">Únete ahora</a>
+    <a href="#unete" class="btn btn-outline btn-secondary"
+      >Únete ahora {Astro.site ? Astro.site : "development"}</a
+    >
   </div>
 </section>
 

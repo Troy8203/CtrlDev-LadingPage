@@ -1,9 +1,9 @@
 ---
-import Navbar from "./navbar.astro";
 import "../styles/global.css";
+import Navbar from "./navbar.astro";
 
 //Favicons
-const base = Astro.site?.pathname;
+const base = Astro.site ? `${Astro.url}` : "";
 
 const favicon96x96 = `${base}assets/favicon/favicon-96x96.png`;
 const faviconSvg = `${base}assets/favicon/favicon.svg`;

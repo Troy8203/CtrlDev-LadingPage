@@ -1,22 +1,23 @@
 ---
 import Layout from "@layouts/layout.astro";
-import Navbar from "@layouts/navbar.astro";
 import Footer from "@layouts/footer.astro";
-import Banner from "../page/home/banner.astro";
+import Banner from "@page/home/banner.astro";
 import Nosotros from "@page/home/nosotros.astro";
 import Cursos from "@page/home/cursos.astro";
 import Preguntas from "@page/home/preguntas.astro";
 import Unete from "@page/home/unete.astro";
+import Test from "@page/test.astro";
+import Navbar from "@layouts/navbar.astro";
 ---
 
 <Layout>
-  <Navbar />
   <main class="h-screen overflow-y-scroll snap-y snap-mandatory">
     <Banner />
     <Nosotros />
     <Cursos />
     <Unete />
     <Preguntas />
+    <Test />
     <Footer />
   </main>
 </Layout>
