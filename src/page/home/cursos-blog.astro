@@ -1,0 +1,52 @@
+---
+const site = import.meta.env.PUBLIC_SITE;
+const base = import.meta.env.PUBLIC_BASE;
+const site2 = Astro.site;
+const path = Astro.site?.pathname;
+---
+
+<div
+  class="h-svh md:h-screen snap-start w-full px-5 py-20 md:px-10 flex flex-col items-center justify-evenly gap-8"
+>
+  <div class="flex flex-col items-center justify-center gap-5">
+    <h2
+      class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold text-5xl md:text-6xl text-center"
+    >
+      Cursos Publicados
+    </h2>
+    <p class="max-w-2xl text-center text-accent/85">
+      Aquí puedes ver los cursos que hemos publicado en nuestro blog.
+    </p>
+  </div>
+  <div class="flex flex-col gap-9 w-full max-w-6xl">
+    <div class="card bg-base-100 w-96 shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title">Card Title</h2>
+        <p>
+          A card component has a figure, a body part, and inside body there are
+          title and actions parts
+        </p>
+      </div>
+      <figure>
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          alt="Shoes"
+        />
+      </figure>
+    </div>
+    <ul>
+      <li><a class="link" href="dogs/clifford">Link1</a></li>
+      <li><a class="link" href="dogs/rover">Link2</a></li>
+      <li><a class="link" href="dogs/spot">Link3</a></li>
+      <li><a class="link" href="dogs/curso-d">Link4</a></li>
+      <li><a class="link" href="dogs/curso-e">Link5</a></li>
+      <li><a class="link" href="dogs/curso-f">Link6</a></li>
+      <li><a class="link" href="dogs/curso-g">Link7</a></li>
+      <li><a class="link" href="dogs/curso-h">Link8</a></li>
+    </ul>
+    <p>Site: {site}</p>
+    <p>Base: {base}</p>
+    <p>Site2: {site2}</p>
+    <p>Path: {path}</p>
+  </div>
+</div>

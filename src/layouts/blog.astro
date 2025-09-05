@@ -1,0 +1,13 @@
+---
+import Footer from "./footer.astro";
+import Layout from "./layout.astro";
+---
+
+<Layout>
+  <div
+    class="min-h-svh md:min-h-screen w-full px-5 py-20 md:px-10 flex flex-col"
+  >
+    <slot />
+  </div>
+  <Footer />
+</Layout>
