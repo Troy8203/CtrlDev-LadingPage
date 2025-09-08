@@ -73,7 +73,7 @@
   @apply [&>table]:w-full [&>table>thead]:bg-base-200 [&>table>thead>tr>th]:py-2 [&>table>tbody>tr>td]:py-0.5;
 
   /* Images */
-  @apply [&>p>img]:rounded-md [&>p>img]:my-3 [&>p>img]:max-w-3xl;
+  @apply [&>p>img]:rounded-md [&>p>img]:my-3 [&>p>img]:w-full [&>p>img]:max-w-3xl [&>p>img]:bg-white;
   @apply [&>p>a>img]:rounded-md [&>p>a>img]:my-3 [&>p>a>img]:border-2 [&>p>a>img]:border-transparent [&>p>a>img]:hover:border-primary;
 
   /* BR */

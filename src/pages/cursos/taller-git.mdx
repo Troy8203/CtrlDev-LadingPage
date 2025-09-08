@@ -4,197 +4,160 @@ title: "Introducción a Git"
 author: "Matthew Phillips"
 date: "09 Aug 2022"
 ---
-# Introducción a Git
 
-Git es un **sistema de control de versiones distribuido**.  
-Se utiliza para gestionar los cambios en un proyecto, permitiendo que varios desarrolladores trabajen en paralelo sin perder información.  
+# 🚀 Guía Básica de Git para Principiantes
 
-A diferencia de simplemente guardar copias de seguridad, Git registra **qué cambió, quién lo cambió y cuándo**, manteniendo un historial completo del proyecto.  
+![imagen banner de git](https://cdn.filestackcontent.com/6yJPbkQ4SnybLJPKPLXP)
 
-Con Git puedes:  
-
-- Colaborar en equipo sin sobrescribir trabajo.  
-- Recuperar versiones anteriores en caso de errores.  
-- Crear ramas para probar nuevas ideas sin afectar la versión principal.  
-- Documentar la evolución de un proyecto de software.  
+Si nunca has tocado Git y solo conoces copiar y pegar archivos, no te preocupes. Aquí vamos a ver **qué es Git, para qué sirve y cómo empezar a usarlo sin morir en el intento**.
 
 ---
 
-## 1. Fundamentos de Git
+## ⏳ Antes de empezar: ¿Qué es un sistema de control de versiones?
 
-Los conceptos básicos que debes conocer son:  
+Piensa en Git como una **máquina del tiempo para tu código**.
+Si haces algo mal, puedes retroceder; si quieres ver cómo estaba tu proyecto hace 2 semanas, puedes hacerlo; si quieres trabajar en varias ideas al mismo tiempo, puedes. Todo esto sin romper nada.
 
-- **Repositorio**: la base de datos donde Git guarda todo el historial. Puede estar en tu computadora (local) o en un servidor (remoto).  
-- **Commit**: es como una “fotografía” del estado actual del proyecto.  
-- **Rama (branch)**: una línea de trabajo independiente que permite probar nuevas funcionalidades.  
-- **Staging area**: una zona intermedia donde decides qué cambios incluir en el próximo commit.  
+Los sistemas de control de versiones hacen cosas como:
 
-> Git fue creado en 2005 por Linus Torvalds, el creador de Linux, para gestionar el desarrollo del kernel de manera distribuida y eficiente.
+* **Rastrear cambios:** quién hizo qué y cuándo.
+* **Gestionar versiones:** trabajar en nuevas funciones o arreglar errores sin afectar lo demás.
+* **Colaborar en equipo:** varios pueden trabajar en el mismo proyecto sin pisarse los pies.
+* **Revertir errores:** si algo sale mal, volver atrás es pan comido.
+* **Proteger el código:** todo queda registrado y seguro.
+
+![máquina del tiempo de código](https://miro.medium.com/1*at_PUpeIhxFMecl4Wkeh7Q.png)
 
 ---
 
-## 2. Instalación de Git
+## 🐙 Git en pocas palabras
 
-La instalación depende de tu sistema operativo:  
+Git es uno de los sistemas de control de versiones más populares del mundo, creado en 2005 por Linus Torvalds (sí, el de Linux).
+Es **rápido, flexible y distribuido**, perfecto para trabajar solo o en equipo.
 
-- **Windows**: descargar desde [git-scm.com](https://git-scm.com/download/win). Incluye Git Bash, una terminal para usar los comandos.  
-- **MacOS**: instalar con Homebrew:  
+Además, existen plataformas que hacen que usar Git sea aún más fácil:
+
+* **GitHub** → la más conocida.
+* **GitLab** → ideal si quieres todo en tu servidor.
+* **Bitbucket** → popular en empresas que usan Atlassian.
+
+![logos GitHub, GitLab, Bitbucket](https://imagedelivery.net/IEMzXmjRvW0g933AN5ejrA/wwwnotionso-image-uploads-sslwebflowcom-615af81f65d1ab72d2969269-63a2f2c7de354d6704accf44_1_yn9i_2hq6yxnmnje1ij4lwpng/public)
+
+---
+
+## 💻 Instalación de Git
+
+Dependiendo de tu sistema operativo:
+
+* **Linux:** `[poner enlace a guía instalación Linux]`
+* **MacOS:** `[poner enlace a guía instalación Mac]`
+* **Windows:** `[poner enlace a guía instalación Windows]`
+
+Una vez instalado, es buena idea configurarlo:
 
 ```bash
-brew install git
-````
-
-* **Linux (Debian/Ubuntu)**:
-
-```bash
-sudo apt update
-sudo apt install git
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"
 ```
 
-Para verificar que está instalado:
-
-```bash
-git --version
-```
+Esto le dice a Git quién eres cuando haces cambios.
 
 ---
 
-## 3. Entornos donde se usa Git
+## 🔄 Flujo de trabajo básico de Git
 
-Aunque Git funciona de manera local, la colaboración en equipo se logra al usar plataformas remotas como:
+Antes de entrar en comandos, hay que entender **las tres áreas de trabajo de Git**:
 
-### GitHub
+1. **Working Directory (Directorio de trabajo):** tus archivos actuales.
+2. **Staging Area (Área de preparación):** archivos listos para ser guardados.
+3. **Local Repository (Repositorio local):** tus cambios guardados de forma segura.
 
-* La plataforma más popular.
-* Ideal para proyectos **open source** y privados.
-* Ofrece herramientas de revisión de código, issues y pull requests.
+![flujo Working Directory → Staging Area → Local Repository] (https://nulab.com/static/d13cdc1344230f603d17b31a5cbd1dae/5a190/02.png)
 
-### GitLab
+### Principales comandos
 
-* Similar a GitHub, pero con enfoque en empresas.
-* Incluye **CI/CD** de forma integrada.
-* Puede instalarse en servidores propios.
+#### 1. Preparar tu proyecto
 
-### Otros
-
-* **Bitbucket**: usado en entornos corporativos, integrado con Atlassian (Jira, Confluence).
-* **Azure Repos**: parte de la suite de Azure DevOps de Microsoft.
-
----
-
-## 4. Comandos esenciales de Git
-
-Los comandos se dividen en distintas etapas del flujo de trabajo.
-
-### Inicialización y estado
-
-* Crear un repositorio:
+* `git init` → inicia un repositorio Git en tu carpeta actual.
+* `git config` → configura usuario, correo y más.
 
 ```bash
 git init
+git config --list
 ```
 
-* Ver el estado del proyecto:
+#### 2. Gestionar cambios
 
-```bash
-git status
-```
-
-### Añadir y confirmar cambios
-
-* Preparar un archivo:
-
-```bash
-git add archivo.txt
-```
-
-* Confirmar cambios en el historial:
-
-```bash
-git commit -m "Mensaje descriptivo"
-```
-
-### Historial y diferencias
-
-* Ver historial de commits:
-
-```bash
-git log
-```
-
-* Ver cambios realizados:
-
-```bash
-git diff
-```
-
-### Ramas y fusiones
-
-* Crear y cambiar a una rama:
-
-```bash
-git checkout -b nueva-rama
-```
-
-* Fusionar ramas:
-
-```bash
-git merge otra-rama
-```
-
----
-
-## 5. Flujos de trabajo con Git
-
-Dependiendo del equipo y del tipo de proyecto, existen distintos modelos de colaboración:
-
-### Git Flow
-
-* `main`: rama estable para producción.
-* `develop`: rama de desarrollo principal.
-* `feature/*`: ramas para nuevas funcionalidades.
-* `hotfix/*`: ramas para correcciones rápidas.
-
-### Feature Branch Workflow
-
-Cada nueva funcionalidad se desarrolla en una rama separada y luego se integra a `main`.
-
-### Fork Workflow
-
-Usado en proyectos open source: cada persona hace un fork del repositorio, desarrolla en su copia y envía un pull request al repositorio original.
-
----
-
-## 6. Git en la práctica
-
-Un flujo de trabajo típico sería:
-
-1. **Clonar un repositorio**:
-
-```bash
-git clone https://github.com/usuario/proyecto.git
-```
-
-2. **Crear una rama para una nueva tarea**:
-
-```bash
-git checkout -b feature/login
-```
-
-3. **Hacer cambios y guardarlos**:
+* `git add` → mueve archivos a **Staging Area**.
+* `git commit` → guarda cambios en **Local Repository** con un mensaje.
+* `git reset` → deshace cambios si te equivocas.
 
 ```bash
 git add .
-git commit -m "Agregada pantalla de login"
+git commit -m "Mi primer commit"
+git reset HEAD archivo.txt
 ```
 
-4. **Subir la rama al remoto**:
+![Working Directory → git add → Staging Area → git commit → Local Repository](https://marklodato.github.io/visual-git-guide/basic-usage.svg)
+
+#### 3. Ramas: tu espacio seguro para experimentar
+
+Las **ramas** te permiten trabajar en paralelo sin romper nada.
+
+* `git branch` → lista, crea o elimina ramas.
+* `git checkout` → cambia de rama o a un commit específico.
+* `git merge` → une cambios de ramas.
 
 ```bash
-git push origin feature/login
+git branch nueva-rama
+git checkout nueva-rama
+git merge main
 ```
 
-5. **Abrir un Pull Request** en GitHub o GitLab para revisión y fusión.
+![ramas y merge](https://articles.mergify.com/content/images/2021/03/chart.png)
 
-> Git no solo se usa en proyectos de software, también en documentación, análisis de datos, DevOps e infraestructura como código.
-> Gracias a su flexibilidad y potencia, se ha convertido en la herramienta estándar para el control de versiones.
+#### 4. Trabajar con repositorios remotos
+
+* `git clone` → copia un repositorio remoto.
+* `git remote` → conecta con un servidor remoto.
+* `git fetch` → trae cambios remotos sin aplicarlos.
+* `git pull` → trae y combina cambios remotos.
+* `git push` → sube tus cambios al remoto.
+
+```bash
+git clone url_del_repo
+git pull origin main
+git push origin main
+```
+
+#### 5. Revisar el historial
+
+* `git log` → ve todos los commits.
+* `git show` → detalles de un commit específico.
+
+```bash
+git log --oneline
+git show abc123
+```
+
+![historial de commits](https://velog.velcdn.com/images/tjdud0123/post/77916e2c-f6f5-43a5-838a-5f14e9de110c/image.png)
+
+#### 6. Comparar versiones
+
+* `git diff` → compara cambios entre versiones o ramas.
+
+```bash
+git diff archivo.txt
+```
+
+![diferencias de código](https://user-images.githubusercontent.com/5740731/162084469-718a8b48-a176-4657-961a-f45e157ff562.png)
+
+---
+
+## 📚 Recursos para seguir aprendiendo
+
+* [Git Oficial](https://git-scm.com/)
+* [GitHub Docs](https://docs.github.com/)
+* [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
+* [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+* [Git Cheat Sheet PDF](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
