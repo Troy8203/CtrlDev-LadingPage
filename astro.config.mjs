@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 import icon from "astro-icon";
 
+import mdx from "@astrojs/mdx";
+
 const isDev = import.meta.env.DEV;
 
 // https://astro.build/config
@@ -14,5 +16,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [icon()],
+  integrations: [icon(), mdx()],
 });

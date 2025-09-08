@@ -1,0 +1,208 @@
+---
+layout: ./[slug].astro
+title: "Hello, World!"
+author: "Matthew Phillips"
+date: "09 Aug 2022"
+---
+# Taller de Docker: Introducción y primeros pasos
+
+Docker es una plataforma que permite **crear, distribuir y ejecutar aplicaciones en contenedores**.  
+Un contenedor es como una “caja ligera” que incluye todo lo necesario para ejecutar un programa: código, dependencias, librerías y configuración.  
+
+Con Docker puedes:  
+- Garantizar que tu aplicación se ejecute igual en cualquier entorno (local, servidor, nube).  
+- Aislar servicios para evitar conflictos entre proyectos.  
+- Automatizar despliegues y escalar aplicaciones fácilmente.  
+
+---
+
+## 1. Fundamentos de Docker
+
+Antes de usar Docker, debemos entender sus conceptos principales:  
+
+- **Imagen**: plantilla inmutable que contiene una aplicación lista para ejecutarse (ejemplo: `nginx`, `mysql`).  
+- **Contenedor**: una instancia en ejecución de una imagen.  
+- **Dockerfile**: archivo con instrucciones para construir imágenes personalizadas.  
+- **Docker Hub**: repositorio público donde se comparten imágenes de contenedores.  
+
+> Un contenedor es a una **imagen** lo que un proceso es a un **programa**: uno es la definición, el otro la ejecución.
+
+---
+
+## 2. Instalación de Docker
+
+### Windows / Mac
+Descargar e instalar [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+
+### Linux (ejemplo: Ubuntu)
+```bash
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl enable --now docker
+````
+
+Verificar instalación:
+
+```bash
+docker --version
+```
+
+---
+
+## 3. Primeros pasos con Docker
+
+### Hola Mundo
+
+Ejecuta el contenedor de prueba:
+
+```bash
+docker run hello-world
+```
+
+### Descargar una imagen
+
+```bash
+docker pull nginx
+```
+
+### Listar imágenes disponibles
+
+```bash
+docker images
+```
+
+### Crear un contenedor
+
+```bash
+docker run -d -p 8080:80 nginx
+```
+
+* `-d`: modo “detached” (en segundo plano).
+* `-p`: mapea el puerto 80 del contenedor al 8080 de tu máquina.
+
+Accede en el navegador: [http://localhost:8080](http://localhost:8080)
+
+### Listar contenedores
+
+```bash
+docker ps
+```
+
+---
+
+## 4. Gestión de contenedores
+
+* Detener un contenedor:
+
+```bash
+docker stop <id_contenedor>
+```
+
+* Eliminar un contenedor:
+
+```bash
+docker rm <id_contenedor>
+```
+
+* Eliminar una imagen:
+
+```bash
+docker rmi nginx
+```
+
+---
+
+## 5. Construcción de imágenes con Dockerfile
+
+Ejemplo de `Dockerfile` para una aplicación Node.js:
+
+```dockerfile
+# Imagen base
+FROM node:18
+
+# Carpeta de trabajo
+WORKDIR /app
+
+# Copiar archivos
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+# Puerto expuesto
+EXPOSE 3000
+
+# Comando de inicio
+CMD ["npm", "start"]
+```
+
+Construir la imagen:
+
+```bash
+docker build -t mi-app .
+```
+
+Ejecutar la imagen:
+
+```bash
+docker run -d -p 3000:3000 mi-app
+```
+
+---
+
+## 6. Docker Compose
+
+Para manejar múltiples contenedores juntos usamos **Docker Compose**.
+Ejemplo: aplicación con Node.js y MongoDB.
+
+`docker-compose.yml`:
+
+```yaml
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+```
+
+Levantar todo:
+
+```bash
+docker-compose up -d
+```
+
+Detener todo:
+
+```bash
+docker-compose down
+```
+
+---
+
+## 7. Casos de uso de Docker
+
+* Desarrollo local sin problemas de dependencias.
+* Pruebas automatizadas en CI/CD.
+* Despliegue en servidores y nube.
+* Microservicios que necesitan correr de forma aislada.
+
+---
+
+## 8. Ejercicio práctico del taller
+
+1. Instalar Docker en tu máquina.
+2. Levantar un contenedor de **Nginx** en el puerto 8080.
+3. Crear un contenedor de **MySQL** con usuario y contraseña configurados.
+4. Construir tu propia imagen de una app simple en Node.js o Python.
+5. Usar **Docker Compose** para ejecutar la app + base de datos juntas.
+
+---
+
+> Docker es la base de muchas tecnologías modernas (Kubernetes, Swarm, OpenShift).
+> Dominarlo es un paso fundamental en el camino hacia DevOps y despliegue en la nube.

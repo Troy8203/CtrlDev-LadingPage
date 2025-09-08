@@ -1,21 +1,21 @@
 ---
 import Blog from "@layouts/blog.astro";
+import { cursosRoutes } from "src/routes/routes";
 
 export function getStaticPaths() {
-  return [
-    { params: { dog: "clifford" } },
-    { params: { dog: "rover" } },
-    { params: { dog: "spot" } },
-  ];
+  const routes = cursosRoutes;
+
+  return routes;
 }
 
-const { dog } = Astro.params;
+const { slug } = Astro.params;
 
 const base = Astro.site?.pathname;
 const site: URL | string = Astro.site ? Astro.site : "";
 ---
 
 <Blog>
-  <div>Good dog, {dog}!</div>
+  <div>Good dog, {slug}!</div>
   <div>{base} {JSON.stringify(site)}</div>
+  <slot />
 </Blog>

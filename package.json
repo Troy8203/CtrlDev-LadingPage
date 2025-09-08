@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.4",
     "@iconify-json/mingcute": "^1.2.5",
     "@iconify-json/skill-icons": "^1.2.3",
     "@iconify-json/solar": "^1.2.4",
