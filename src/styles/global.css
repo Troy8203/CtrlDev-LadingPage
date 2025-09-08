@@ -36,3 +36,51 @@
   --noise: 0;
 }
 
+.md-content {
+  @apply text-neutral-300 bg-base-200 px-10 py-3 rounded-xl;
+
+  /* Headings */
+  @apply [&>h1]:my-14! [&>h1]:text-4xl [&>h1]:text-center;
+  @apply [&>h2]:text-3xl [&>h3]:text-2xl [&>h4]:text-xl [&>h5]:text-lg [&>h6]:text-base;
+  @apply [&>h1,h2,h3,h4,h5,h6]:font-bold [&>h1,h2,h3,h4,h5,h6]:my-4 [&>h1,h2,h3,h4,h5,h6]:text-neutral-100;
+
+  /* Gradient for H1 */
+  @apply [&>h1]:bg-gradient-to-br [&>h1]:from-blue-500 [&>h1]:to-primary [&>h1]:bg-clip-text [&>h1]:text-transparent;
+
+  /* HR */
+  @apply [&>hr]:bg-white/20 [&>hr]:h-0.5 [&>hr]:w-full [&>hr]:my-5 [&>hr]:mx-1 [&>hr]:rounded-md [&>hr]:border-none;
+
+  /* Lists */
+  @apply [&>ul]:list-[square] [&>ul]:list-inside [&>ul>li>ul]:list-[square] [&>ul>li>ul]:list-inside;
+  @apply [&>ul,ol]:marker:text-primary;
+  @apply [&>ul>li>ul>li]:indent-4;
+  @apply [&>ol]:list-decimal [&>ol]:list-inside [&>ol>li>ol]:list-decimal [&>ol>li>ol]:list-inside;
+  @apply [&>ol>li>ol>li]:indent-4;
+
+  /* Links */
+  @apply [&>p>a]:italic [&>p>a]:underline [&>p>a]:hover:text-neutral-400 [&>ul>li,ol>li,p>a]:text-neutral-200;
+
+  /* Inline code */
+  @apply [&>p>code]:bg-base-100 [&>p>code]:text-primary [&>p>code]:text-sm [&>p>code]:px-1.5 [&>p>code]:py-1 [&>p>code]:rounded-md;
+
+  /* Code blocks */
+  @apply [&>pre]:mockup-code [&>pre]:p-3 [&>pre]:my-3 [&>pre]:rounded-md [&>pre]:text-xs;
+  @apply [&>pre>code]:text-sm;
+
+  /* Blockquotes & tables */
+  @apply [&>blockquote]:border-l-2 [&>blockquote]:border-l-primary [&>blockquote]:text-sm;
+  @apply [&>blockquote,table]:p-3 [&>blockquote,table]:my-3;
+  @apply [&>table]:w-full [&>table>thead]:bg-base-200 [&>table>thead>tr>th]:py-2 [&>table>tbody>tr>td]:py-0.5;
+
+  /* Images */
+  @apply [&>p>img]:rounded-md [&>p>img]:my-3 [&>p>img]:max-w-3xl;
+  @apply [&>p>a>img]:rounded-md [&>p>a>img]:my-3 [&>p>a>img]:border-2 [&>p>a>img]:border-transparent [&>p>a>img]:hover:border-primary;
+
+  /* BR */
+  @apply [&>br]:divider;
+}
+
+/* Centrar imágenes dentro de <p> o <a> */
+.blog p:has(img), .blog p>a:has(img) {
+  @apply flex justify-center items-center my-2;
+}

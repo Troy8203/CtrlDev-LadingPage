@@ -15,7 +15,5 @@ const site: URL | string = Astro.site ? Astro.site : "";
 ---
 
 <Blog>
-  <div>Good dog, {slug}!</div>
-  <div>{base} {JSON.stringify(site)}</div>
   <slot />
 </Blog>
