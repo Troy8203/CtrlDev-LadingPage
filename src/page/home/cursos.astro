@@ -7,7 +7,7 @@ import StackIcon from "@components/card/stack-icon.astro";
 
 <div
   id="cursos"
-  class="h-svh md:h-screen snap-start w-full px-5 py-20 md:px-10 flex flex-col items-center justify-evenly gap-0 lg:gap-8"
+  class="h-svh md:h-screen snap-start w-full px-5 py-20 md:px-10 flex flex-col items-center justify-evenly gap-0 lg:gap-8 overflow-hidden"
 >
   <div class="flex flex-col items-center justify-center gap-5">
     <h2
@@ -40,11 +40,11 @@ import StackIcon from "@components/card/stack-icon.astro";
               contenedores.
             </p>
           </div>
-          <hr class="min-h-[20px] bg-info" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
         </li>
 
         <li>
-          <hr class="min-h-[20px] bg-info" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
           <div class="timeline-start font-bold">Web Starter</div>
           <div class="timeline-middle">
             <StackIcon
@@ -63,11 +63,11 @@ import StackIcon from "@components/card/stack-icon.astro";
               Construye sitios web interactivos desde cero.
             </p>
           </div>
-          <hr class="min-h-[20px] bg-info" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
         </li>
 
         <li>
-          <hr class="min-h-[20px] bg-info" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
           <div class="timeline-start font-bold">FigMagic</div>
           <div class="timeline-middle">
             <CardIcon icon={Icons.FIGMA} />
@@ -83,11 +83,13 @@ import StackIcon from "@components/card/stack-icon.astro";
               Diseña interfaces y prototipos de forma rápida y profesional.
             </p>
           </div>
-          <hr class="min-h-[20px] bg-info" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
         </li>
 
         <li>
-          <hr class="min-h-[20px] bg-gradient-to-b from-info to-success" />
+          <hr
+            class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-info to-success"
+          />
           <div class="timeline-start font-bold">Frontend Turbo</div>
           <div class="timeline-middle">
             <StackIcon icons={[Icons.ASTRO_WEB, Icons.TAILWIND]} size={40} />
@@ -104,11 +106,11 @@ import StackIcon from "@components/card/stack-icon.astro";
               Tailwind.
             </p>
           </div>
-          <hr class="min-h-[20px] bg-success" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
         </li>
 
         <li>
-          <hr class="min-h-[20px] bg-success" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
           <div class="timeline-start font-bold">Component Pro</div>
           <div class="timeline-middle">
             <StackIcon icons={[Icons.TYPESCRIPT, Icons.REACT]} size={40} />
@@ -125,11 +127,11 @@ import StackIcon from "@components/card/stack-icon.astro";
               TypeScript.
             </p>
           </div>
-          <hr class="min-h-[20px] bg-success" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
         </li>
 
         <li>
-          <hr class="min-h-[20px] bg-success" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
           <div class="timeline-start font-bold">Backend Boost</div>
           <div class="timeline-middle">
             <StackIcon
@@ -149,11 +151,13 @@ import StackIcon from "@components/card/stack-icon.astro";
               Supabase.
             </p>
           </div>
-          <hr class="min-h-[20px] bg-success" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
         </li>
 
         <li>
-          <hr class="min-h-[20px] bg-gradient-to-b from-secondary to-primary" />
+          <hr
+            class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-secondary to-primary"
+          />
           <div class="timeline-start font-bold">DevUps</div>
           <div class="timeline-middle">
             <StackIcon
@@ -173,7 +177,7 @@ import StackIcon from "@components/card/stack-icon.astro";
               profesionalmente.
             </p>
           </div>
-          <hr class="min-h-[20px] bg-primary" />
+          <hr class="min-h-[12px] md:min-h-[20px] bg-primary" />
         </li>
       </ul>
       <div class="hidden lg:flex flex-col items-end gap-5 py-0 md:py-10">
