@@ -1,6 +1,8 @@
 ---
 import Iconify from "@components/iconify/iconify.astro";
 import { Icons } from "@components/iconify/icons";
+
+const base = Astro.site ? Astro.site : "";
 ---
 
 <section
@@ -19,7 +21,7 @@ import { Icons } from "@components/iconify/icons";
         comunidad apasionada por el conocimiento.
       </p>
       <div>
-        <a href="/cursos" class="btn btn-secondary">Ver Cursos</a>
+        <a href={`${base}/cursos`} class="btn btn-secondary">Ver Cursos</a>
       </div>
     </div>
 
