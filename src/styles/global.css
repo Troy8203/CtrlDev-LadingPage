@@ -40,12 +40,12 @@
   @apply text-neutral-300 bg-base-200 px-10 py-3 rounded-xl;
 
   /* Headings */
-  @apply [&>h1]:my-14! [&>h1]:text-4xl [&>h1]:text-center;
-  @apply [&>h2]:text-3xl [&>h3]:text-2xl [&>h4]:text-xl [&>h5]:text-lg [&>h6]:text-base;
+  @apply [&>h1]:my-10!;
+  @apply [&>h1,h2]:text-3xl [&>h3]:text-2xl [&>h4]:text-xl [&>h5]:text-lg [&>h6]:text-base;
   @apply [&>h1,h2,h3,h4,h5,h6]:font-bold [&>h1,h2,h3,h4,h5,h6]:my-4 [&>h1,h2,h3,h4,h5,h6]:text-neutral-100;
 
   /* Gradient for H1 */
-  @apply [&>h1]:bg-gradient-to-br [&>h1]:from-blue-500 [&>h1]:to-primary [&>h1]:bg-clip-text [&>h1]:text-transparent;
+  @apply [&>h1]:underline;
 
   /* HR */
   @apply [&>hr]:bg-white/20 [&>hr]:h-0.5 [&>hr]:w-full [&>hr]:my-5 [&>hr]:mx-1 [&>hr]:rounded-md [&>hr]:border-none;

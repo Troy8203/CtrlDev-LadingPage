@@ -1,16 +1,51 @@
 ---
+import { coursesAvailable } from "src/constants";
 import Footer from "./footer.astro";
 import Layout from "./layout.astro";
+import { getInitialsName } from "@utils/utils";
+
+type Props = {
+  title: string;
+  date: string;
+  autor: string;
+};
+
+const base = Astro.site ? Astro.site.host : "";
+
+const { title, date, autor }: Props = Astro.props;
+const autorAvatar = getInitialsName(autor);
 ---
 
 <Layout>
   <main class="h-screen overflow-y-scroll">
     <section
       class="flex-1 bg-[url(/assets/banner.svg)] bg-no-repeat bg-top
-             bg-size-[auto_500px] md:bg-size-[auto_700px] lg:bg-contain pt-10"
+             bg-size-[auto_500px] md:bg-size-[auto_700px] lg:bg-contain pt-10 p-2"
     >
       <div
-        class="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5 px-6 py-16"
+        class="w-full max-w-6xl mx-auto px-6 pb-4 mt-14 mb-5 bg-base-200 rounded-xl flex flex-col gap-1"
+      >
+        <p
+          class="bg-gradient-to-br from-blue-500 to-primary bg-clip-text text-transparent text-4xl text-center font-bold py-8 uppercase"
+        >
+          {title}
+        </p>
+        <div class="w-full flex justify-between text-sm text-accent/80">
+          <div class="flex items-center gap-2">
+            <div class="avatar avatar-placeholder">
+              <div
+                class="ring-primary ring-2 bg-neutral text-neutral-content w-8 rounded-full"
+              >
+                <span class="text-xs">{autorAvatar}</span>
+              </div>
+            </div>
+            <p class="font-semibold">{autor}</p>
+          </div>
+          <p>{date}</p>
+        </div>
+      </div>
+      <div
+        class="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-5"
       >
         <div
           class="lg:col-span-3 prose prose-lg prose-slate max-w-none md-content"
@@ -25,21 +60,13 @@ import Layout from "./layout.astro";
           <ul
             class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent"
           >
-            <li>
-              <a href="#">Noticia 1</a>
-            </li>
-            <li>
-              <a href="#">Noticia 2</a>
-            </li>
-            <li>
-              <a href="#">Noticia 3</a>
-            </li>
-            <li>
-              <a href="#">Noticia 4</a>
-            </li>
-            <li>
-              <a href="#">Noticia 5</a>
-            </li>
+            {
+              coursesAvailable.map((item) => (
+                <li class="before:content-['>'] before:text-primary">
+                  <a href={`${base}${item.link}`}>{item.title}</a>
+                </li>
+              ))
+            }
           </ul>
         </aside>
       </div>
