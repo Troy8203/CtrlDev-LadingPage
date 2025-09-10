@@ -1,15 +1,16 @@
 ---
 layout: ../[slug].astro
 title: "Introducción a Git - Sesión 1"
-author: "DevTroy"
-date: "09 Aug 2022"
+author: "Neil Graneros"
+date: "09 Sep 2025"
 ---
 ## 📋 Descripción
-En esta carpeta (directorio) se encuentra el material de la **primera sesión** del taller de GIT.
+En este apartado se encuentra el material relacionado a la **primera sesión** del taller de GIT.
 
 En esta clase, se abordaron los conceptos básicos y necesarios sobre git y sus comandos, así como como trabajar en ramas y la creación de un repositorio remoto en [GitHub](https://github.com/).
 
-> **📎 Adjunto :** Se incluye la diapositiva usada en la sesión [diapositiva](diapositivas-primera-sesion.pdf)
+> **📎 Adjunto :** Se incluye la diapositiva usada en la sesión:
+<iframe src="https://drive.google.com/file/d/1aAs5mwlfbmW-4eOqX343uuAPVNf29TVj/preview" width="100%" height="480" allow="autoplay"></iframe>
 
 ---
 ## 📚 Temas tratados
@@ -57,9 +58,10 @@ git branch -M main
 git remote add origin https://github.com/user/prueba.git
 git push -u origin main
 ```
+---
 
-### 🚨 Errores comúnes y soluciones al crear un repositorio remoto
-#### Error al crear la conexión entre los repositorios:
+### 🚨 Errores comunes y soluciones al crear un repositorio remoto
+#### 1. Error al crear la conexión entre los repositorios:
 Si es la primera vez que creamos un repositorio remoto en GitHub, al momento de realizar la conexión (`push`) del repositorio local al remoto sale este error ⚠️: 
 ```bash
 git push -u origin main
@@ -104,7 +106,7 @@ Para poder tener acceso y poder loguearnos debemos crear un token de acceso pers
     - `workflow` (si vas a usar acciones de GitHub más adelante o en otros proyectos).
 - Con los permisos ya seleccionados. Haz click en **"Generate token"**
 - Y copia el token generado. Ten cuidado que se muestra solo una vez. [![image.png](https://i.postimg.cc/YSPK0WQg/image.png)](https://postimg.cc/Y4Qyyjnq)
-- La próxima vez que hagas `git push` o `git pull`, Git te pedirá:
+- La próxima vez que hagas `git push` o `git pull`, Git te pedirá tu `usuario` y `token`:
     ```bash
     Username for 'https://github.com': tu_usuario
     Password for 'https://github.com': tu_token //pega el token generado en el anterior paso
