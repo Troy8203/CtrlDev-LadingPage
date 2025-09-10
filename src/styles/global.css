@@ -53,6 +53,7 @@
   /* Lists */
   @apply [&>ul]:list-[square] [&>ul]:list-inside [&>ul>li>ul]:list-[square] [&>ul>li>ul]:list-inside;
   @apply [&>ul,ol]:marker:text-primary;
+  @apply [&>ul>li>a]:underline [&>ul>li>a]:italic!;
   @apply [&>ul>li>ul>li]:indent-4;
   @apply [&>ol]:list-decimal [&>ol]:list-inside [&>ol>li>ol]:list-decimal [&>ol>li>ol]:list-inside;
   @apply [&>ol>li>ol>li]:indent-4;
