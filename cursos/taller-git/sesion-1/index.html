@@ -34,14 +34,14 @@ La creación y navegacón del flujo se hará mediante <code>HTTPS</code> y no as
 </ul>
 <h3 id="️-crear-repositorio-remoto-en-github">🏗️ Crear repositorio remoto en GitHub</h3>
 <ol>
-<li>Ve a <a href="https://github.com/">github.com</a>, dirigete a tu cuenta a la seccion <code>Repositories</code>.</li>
+<li>Ve a <a href="https://github.com/">github.com</a>, dirigete a tu cuenta a la sección <code>Repositories</code>.</li>
 <li>Click en <code>New</code>.</li>
 <li>Debes elegir un nombre, además decidir si quieres que sea público para otras personas o privado. Puedes dejar el resto por defecto (sin README, <code>.gitignore</code>, etc).</li>
 <li>Y después click en <strong>Create repository</strong></li>
 </ol>
 <h3 id="-conectar-repositorio-local-al-repositorio-remoto-en-github-mediante-https">🔗 Conectar repositorio local al repositorio remoto en GitHub (mediante https)</h3>
 <ol>
-<li>Después de haber creado el repositorio remoto solo se debe seguir los pasos que git hub nos brinda:</li>
+<li>Después de haber creado el repositorio remoto, solo se debe seguir los pasos que GitHub nos brinda:</li>
 </ol>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">…or</span><span style="color:#9ECBFF"> create</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> new</span><span style="color:#9ECBFF"> repository</span><span style="color:#9ECBFF"> on</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> command</span><span style="color:#9ECBFF"> line</span></span>
 <span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> &quot;# prueba&quot;</span><span style="color:#F97583"> &gt;&gt;</span><span style="color:#9ECBFF"> README.md</span><span style="color:#9ECBFF"> //omitir</span><span style="color:#9ECBFF"> paso</span><span style="color:#79B8FF">*</span></span>
@@ -54,12 +54,12 @@ La creación y navegacón del flujo se hará mediante <code>HTTPS</code> y no as
 <hr/>
 <h3 id="-errores-comunes-y-soluciones-al-crear-un-repositorio-remoto">🚨 Errores comunes y soluciones al crear un repositorio remoto</h3>
 <h4 id="1-error-al-crear-la-conexión-entre-los-repositorios">1. Error al crear la conexión entre los repositorios:</h4>
-<p>Si es la primera vez que creamos un repositorio remoto en GitHub, al momento de realizar la conexión (<code>push</code>) del repositorio local al remoto sale este error ⚠️:</p>
+<p>Si es la primera vez, que creamos un repositorio remoto en GitHub. Si al momento de realizar la conexión (<code>push</code>) del repositorio local al remoto, nos sale este error ⚠️:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> push</span><span style="color:#79B8FF"> -u</span><span style="color:#9ECBFF"> origin</span><span style="color:#9ECBFF"> main</span></span>
 <span class="line"><span style="color:#B392F0">error:</span><span style="color:#9ECBFF"> src</span><span style="color:#9ECBFF"> refspec</span><span style="color:#9ECBFF"> main</span><span style="color:#9ECBFF"> no</span><span style="color:#9ECBFF"> concuerda</span><span style="color:#9ECBFF"> con</span><span style="color:#9ECBFF"> ninguno</span></span>
 <span class="line"><span style="color:#B392F0">error:</span><span style="color:#9ECBFF"> falló</span><span style="color:#9ECBFF"> el</span><span style="color:#9ECBFF"> empuje</span><span style="color:#9ECBFF"> de</span><span style="color:#9ECBFF"> algunas</span><span style="color:#9ECBFF"> referencias</span><span style="color:#9ECBFF"> a</span><span style="color:#9ECBFF"> &#39;https://github.com/user/prueba.git&#39;</span></span></code></pre>
 <blockquote>
-<p>Se debe a que nuestra rama actual <code>main</code> no tiene al menos un <code>commit</code>. Entonces por que nos saltamos ese paso??. Nos saltamos ese paso para evitar <code>ensuciar</code> el historial de commits.</p>
+<p>Este error se debe a que nuestra rama actual <code>main</code> no tiene al menos un <code>commit</code>, ocasionando ese error. Entonces, porqué nos saltamos ese paso??. Nos saltamos ese paso para evitar <code>ensuciar</code> el historial de commits.</p>
 </blockquote>
 <h4 id="-solución">💡 Solución</h4>
 <p>Para poder realizar la conexión y no ensuciar el historial de commits en el proceso. Se debe agregar un <code>commit vacío</code> que solo haga referencia a la creación o conexión/sincronización con el repo remoto:</p>
@@ -72,21 +72,21 @@ La creación y navegacón del flujo se hará mediante <code>HTTPS</code> y no as
 <span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> push</span><span style="color:#79B8FF"> -u</span><span style="color:#9ECBFF"> origin</span><span style="color:#9ECBFF"> main</span></span></code></pre>
 <hr/>
 <h4 id="2-error-al-sincronizar-los-datos-de-usuario">2. Error al sincronizar los datos de usuario:</h4>
-<p>Si al momento de hacer <code>push</code> se te pide autenticar tus datos de GitHub. Al introducir correctamente tus credenciales te sale este error ⚠️:</p>
+<p>Si al hacer <code>push</code> se te pide autenticar tus datos de GitHub, y tras introducir correctamente tus credenciales aparece el siguiente error ⚠️:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> push</span><span style="color:#79B8FF"> -u</span><span style="color:#9ECBFF"> origin</span><span style="color:#9ECBFF"> main</span><span style="color:#E1E4E8"> </span></span>
 <span class="line"><span style="color:#B392F0">Username</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> &#39;https://github.com&#39;:</span><span style="color:#9ECBFF"> user123</span><span style="color:#9ECBFF"> Password</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> &#39;https://user@github.com&#39;:</span><span style="color:#79B8FF"> ****</span></span>
 <span class="line"><span style="color:#B392F0">remote:</span><span style="color:#9ECBFF"> Invalid</span><span style="color:#9ECBFF"> username</span><span style="color:#9ECBFF"> or</span><span style="color:#9ECBFF"> token.</span><span style="color:#9ECBFF"> Password</span><span style="color:#9ECBFF"> authentication</span><span style="color:#9ECBFF"> is</span><span style="color:#9ECBFF"> not</span><span style="color:#9ECBFF"> supported</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> Git</span><span style="color:#9ECBFF"> operations.</span><span style="color:#9ECBFF"> fatal:</span><span style="color:#9ECBFF"> Autenticación</span><span style="color:#9ECBFF"> falló</span><span style="color:#9ECBFF"> para</span><span style="color:#9ECBFF"> &#39;https://github.com/user/prueba.git/&#39;</span></span></code></pre>
 <blockquote>
-<p>Se debe que desde el <strong>2021</strong> GitHub deshabilitó el uso de <strong>contraseñas</strong> para hacer <strong>git push, clone, etc.</strong>, vía <strong>HTTPS</strong>. Solo acepta:
+<p>Esto se debe a que, desde el <strong>2021</strong>, GitHub deshabilitó el uso de <strong>contraseñas</strong> para operaciones como <strong>git push, clone, etc.</strong>, vía <strong>HTTPS</strong>. Actualmente, solo acepta la autenticación de usuarios mediante:
 <strong>SSH o Tokens de Acceso Personal (PAT)</strong></p>
 </blockquote>
 <h4 id="-solución-1">💡 Solución</h4>
-<p>Para poder tener acceso y poder loguearnos debemos crear un token de acceso personal.</p>
+<p>Para poder autenticarnos y obtener acceso, debemos crear un token de acceso personal (PAT).</p>
 <ul>
 <li>Ve a <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
 <li>Haz click en <code>&quot;Generate new token (classic)&quot;</code>
 <a href="https://postimg.cc/fJgFVGSZ"><img src="https://i.postimg.cc/rw8LPc8d/image.png" alt="image.png"/></a></li>
-<li>Debes darle un tiempo de expiración al token. Dale nombre al token y selecciona expiración (ej: 30 días o “no expiration”)
+<li>Dale nombre al token y selecciona su tiempo de expiración.  (ej: 30 días o “no expiration”)
 <a href="https://postimg.cc/w7fKhtPC"><img src="https://i.postimg.cc/NjYgvmxj/image.png" alt="image.png"/></a></li>
 <li>Marca los permisos necesarios para ese token. Para Git básico:
 <ul>
@@ -95,7 +95,7 @@ La creación y navegacón del flujo se hará mediante <code>HTTPS</code> y no as
 </ul>
 </li>
 <li>Con los permisos ya seleccionados. Haz click en <strong>“Generate token”</strong></li>
-<li>Y copia el token generado. Ten cuidado que se muestra solo una vez. <a href="https://postimg.cc/Y4Qyyjnq"><img src="https://i.postimg.cc/YSPK0WQg/image.png" alt="image.png"/></a></li>
+<li>Y copia el token generado. <strong>Ten cuidado que se muestra solo una vez</strong>. <a href="https://postimg.cc/Y4Qyyjnq"><img src="https://i.postimg.cc/YSPK0WQg/image.png" alt="image.png"/></a></li>
 <li>La próxima vez que hagas <code>git push</code> o <code>git pull</code>, Git te pedirá tu <code>usuario</code> y <code>token</code>:
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">Username</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> &#39;https://github.com&#39;:</span><span style="color:#9ECBFF"> tu_usuario</span></span>
 <span class="line"><span style="color:#B392F0">Password</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> &#39;https://github.com&#39;:</span><span style="color:#9ECBFF"> tu_token</span><span style="color:#9ECBFF"> //pega</span><span style="color:#9ECBFF"> el</span><span style="color:#9ECBFF"> token</span><span style="color:#9ECBFF"> generado</span><span style="color:#9ECBFF"> en</span><span style="color:#9ECBFF"> el</span><span style="color:#9ECBFF"> anterior</span><span style="color:#9ECBFF"> paso</span></span></code></pre>
