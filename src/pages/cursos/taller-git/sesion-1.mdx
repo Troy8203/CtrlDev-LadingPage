@@ -41,13 +41,13 @@ En esta sección se detalla el paso a paso de la creación de un repositorio en 
     ```
 
 ### 🏗️ Crear repositorio remoto en GitHub
-1. Ve a [github.com](https://github.com/), dirigete a tu cuenta a la seccion `Repositories`.
+1. Ve a [github.com](https://github.com/), dirigete a tu cuenta a la sección `Repositories`.
 2. Click en `New`.
 3. Debes elegir un nombre, además decidir si quieres que sea público para otras personas o privado. Puedes dejar el resto por defecto (sin README, `.gitignore`, etc).
 4. Y después click en **Create repository**
 
 ### 🔗 Conectar repositorio local al repositorio remoto en GitHub (mediante https)
-1. Después de haber creado el repositorio remoto solo se debe seguir los pasos que git hub nos brinda:
+1. Después de haber creado el repositorio remoto, solo se debe seguir los pasos que GitHub nos brinda:
 ```bash
 …or create a new repository on the command line
 echo "# prueba" >> README.md //omitir paso*
@@ -62,13 +62,13 @@ git push -u origin main
 
 ### 🚨 Errores comunes y soluciones al crear un repositorio remoto
 #### 1. Error al crear la conexión entre los repositorios:
-Si es la primera vez que creamos un repositorio remoto en GitHub, al momento de realizar la conexión (`push`) del repositorio local al remoto sale este error ⚠️: 
+Si es la primera vez, que creamos un repositorio remoto en GitHub. Si al momento de realizar la conexión (`push`) del repositorio local al remoto, nos sale este error ⚠️: 
 ```bash
 git push -u origin main
 error: src refspec main no concuerda con ninguno
 error: falló el empuje de algunas referencias a 'https://github.com/user/prueba.git'
 ```
-> Se debe a que nuestra rama actual `main` no tiene al menos un `commit`. Entonces por que nos saltamos ese paso??. Nos saltamos ese paso para evitar `ensuciar` el historial de commits.
+> Este error se debe a que nuestra rama actual `main` no tiene al menos un `commit`, ocasionando ese error. Entonces, porqué nos saltamos ese paso??. Nos saltamos ese paso para evitar `ensuciar` el historial de commits.
 #### 💡 Solución
 Para poder realizar la conexión y no ensuciar el historial de commits en el proceso. Se debe agregar un `commit vacío` que solo haga referencia a la creación o conexión/sincronización con el repo remoto:
 ```bash
@@ -85,27 +85,27 @@ git push -u origin main
 ```
 ---
 #### 2. Error al sincronizar los datos de usuario:
-Si al momento de hacer `push` se te pide autenticar tus datos de GitHub. Al introducir correctamente tus credenciales te sale este error ⚠️:
+Si al hacer `push` se te pide autenticar tus datos de GitHub, y tras introducir correctamente tus credenciales aparece el siguiente error ⚠️:
 
 ```bash
 git push -u origin main 
 Username for 'https://github.com': user123 Password for 'https://user@github.com': ****
 remote: Invalid username or token. Password authentication is not supported for Git operations. fatal: Autenticación falló para 'https://github.com/user/prueba.git/'
 ```
-> Se debe que desde el **2021** GitHub deshabilitó el uso de **contraseñas** para hacer **git push, clone, etc.**, vía **HTTPS**. Solo acepta:
+> Esto se debe a que, desde el **2021**, GitHub deshabilitó el uso de **contraseñas** para operaciones como **git push, clone, etc.**, vía **HTTPS**. Actualmente, solo acepta la autenticación de usuarios mediante:
 **SSH o Tokens de Acceso Personal (PAT)**
 #### 💡 Solución
-Para poder tener acceso y poder loguearnos debemos crear un token de acceso personal.
+Para poder autenticarnos y obtener acceso, debemos crear un token de acceso personal (PAT).
 - Ve a https://github.com/settings/tokens
 - Haz click en `"Generate new token (classic)"`
 [![image.png](https://i.postimg.cc/rw8LPc8d/image.png)](https://postimg.cc/fJgFVGSZ)
-- Debes darle un tiempo de expiración al token. Dale nombre al token y selecciona expiración (ej: 30 días o "no expiration")
+- Dale nombre al token y selecciona su tiempo de expiración.  (ej: 30 días o "no expiration")
 [![image.png](https://i.postimg.cc/NjYgvmxj/image.png)](https://postimg.cc/w7fKhtPC)
 - Marca los permisos necesarios para ese token. Para Git básico:
     - `repo` (para acceso a tus repositorios).
     - `workflow` (si vas a usar acciones de GitHub más adelante o en otros proyectos).
 - Con los permisos ya seleccionados. Haz click en **"Generate token"**
-- Y copia el token generado. Ten cuidado que se muestra solo una vez. [![image.png](https://i.postimg.cc/YSPK0WQg/image.png)](https://postimg.cc/Y4Qyyjnq)
+- Y copia el token generado. **Ten cuidado que se muestra solo una vez**. [![image.png](https://i.postimg.cc/YSPK0WQg/image.png)](https://postimg.cc/Y4Qyyjnq)
 - La próxima vez que hagas `git push` o `git pull`, Git te pedirá tu `usuario` y `token`:
     ```bash
     Username for 'https://github.com': tu_usuario
