@@ -40,8 +40,7 @@
   @apply text-accent/70 bg-base-200 px-10 py-3 rounded-xl;
 
   /* Headings */
-  @apply [&>h1]:my-10!;
-  @apply [&>h1]:text-accent;
+  @apply [&>h1]:my-10! [&>h1]:text-accent;
   @apply [&>h2]:text-accent/90;
   @apply [&>h3]:text-accent/80;
   @apply [&>h4]:text-accent/70;
@@ -54,7 +53,7 @@
   @apply [&>h1]:underline;
 
   /* HR */
-  @apply [&>hr]:bg-white/20 [&>hr]:h-0.5 [&>hr]:w-full [&>hr]:my-5 [&>hr]:mx-1 [&>hr]:rounded-md [&>hr]:border-none;
+  @apply [&>hr]:border-none;
 
   /* Lists */
   @apply [&>ul]:list-[square] [&>ul]:list-inside [&>ul>li>ul]:list-[square] [&>ul>li>ul]:list-inside;
@@ -84,7 +83,7 @@
   @apply [&>p>a>img]:rounded-md [&>p>a>img]:my-3 [&>p>a>img]:border-2 [&>p>a>img]:border-transparent [&>p>a>img]:hover:border-primary;
 
   /* BR */
-  @apply [&>,hr]:divider [&>br,hr]:bg-accent/5 [&>br,hr]:my-8;
+  @apply [&>hr]:divider [&>br,hr]:my-8;
 
   /* IFrames */
   @apply [&>iframe]:w-full [&>iframe]:max-h-60 md:[&>iframe]:max-h-96 [&>iframe]:my-3 [&>iframe]:rounded-md [&>iframe]:bg-base-200;
