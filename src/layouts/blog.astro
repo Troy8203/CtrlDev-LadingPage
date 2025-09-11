@@ -10,7 +10,7 @@ type Props = {
   autor: string;
 };
 
-const base = Astro.site ? Astro.site.host : "";
+const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
 
 const { title, date, autor }: Props = Astro.props;
 const autorAvatar = getInitialsName(autor);
@@ -62,8 +62,8 @@ const autorAvatar = getInitialsName(autor);
           >
             {
               coursesAvailable.map((item) => (
-                <li class="before:content-['>'] before:text-primary">
-                  <a href={`${base} # ${item.link}`}>{item.title}</a>
+                <li class="before:content-['*'] before:text-primary">
+                  <a href={`${base}/${item.link}`}>{item.title}</a>
                 </li>
               ))
             }
