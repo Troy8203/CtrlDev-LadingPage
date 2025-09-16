@@ -3,10 +3,16 @@ import Blog from "@layouts/blog.astro";
 import { cursosRoutes } from "src/routes/routes";
 import type { MarkdownLayoutProps } from "astro";
 
+type Index = {
+  name: string;
+  link: string;
+};
+
 type Props = MarkdownLayoutProps<{
   title: string;
   author: string;
   date: string;
+  content: Index[];
 }>;
 
 export function getStaticPaths() {
@@ -19,9 +25,9 @@ const { slug } = Astro.params;
 const base = Astro.site?.pathname;
 const site: URL | string = Astro.site ? Astro.site : "";
 
-const { title, date, author } = Astro.props.frontmatter;
+const { title, date, author, content } = Astro.props.frontmatter;
 ---
 
-<Blog title={title} date={date} autor={author}>
+<Blog title={title} date={date} author={author} content={content}>
   <slot />
 </Blog>

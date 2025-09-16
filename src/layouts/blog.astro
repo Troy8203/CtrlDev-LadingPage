@@ -4,16 +4,22 @@ import Footer from "./footer.astro";
 import Layout from "./layout.astro";
 import { getInitialsName } from "@utils/utils";
 
+type Index = {
+  name: string;
+  link: string;
+};
+
 type Props = {
   title: string;
   date: string;
-  autor: string;
+  author: string;
+  content: Index[];
 };
 
 const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
 
-const { title, date, autor }: Props = Astro.props;
-const autorAvatar = getInitialsName(autor);
+const { title, date, author, content }: Props = Astro.props;
+const authorAvatar = getInitialsName(author);
 ---
 
 <Layout>
@@ -36,10 +42,10 @@ const autorAvatar = getInitialsName(autor);
               <div
                 class="ring-primary ring-2 bg-neutral text-neutral-content w-8 rounded-full"
               >
-                <span class="text-xs">{autorAvatar}</span>
+                <span class="text-xs">{authorAvatar}</span>
               </div>
             </div>
-            <p class="font-semibold">{autor}</p>
+            <p class="font-semibold">{author}</p>
           </div>
           <p>{date}</p>
         </div>
@@ -52,11 +58,22 @@ const autorAvatar = getInitialsName(autor);
         >
           <slot />
         </div>
-
         <aside
           class="bg-base-200 p-10 pb-16 rounded-xl h-auto self-start space-y-3 hidden lg:block"
         >
-          <h4 class="text-lg font-semibold underline">Otras Publicaciones</h4>
+          {
+            content && (
+                <h4 class="text-lg font-semibold underline">Contenido</h4>
+                <ul class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent pb-5">
+                  {content.map((item) => (
+                    <li class="before:content-['*'] before:text-primary">
+                      <a href={`${base}/${item.link}`}>{item.name}</a>
+                    </li>
+                  ))}
+                </ul>
+            )
+          }
+          <h4 class="text-md font-semibold underline">Otras Publicaciones</h4>
           <ul
             class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent"
           >

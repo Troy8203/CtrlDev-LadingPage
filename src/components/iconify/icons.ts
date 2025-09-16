@@ -34,6 +34,8 @@ export enum Icons {
 
   //INPUT
   SEARCH = "mingcute:search-3-line",
+
+  //BLOG
 }
 
 export type IconType = Icons;
