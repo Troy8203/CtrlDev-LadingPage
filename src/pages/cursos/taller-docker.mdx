@@ -1,10 +1,24 @@
 ---
 layout: ./[slug].astro
-title: "Hello, World!"
-author: "Matthew Phillips"
-date: "09 Aug 2022"
+title: "Introducción a Docker"
+author: "Neil Graneros"
+date: "16 Sep 2025"
 ---
-# Taller de Docker: Introducción y primeros pasos
+# 📋 Descripción
+En este apartado se encuentra el material relacionado al taller de Docker.
+
+En esta clase, se abordaron los conceptos básicos y comandos útiles sobre la creación de imágenes y contenedores [Docker](https://www.docker.com).
+
+> **📎 Adjunto :** Se incluye la diapositiva usada en la sesión:
+<iframe src="https://drive.google.com/file/d/1DNaN4cwc5Nut5XWk_egRFTFuLdIu6QRD/preview" width="640" height="480" allow="autoplay" />
+---
+
+# 🧰 Recursos
+- [Laboratorio Docker](https://labs.play-with-docker.com)
+- [What is Docker?](https://docker-curriculum.com/#prerequisites)
+- [Dockerfile sample](https://github.com/reveluv1814/docker-sample.git)
+
+# 📚 Taller de Docker: Introducción y primeros pasos
 
 Docker es una plataforma que permite **crear, distribuir y ejecutar aplicaciones en contenedores**.  
 Un contenedor es como una “caja ligera” que incluye todo lo necesario para ejecutar un programa: código, dependencias, librerías y configuración.  
@@ -112,7 +126,21 @@ docker rmi nginx
 
 ---
 
-## 5. Construcción de imágenes con Dockerfile
+## 5. Crear una BD a partir de una Imagen
+
+* Crear instancia de una BD en Postres 16:
+
+```bash
+docker run --name pg16 -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres:16.0
+```
+- Esto crea un contenedor de *Postgres* con la siguiente configuración:
+  - Host : localhost
+  - Puerto: 5432
+  - Database: postgres
+  - Username: postgres
+  - Password: postgres
+
+## 6. Construcción de imágenes con Dockerfile
 
 Ejemplo de `Dockerfile` para una aplicación Node.js:
 
@@ -149,7 +177,7 @@ docker run -d -p 3000:3000 mi-app
 
 ---
 
-## 6. Docker Compose
+## 7. Docker Compose
 
 Para manejar múltiples contenedores juntos usamos **Docker Compose**.
 Ejemplo: aplicación con Node.js y MongoDB.
@@ -185,7 +213,7 @@ docker-compose down
 
 ---
 
-## 7. Casos de uso de Docker
+## 8. Casos de uso de Docker
 
 * Desarrollo local sin problemas de dependencias.
 * Pruebas automatizadas en CI/CD.
@@ -206,3 +234,18 @@ docker-compose down
 
 > Docker es la base de muchas tecnologías modernas (Kubernetes, Swarm, OpenShift).
 > Dominarlo es un paso fundamental en el camino hacia DevOps y despliegue en la nube.
+
+---
+
+## 👨‍💻 Autor - Facilitador
+- [Neil Graneros Flores](https://github.com/reveluv1814)
+
+---
+
+## 🔰 Grupos de estudio organizadores
+
+- [GNU Núcleo Linux](https://www.nucleognulinux.org)
+- [Ctrl + Dev](https://troy8203.github.io/CtrlDev-LadingPage)
+
+---
+`🇧🇴 La Paz - Bolivia 2025`
