@@ -36,6 +36,9 @@ export enum Icons {
   SEARCH = "mingcute:search-3-line",
 
   //BLOG
+  SHARE = "mingcute:share-forward-fill",
+  INDEX = "mingcute:list-check-3-line",
+  COURSES = "mingcute:book-5-line",
 }
 
 export type IconType = Icons;
