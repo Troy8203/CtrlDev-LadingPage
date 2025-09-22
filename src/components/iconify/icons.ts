@@ -38,6 +38,7 @@ export enum Icons {
   SEARCH = "mingcute:search-3-line",
 
   //BLOG
+  LINK = "mingcute:link-2-fill",
   SHARE = "mingcute:share-forward-line",
   INDEX = "mingcute:list-check-3-line",
   COURSES = "mingcute:book-5-line",

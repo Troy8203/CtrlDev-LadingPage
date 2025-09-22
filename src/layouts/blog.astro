@@ -54,7 +54,7 @@ const authorAvatar = getInitialsName(author);
           <div class="flex items-center gap-2">
             <p>{date}</p>
             <button class="btn btn-circle btn-outline btn-primary btn-md" onclick="my_modal_1.showModal()">
-            <Iconify icon={Icons.SHARE} size={19} />
+            <Iconify icon={Icons.LINK} size={19} />
             </button>
           </div>
         </div>
@@ -111,16 +111,16 @@ const authorAvatar = getInitialsName(author);
     <div class="modal-box bg-base-200">
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-          <Iconify icon={Icons.CLOSE} size={22} />
+          <Iconify class="text-white/20" icon={Icons.CLOSE} size={22} />
         </button>
       </form>
       <h3 class="text-lg font-bold mb-4">Compartir</h3>
       <div class="flex flex-col gap-2">
         <div class="w-full flex flex-row gap-2">
           <label class="input input-md w-full">
-            <input type="text" class="grow" placeholder="enlace" value={currentPath} />
+            <input id="inputPath" type="text" class="grow" placeholder="enlace" value={currentPath} readonly/>
           </label>
-          <button class="btn btn-primary">Copiar</button>
+          <button class="btn btn-primary" id="copyButton">Copiar</button>
         </div>
         <div class="flex flex-row gap-2">
           <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
@@ -143,4 +143,16 @@ const authorAvatar = getInitialsName(author);
       </div>
     </div>
   </dialog>
+
+  <script type="module">
+    const input = document.getElementById('inputPath');
+    const button = document.getElementById('copyButton');
+
+    button.addEventListener('click', () => {
+      navigator.clipboard.writeText(input.value)
+        .catch(err => {
+          console.error('Error al copiar: ', err);
+        });
+    });
+  </script>
 </Layout>
