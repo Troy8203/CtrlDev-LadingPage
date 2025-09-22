@@ -20,6 +20,7 @@ type Props = {
 };
 
 const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
+const currentPath = Astro.url.pathname.replace(`${base}/`, "");
 
 const { title, date, author, content }: Props = Astro.props;
 const authorAvatar = getInitialsName(author);
@@ -50,7 +51,12 @@ const authorAvatar = getInitialsName(author);
             </div>
             <p class="font-semibold">{author}</p>
           </div>
-          <p>{date}</p>
+          <div class="flex items-center gap-2">
+            <p>{date}</p>
+            <button class="btn btn-circle btn-outline btn-primary btn-md" onclick="my_modal_1.showModal()">
+            <Iconify icon={Icons.SHARE} size={19} />
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -100,4 +106,41 @@ const authorAvatar = getInitialsName(author);
 
     <Footer />
   </main>
+
+  <dialog id="my_modal_1" class="modal">
+    <div class="modal-box bg-base-200">
+      <form method="dialog">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+          <Iconify icon={Icons.CLOSE} size={22} />
+        </button>
+      </form>
+      <h3 class="text-lg font-bold mb-4">Compartir</h3>
+      <div class="flex flex-col gap-2">
+        <div class="w-full flex flex-row gap-2">
+          <label class="input input-md w-full">
+            <input type="text" class="grow" placeholder="enlace" value={currentPath} />
+          </label>
+          <button class="btn btn-primary">Copiar</button>
+        </div>
+        <div class="flex flex-row gap-2">
+          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
+            <Iconify class="text-[#0866FF]" icon={Icons.FACEBOOK} size={20} />
+            <span class="text-sm">Facebook</span>
+          </a>
+          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
+            <Iconify class="text-[#26A5E4]" icon={Icons.TELEGRAM} size={20} />
+            <span class="text-sm">Telegram</span>
+          </a>
+          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
+            <Iconify class="text-[#25D366]" icon={Icons.WHATSAPP} size={20} />
+            <span class="text-sm">Whatsapp</span>
+          </a>
+          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
+            <Iconify icon={Icons.TIKTOK} size={20} />
+            <span class="text-sm">TikTok</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </dialog>
 </Layout>

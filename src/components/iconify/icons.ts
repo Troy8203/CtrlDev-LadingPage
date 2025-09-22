@@ -3,6 +3,7 @@ export enum Icons {
   CHECK = "mingcute:check-circle-line",
   MENU = "mingcute:menu-fill",
   SQUARE = "solar:three-squares-bold-duotone",
+  CLOSE = "mingcute:close-circle-fill",
 
   GIT = "skill-icons:git",
   DOCKER = "skill-icons:docker",
@@ -31,12 +32,13 @@ export enum Icons {
   INSTAGRAM = "mingcute:instagram-fill",
   TIKTOK = "mingcute:tiktok-fill",
   FACEBOOK = "mingcute:facebook-fill",
+  WHATSAPP = "mingcute:whatsapp-fill",
 
   //INPUT
   SEARCH = "mingcute:search-3-line",
 
   //BLOG
-  SHARE = "mingcute:share-forward-fill",
+  SHARE = "mingcute:share-forward-line",
   INDEX = "mingcute:list-check-3-line",
   COURSES = "mingcute:book-5-line",
 }
