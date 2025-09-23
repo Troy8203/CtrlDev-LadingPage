@@ -4,7 +4,6 @@ import Footer from "./footer.astro";
 import Layout from "./layout.astro";
 import { getInitialsName } from "@utils/utils";
 import Iconify from "@components/iconify/iconify.astro";
-import { Icon } from "astro-icon/components";
 import { Icons } from "@components/iconify/icons";
 
 type Index = {
@@ -20,7 +19,7 @@ type Props = {
 };
 
 const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
-const currentPath = Astro.site ? `${Astro.site.pathname}${Astro.url.pathname}` : "";
+const currentPath = Astro.site ? `${Astro.url}` : "";
 
 const { title, date, author, content }: Props = Astro.props;
 const authorAvatar = getInitialsName(author);
