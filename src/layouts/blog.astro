@@ -20,7 +20,7 @@ type Props = {
 };
 
 const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
-const currentPath = Astro.url.pathname.replace(`${base}/`, "");
+const currentPath = Astro.site ? Astro.site : "";
 
 const { title, date, author, content }: Props = Astro.props;
 const authorAvatar = getInitialsName(author);
