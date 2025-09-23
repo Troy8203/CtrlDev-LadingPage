@@ -5,7 +5,7 @@ import { Icons } from "../components/iconify/icons";
 ---
 
 <footer
-  class="footer sm:footer-horizontal bg-primary/30 text-neutral-content p-10 mt-20"
+  class="footer sm:footer-horizontal bg-primary/30 text-neutral-content p-10 mt-20 relative"
 >
   <aside>
     <Logo class="h-10 w-auto" />
@@ -35,4 +35,12 @@ import { Icons } from "../components/iconify/icons";
       </a>
     </div>
   </nav>
+  <a
+    class="absolute bottom-0 right-0 w-28 h-28 bg-black/50 hover:bg-black/20 transition-colors flex items-end justify-end overflow-hidden cursor-pointer"
+    style="clip-path: polygon(100% 0, 0 100%, 100% 100%);"
+    href="https://github.com/Troy8203/CtrlDev-LadingPage"
+    target="_blank"
+  >
+    <Iconify class="text-white -rotate-45" icon={Icons.GITHUB} size={55} />
+  </a>
 </footer>

@@ -33,6 +33,7 @@ export enum Icons {
   TIKTOK = "mingcute:tiktok-fill",
   FACEBOOK = "mingcute:facebook-fill",
   WHATSAPP = "mingcute:whatsapp-fill",
+  GITHUB = "mingcute:github-fill",
 
   //INPUT
   SEARCH = "mingcute:search-3-line",
