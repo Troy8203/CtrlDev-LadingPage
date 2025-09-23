@@ -20,7 +20,7 @@ type Props = {
 };
 
 const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
-const currentPath = Astro.site ? Astro.site : "";
+const currentPath = Astro.site ? `${Astro.site.pathname}${Astro.url.pathname}` : "";
 
 const { title, date, author, content }: Props = Astro.props;
 const authorAvatar = getInitialsName(author);
@@ -112,11 +112,18 @@ const authorAvatar = getInitialsName(author);
           <Iconify class="text-white/20" icon={Icons.CLOSE} size={22} />
         </button>
       </form>
-      <h3 class="text-lg font-bold mb-4">Compartir</h3>
-      <div class="flex flex-col gap-2">
+      <h3 class="text-lg font-bold mb-6">Compartir</h3>
+      <div class="flex flex-col gap-3">
         <div class="w-full flex flex-row gap-2">
-          <label class="input input-md w-full">
-            <input id="inputPath" type="text" class="grow" placeholder="enlace" value={currentPath} readonly/>
+          <label class="input-group w-full input-md focus:ring-0 focus:border-0">
+            <input
+              id="inputPath"
+              type="text"
+              class="input grow w-full bg-base-300!"
+              placeholder="enlace"
+              value={currentPath}
+              disabled
+            />
           </label>
           <button class="btn btn-primary" id="copyButton">Copiar</button>
         </div>
