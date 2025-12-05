@@ -23,16 +23,19 @@ content:
   - name: "Ejercicio práctico del taller"
     link: "9-ejercicio-práctico-del-taller"
 ---
+
 # 📋 Descripción
+
 En este apartado se encuentra el material relacionado al taller de Docker.
 
 En esta clase, se abordaron los conceptos básicos y comandos útiles sobre la creación de imágenes y contenedores [Docker](https://www.docker.com).
 
 > **📎 Adjunto :** Se incluye la diapositiva usada en la sesión:
-<iframe src="https://drive.google.com/file/d/1DNaN4cwc5Nut5XWk_egRFTFuLdIu6QRD/preview" width="640" height="480" allow="autoplay" />
----
+
+## <iframe src="https://drive.google.com/file/d/1DNaN4cwc5Nut5XWk_egRFTFuLdIu6QRD/preview" width="640" height="480" allow="autoplay" />
 
 # 🧰 Recursos
+
 - [Laboratorio Docker](https://labs.play-with-docker.com)
 - [What is Docker?](https://docker-curriculum.com/#prerequisites)
 - [Dockerfile sample](https://github.com/reveluv1814/docker-sample.git)
@@ -40,23 +43,24 @@ En esta clase, se abordaron los conceptos básicos y comandos útiles sobre la c
 # 📚 Taller de Docker: Introducción y primeros pasos
 
 Docker es una plataforma que permite **crear, distribuir y ejecutar aplicaciones en contenedores**.  
-Un contenedor es como una “caja ligera” que incluye todo lo necesario para ejecutar un programa: código, dependencias, librerías y configuración.  
+Un contenedor es como una “caja ligera” que incluye todo lo necesario para ejecutar un programa: código, dependencias, librerías y configuración.
 
-Con Docker puedes:  
-- Garantizar que tu aplicación se ejecute igual en cualquier entorno (local, servidor, nube).  
-- Aislar servicios para evitar conflictos entre proyectos.  
-- Automatizar despliegues y escalar aplicaciones fácilmente.  
+Con Docker puedes:
+
+- Garantizar que tu aplicación se ejecute igual en cualquier entorno (local, servidor, nube).
+- Aislar servicios para evitar conflictos entre proyectos.
+- Automatizar despliegues y escalar aplicaciones fácilmente.
 
 ---
 
 ## 1. Fundamentos de Docker
 
-Antes de usar Docker, debemos entender sus conceptos principales:  
+Antes de usar Docker, debemos entender sus conceptos principales:
 
-- **Imagen**: plantilla inmutable que contiene una aplicación lista para ejecutarse (ejemplo: `nginx`, `mysql`).  
-- **Contenedor**: una instancia en ejecución de una imagen.  
-- **Dockerfile**: archivo con instrucciones para construir imágenes personalizadas.  
-- **Docker Hub**: repositorio público donde se comparten imágenes de contenedores.  
+- **Imagen**: plantilla inmutable que contiene una aplicación lista para ejecutarse (ejemplo: `nginx`, `mysql`).
+- **Contenedor**: una instancia en ejecución de una imagen.
+- **Dockerfile**: archivo con instrucciones para construir imágenes personalizadas.
+- **Docker Hub**: repositorio público donde se comparten imágenes de contenedores.
 
 > Un contenedor es a una **imagen** lo que un proceso es a un **programa**: uno es la definición, el otro la ejecución.
 
@@ -65,14 +69,16 @@ Antes de usar Docker, debemos entender sus conceptos principales:
 ## 2. Instalación de Docker
 
 ### Windows / Mac
+
 Descargar e instalar [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
 ### Linux (ejemplo: Ubuntu)
+
 ```bash
 sudo apt update
 sudo apt install docker.io -y
 sudo systemctl enable --now docker
-````
+```
 
 Verificar instalación:
 
@@ -110,8 +116,8 @@ docker images
 docker run -d -p 8080:80 nginx
 ```
 
-* `-d`: modo “detached” (en segundo plano).
-* `-p`: mapea el puerto 80 del contenedor al 8080 de tu máquina.
+- `-d`: modo “detached” (en segundo plano).
+- `-p`: mapea el puerto 80 del contenedor al 8080 de tu máquina.
 
 Accede en el navegador: [http://localhost:8080](http://localhost:8080)
 
@@ -125,19 +131,19 @@ docker ps
 
 ## 4. Gestión de contenedores
 
-* Detener un contenedor:
+- Detener un contenedor:
 
 ```bash
 docker stop <id_contenedor>
 ```
 
-* Eliminar un contenedor:
+- Eliminar un contenedor:
 
 ```bash
 docker rm <id_contenedor>
 ```
 
-* Eliminar una imagen:
+- Eliminar una imagen:
 
 ```bash
 docker rmi nginx
@@ -147,12 +153,13 @@ docker rmi nginx
 
 ## 5. Crear una BD a partir de una Imagen
 
-* Crear instancia de una BD en Postres 16:
+- Crear instancia de una BD en Postres 16:
 
 ```bash
 docker run --name pg16 -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres:16.0
 ```
-- Esto crea un contenedor de *Postgres* con la siguiente configuración:
+
+- Esto crea un contenedor de _Postgres_ con la siguiente configuración:
   - Host : localhost
   - Puerto: 5432
   - Database: postgres
@@ -234,10 +241,10 @@ docker-compose down
 
 ## 8. Casos de uso de Docker
 
-* Desarrollo local sin problemas de dependencias.
-* Pruebas automatizadas en CI/CD.
-* Despliegue en servidores y nube.
-* Microservicios que necesitan correr de forma aislada.
+- Desarrollo local sin problemas de dependencias.
+- Pruebas automatizadas en CI/CD.
+- Despliegue en servidores y nube.
+- Microservicios que necesitan correr de forma aislada.
 
 ---
 
@@ -257,6 +264,7 @@ docker-compose down
 ---
 
 ## 👨‍💻 Autor - Facilitador
+
 - [Neil Graneros Flores](https://github.com/reveluv1814)
 
 ---
@@ -267,4 +275,5 @@ docker-compose down
 - [Ctrl + Dev](https://troy8203.github.io/CtrlDev-LadingPage)
 
 ---
+
 `🇧🇴 La Paz - Bolivia 2025`

@@ -6,11 +6,11 @@
   default: true;
   prefersdark: true;
   color-scheme: "dark";
-  --color-base-100: oklch(0.00% 0.000 0);
-  --color-base-200: oklch(16.84% 0.000 0);
-  --color-base-300: oklch(23.50% 0.000 0);
+  --color-base-100: oklch(0% 0 0);
+  --color-base-200: oklch(16.84% 0 0);
+  --color-base-300: oklch(23.5% 0 0);
   --color-base-content: oklch(97.807% 0.029 256.847);
-  --color-primary: oklch(64.05% 0.200 306.75);
+  --color-primary: oklch(64.05% 0.2 306.75);
   --color-primary-content: oklch(96% 0.018 272.314);
   --color-secondary: oklch(72.37% 0.149 49.18);
   --color-secondary-content: oklch(94% 0.028 342.258);
@@ -90,6 +90,7 @@
 }
 
 /* Centrar imágenes dentro de <p> o <a> */
-.blog p:has(img), .blog p>a:has(img) {
+.blog p:has(img),
+.blog p > a:has(img) {
   @apply flex justify-center items-center my-2;
 }

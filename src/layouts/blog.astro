@@ -54,8 +54,11 @@ const authorAvatar = getInitialsName(author);
           </div>
           <div class="flex items-center gap-2">
             <p>{date}</p>
-            <button class="btn btn-circle btn-outline btn-primary btn-md" onclick="my_modal_1.showModal()">
-            <Iconify icon={Icons.LINK} size={19} />
+            <button
+              class="btn btn-circle btn-outline btn-primary btn-md"
+              onclick="my_modal_1.showModal()"
+            >
+              <Iconify icon={Icons.LINK} size={19} />
             </button>
           </div>
         </div>
@@ -71,60 +74,80 @@ const authorAvatar = getInitialsName(author);
         <aside class="hidden lg:block h-auto">
           <div class="h-auto sticky top-20">
             <div class="flex flex-col self-start space-y-3 mb-3">
-            {
-            colaboration &&
-            colaboration.map((item) => (
-              <a
-              class="block bg-base-200 rounded-xl w-full h-16 p-0.5 overflow-clip"
-              href={item.link}
-              style={`background-color: ${item.color}; --hover-color: ${item.color ? item.color : "#FFFFFF"}8C`}
-              data-hover
+              {
+                colaboration &&
+                  colaboration.map((item) => (
+                    <a
+                      class="block bg-base-200 rounded-xl w-full h-16 p-0.5 overflow-clip transition-shadow"
+                      href={item.link}
+                      style={{
+                        backgroundColor: item.color,
+                        "--hover-color": item.color
+                          ? `${item.color}8C`
+                          : "#FFFFFF8C",
+                      }}
+                    >
+                      <img
+                        src={item.imageUri}
+                        alt={`Logo ${item.name}`}
+                        class="h-full w-auto object-cover object-center mx-auto"
+                      />
+                    </a>
+                  ))
+              }
+            </div>
+
+            <style>
+              a.transition-shadow {
+                transition:
+                  box-shadow 0.3s ease-in-out,
+                  all 0.3s ease-in-out;
+              }
+              a.transition-shadow:hover {
+                box-shadow: 0px 0px 10px var(--hover-color);
+              }
+            </style>
+
+            <div
+              class="bg-base-200 p-10 px-5 pb-16 rounded-xl self-start space-y-3"
+            >
+              {
+                content && (
+                  <>
+                    <div class="flex flex-row items-center gap-2 w-full text-lg rounded p-1.5 px-3 bg-primary/20 text-primary">
+                      <Iconify icon={Icons.INDEX} size={22} />
+                      <h4 class="text-lg font-semibold">Contenido</h4>
+                    </div>
+                    <ul class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent px-4 mb-16">
+                      {content.map((item) => (
+                        <li class="before:content-['*'] before:text-primary">
+                          <a class="text-sm" href={`#${item.link}`}>
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )
+              }
+              <div
+                class="flex flex-row items-center gap-2 w-full text-lg rounded p-1.5 px-3 bg-primary/20 text-primary"
               >
-                <style>
-                  a[data-hover] {
-                    transition: box-shadow 0.3s ease-in-out;
-                    transition: all 0.3s ease-in-out;
-                  }
-                  a[data-hover]:hover {
-                    box-shadow: 0px 0px 10px var(--hover-color);
-                  }
-                </style>
-                <img src={item.imageUri} alt={`Logo ${item.name}`} class="h-full w-auto object-cover object-center mx-auto" />
-              </a>
+                <Iconify icon={Icons.COURSES} size={22} />
+                <h4 class="text-lg font-semibold">Otros cursos</h4>
+              </div>
+              <ul
+                class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent px-4"
+              >
+                {
+                  coursesAvailable.map((item) => (
+                    <li class="before:content-['*'] before:text-primary">
+                      <a href={`${base}/${item.link}`}>{item.title}</a>
+                    </li>
                   ))
                 }
-              </div>
-        <div class="bg-base-200 p-10 px-5 pb-16 rounded-xl self-start space-y-3">
-          {
-          content && (
-              <div class="flex flex-row items-center gap-2 w-full text-lg rounded p-1.5 px-3 bg-primary/20 text-primary">
-                <Iconify icon={Icons.INDEX} size={22} />
-                <h4 class="text-lg font-semibold">Contenido</h4>
-              </div>
-              <ul class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent px-4 mb-16">
-                {content.map((item) => (
-                  <li class="before:content-['*'] before:text-primary">
-                    <a class="text-sm" href={`#${item.link}`}>{item.name}</a>
-                  </li>
-                ))}
               </ul>
-          )}
-          <div class="flex flex-row items-center gap-2 w-full text-lg rounded p-1.5 px-3 bg-primary/20 text-primary">
-            <Iconify icon={Icons.COURSES} size={22} />
-            <h4 class="text-lg font-semibold">Otros cursos</h4>
-          </div>
-          <ul
-            class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent px-4"
-          >
-            {
-              coursesAvailable.map((item) => (
-                <li class="before:content-['*'] before:text-primary">
-                  <a href={`${base}/${item.link}`}>{item.title}</a>
-                </li>
-              ))
-            }
-          </ul>
-          </div>
+            </div>
           </div>
         </aside>
       </div>
@@ -143,7 +166,9 @@ const authorAvatar = getInitialsName(author);
       <h3 class="text-lg font-bold mb-6">Compartir</h3>
       <div class="flex flex-col gap-3">
         <div class="w-full flex flex-row gap-2">
-          <label class="input-group w-full input-md focus:ring-0 focus:border-0">
+          <label
+            class="input-group w-full input-md focus:ring-0 focus:border-0"
+          >
             <input
               id="inputPath"
               type="text"
@@ -156,30 +181,34 @@ const authorAvatar = getInitialsName(author);
           <button class="btn btn-primary" id="copyButton">Copiar</button>
         </div>
         <div class="flex flex-row gap-2">
-          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
+          <a
+            class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
             href={`https://www.facebook.com/sharer/sharer.php?u=${currentPath}`}
             target="_blank"
           >
             <Iconify class="text-[#0866FF]" icon={Icons.FACEBOOK} size={20} />
             <span class="text-sm">Facebook</span>
           </a>
-          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
-          href={`https://t.me/share/url?url=${currentPath}&text=${title}`}
-          target="_blank"
+          <a
+            class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
+            href={`https://t.me/share/url?url=${currentPath}&text=${title}`}
+            target="_blank"
           >
             <Iconify class="text-[#26A5E4]" icon={Icons.TELEGRAM} size={20} />
             <span class="text-sm">Telegram</span>
           </a>
-          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
-          href={`https://api.whatsapp.com/send?text=${currentPath}`}
-          target="_blank"
+          <a
+            class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
+            href={`https://api.whatsapp.com/send?text=${currentPath}`}
+            target="_blank"
           >
             <Iconify class="text-[#25D366]" icon={Icons.WHATSAPP} size={20} />
             <span class="text-sm">Whatsapp</span>
           </a>
-          <a class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
-          href={`https://www.tiktok.com/share?url=${currentPath}`}
-          target="_blank"
+          <a
+            class="border-2 border-white/10 flex flex-col items-center justify-center gap-1 flex-1 p-2 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
+            href={`https://www.tiktok.com/share?url=${currentPath}`}
+            target="_blank"
           >
             <Iconify icon={Icons.TIKTOK} size={20} />
             <span class="text-sm">TikTok</span>
@@ -190,14 +219,13 @@ const authorAvatar = getInitialsName(author);
   </dialog>
 
   <script type="module">
-    const input = document.getElementById('inputPath');
-    const button = document.getElementById('copyButton');
+    const input = document.getElementById("inputPath");
+    const button = document.getElementById("copyButton");
 
-    button.addEventListener('click', () => {
-      navigator.clipboard.writeText(input.value)
-        .catch(err => {
-          console.error('Error al copiar: ', err);
-        });
+    button.addEventListener("click", () => {
+      navigator.clipboard.writeText(input.value).catch((err) => {
+        console.error("Error al copiar: ", err);
+      });
     });
   </script>
 </Layout>

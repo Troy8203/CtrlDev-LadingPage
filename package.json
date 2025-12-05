@@ -20,6 +20,8 @@
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
-    "astro-icon": "^1.1.5"
+    "astro-icon": "^1.1.5",
+    "prettier": "3.7.4",
+    "prettier-plugin-astro": "0.14.1"
   }
 }
