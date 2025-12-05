@@ -28,12 +28,51 @@ const base = Astro.site ? Astro.site : "";
   </div>
   <div class="navbar-end flex">
     <ul
-      class="menu menu-horizontal px-1 [&>li>a]:hover:bg-base-300 hidden lg:flex"
+      class="menu menu-horizontal px-1 [&>li>a]:hover:bg-base-300 hidden lg:flex items-center justify-center gap-1"
     >
       <li><a href=`${base}`>Inicio</a></li>
       <li><a href=`${base}#nosotros`>Nosotros</a></li>
-      <li><a href=`${base}#cursos`>Cursos</a></li>
+      <li><a href=`${base}#unete`>Cursos</a></li>
       <li><a href=`${base}#unete`>Únete</a></li>
+      <li>
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="">
+            <Iconify class="swap-off" icon={Icons.PALETTE} />
+          </div>
+          <ul
+            tabindex="-1"
+            class="dropdown-content bg-base-300 rounded-box z-1 w-32 p-2 shadow-2xl"
+          >
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Sistema"
+                value="default"
+              />
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Claro"
+                value="light"
+              />
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Oscuro"
+                value="dark"
+              />
+            </li>
+          </ul>
+        </div>
+      </li>
     </ul>
     <Logo class="h-10 w-auto mx-2 block lg:hidden" />
   </div>

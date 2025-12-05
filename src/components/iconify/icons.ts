@@ -4,6 +4,9 @@ export enum Icons {
   MENU = "mingcute:menu-fill",
   SQUARE = "solar:three-squares-bold-duotone",
   CLOSE = "mingcute:close-circle-fill",
+  SUN = "mingcute:sun-line",
+  MOON = "mingcute:moon-fill",
+  PALETTE = "mingcute:palette-fill",
 
   GIT = "skill-icons:git",
   DOCKER = "skill-icons:docker",
