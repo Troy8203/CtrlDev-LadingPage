@@ -77,22 +77,27 @@ const authorAvatar = getInitialsName(author);
               {
                 colaboration &&
                   colaboration.map((item) => (
-                    <a
-                      class="block bg-base-200 rounded-xl w-full h-16 p-0.5 overflow-clip transition-shadow"
-                      href={item.link}
-                      style={{
-                        backgroundColor: item.color,
-                        "--hover-color": item.color
-                          ? `${item.color}8C`
-                          : "#FFFFFF8C",
-                      }}
+                    <div
+                      class="tooltip tooltip-primary tooltip-bottom"
+                      data-tip="Únete a nosotros!"
                     >
-                      <img
-                        src={item.imageUri}
-                        alt={`Logo ${item.name}`}
-                        class="h-full w-auto object-cover object-center mx-auto"
-                      />
-                    </a>
+                      <a
+                        class="block bg-base-200 rounded-xl w-full h-16 p-0.5 overflow-clip transition-shadow"
+                        href={item.link}
+                        style={{
+                          backgroundColor: item.color,
+                          "--hover-color": item.color
+                            ? `${item.color}8C`
+                            : "#FFFFFF8C",
+                        }}
+                      >
+                        <img
+                          src={item.imageUri}
+                          alt={`Logo ${item.name}`}
+                          class="h-full w-auto object-cover object-center mx-auto"
+                        />
+                      </a>
+                    </div>
                   ))
               }
             </div>
