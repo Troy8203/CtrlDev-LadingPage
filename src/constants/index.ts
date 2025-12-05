@@ -20,4 +20,10 @@ export const coursesAvailable: Curso[] = [
     imageUri: "https://wallpapercave.com/wp/wp11723487.jpg",
     link: "web-basico",
   },
+  {
+    title: "Principios de Diseño UI/UX",
+    description: "Aprende el manejo y funcionamento de Figma.",
+    imageUri: "https://i.postimg.cc/Ls2kwnLY/image.png",
+    link: "principios-ui-ux",
+  },
 ];

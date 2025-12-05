@@ -2,6 +2,7 @@
 import Blog from "@layouts/blog.astro";
 import { cursosRoutes } from "src/routes/routes";
 import type { MarkdownLayoutProps } from "astro";
+import type { Contributor } from "@schema/index";
 
 type Index = {
   name: string;
@@ -13,6 +14,7 @@ type Props = MarkdownLayoutProps<{
   author: string;
   date: string;
   content: Index[];
+  colaboration?: Contributor[];
 }>;
 
 export function getStaticPaths() {
@@ -25,9 +27,15 @@ const { slug } = Astro.params;
 const base = Astro.site?.pathname;
 const site: URL | string = Astro.site ? Astro.site : "";
 
-const { title, date, author, content } = Astro.props.frontmatter;
+const { title, date, author, content, colaboration } = Astro.props.frontmatter;
 ---
 
-<Blog title={title} date={date} author={author} content={content}>
+<Blog
+  title={title}
+  date={date}
+  author={author}
+  content={content}
+  colaboration={colaboration}
+>
   <slot />
 </Blog>

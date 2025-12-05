@@ -5,6 +5,7 @@ import Layout from "./layout.astro";
 import { getInitialsName } from "@utils/utils";
 import Iconify from "@components/iconify/iconify.astro";
 import { Icons } from "@components/iconify/icons";
+import type { Contributor } from "../types/index";
 
 type Index = {
   name: string;
@@ -15,13 +16,14 @@ type Props = {
   title: string;
   date: string;
   author: string;
-  content: Index[];
+  content?: Index[];
+  colaboration?: Contributor[];
 };
 
 const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
 const currentPath = Astro.site ? `${Astro.url}` : "";
 
-const { title, date, author, content }: Props = Astro.props;
+const { title, date, author, content, colaboration }: Props = Astro.props;
 const authorAvatar = getInitialsName(author);
 ---
 
@@ -66,22 +68,47 @@ const authorAvatar = getInitialsName(author);
         >
           <slot />
         </div>
-        <aside class="bg-base-200 p-10 px-5 pb-16 rounded-xl h-auto self-start space-y-3 hidden lg:block sticky top-20">
+        <aside class="hidden lg:block h-auto">
+          <div class="h-auto sticky top-20">
+            <div class="flex flex-col self-start space-y-3 mb-3">
+            {
+            colaboration &&
+            colaboration.map((item) => (
+              <a
+              class="block bg-base-200 rounded-xl w-full h-16 p-0.5 overflow-clip"
+              href={item.link}
+              style={`background-color: ${item.color}; --hover-color: ${item.color ? item.color : "#FFFFFF"}8C`}
+              data-hover
+              >
+                <style>
+                  a[data-hover] {
+                    transition: box-shadow 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                  }
+                  a[data-hover]:hover {
+                    box-shadow: 0px 0px 10px var(--hover-color);
+                  }
+                </style>
+                <img src={item.imageUri} alt={`Logo ${item.name}`} class="h-full w-auto object-cover object-center mx-auto" />
+              </a>
+                  ))
+                }
+              </div>
+        <div class="bg-base-200 p-10 px-5 pb-16 rounded-xl self-start space-y-3">
           {
-            content && (
-                <div class="flex flex-row items-center gap-2 w-full text-lg rounded p-1.5 px-3 bg-primary/20 text-primary">
-                  <Iconify icon={Icons.INDEX} size={22} />
-                  <h4 class="text-lg font-semibold">Contenido</h4>
-                </div>
-                <ul class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent px-4 mb-16">
-                  {content.map((item) => (
-                    <li class="before:content-['*'] before:text-primary">
-                      <a class="text-sm" href={`#${item.link}`}>{item.name}</a>
-                    </li>
-                  ))}
-                </ul>
-            )
-          }
+          content && (
+              <div class="flex flex-row items-center gap-2 w-full text-lg rounded p-1.5 px-3 bg-primary/20 text-primary">
+                <Iconify icon={Icons.INDEX} size={22} />
+                <h4 class="text-lg font-semibold">Contenido</h4>
+              </div>
+              <ul class="space-y-2 text-slate-600 [&>li>a]:link [&>li>a]:link-hover [&>li>a]:link-accent px-4 mb-16">
+                {content.map((item) => (
+                  <li class="before:content-['*'] before:text-primary">
+                    <a class="text-sm" href={`#${item.link}`}>{item.name}</a>
+                  </li>
+                ))}
+              </ul>
+          )}
           <div class="flex flex-row items-center gap-2 w-full text-lg rounded p-1.5 px-3 bg-primary/20 text-primary">
             <Iconify icon={Icons.COURSES} size={22} />
             <h4 class="text-lg font-semibold">Otros cursos</h4>
@@ -97,6 +124,8 @@ const authorAvatar = getInitialsName(author);
               ))
             }
           </ul>
+          </div>
+          </div>
         </aside>
       </div>
     </section>
