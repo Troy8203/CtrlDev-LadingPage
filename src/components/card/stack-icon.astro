@@ -12,17 +12,23 @@ const positions = icons.map((_: string, index: number) => ({
   top: `${index * 2}px`,
   left: `${index * 30}px`,
   rotate: `${index * 9}deg`,
+  animation: `${(index + 1) * 5}px`,
 }));
 
 const containerWidth = icons.length * 30 + 40;
 ---
 
-<div class="relative h-16" style={`width: ${containerWidth}px;`}>
+<div class="relative h-16 group-hover" style={`width: ${containerWidth}px;`}>
   {
     icons.map((icon: string, index: number) => (
       <div
-        class="absolute"
-        style={`top: ${positions[index].top}; left: ${positions[index].left}; transform: rotate(${positions[index].rotate});`}
+        class="absolute transition-all duration-300 group-hover:translate-x-[var(--tx)]"
+        style={`
+          top: ${positions[index].top};
+          left: ${positions[index].left};
+          transform: rotate(${positions[index].rotate});
+          --tx: ${positions[index].animation};
+        `}
       >
         <CardIcon icon={icon} size={size} />
       </div>

@@ -22,28 +22,27 @@ import StackIcon from "@components/card/stack-icon.astro";
   </div>
   <div class="flex flex-col gap-9 w-full max-w-6xl">
     <div class="flex flex-col-reverse lg:flex-row gap-10">
-      <ul class="timeline timeline-vertical">
-        <li>
+      <ul class="timeline timeline-vertical flex-1 [&>li>div]:min-w-28">
+        <li class="group cursor-pointer">
           <div class="timeline-start font-bold">Commit Master & Dock It</div>
           <div class="timeline-middle">
             <StackIcon icons={[Icons.GIT, Icons.DOCKER]} size={40} />
           </div>
           <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
           >
             9 - 11 de Septiembre
             <br />
             <p
               class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
             >
-              Aprende a versionar, empaqueta y despliega aplicaciones en
-              contenedores.
+              Aprende a versionar y dockerizar tus proyectos.
             </p>
           </div>
           <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
         </li>
 
-        <li>
+        <li class="group cursor-pointer">
           <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
           <div class="timeline-start font-bold">Web Starter</div>
           <div class="timeline-middle">
@@ -53,7 +52,7 @@ import StackIcon from "@components/card/stack-icon.astro";
             />
           </div>
           <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
           >
             Proximamente
             <br />
@@ -66,27 +65,27 @@ import StackIcon from "@components/card/stack-icon.astro";
           <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
         </li>
 
-        <li>
+        <li class="group cursor-pointer">
           <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
           <div class="timeline-start font-bold">FigMagic</div>
           <div class="timeline-middle">
             <CardIcon icon={Icons.FIGMA} />
           </div>
           <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
           >
             Proximamente
             <br />
             <p
               class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
             >
-              Diseña interfaces y prototipos de forma rápida y profesional.
+              Diseña interfaces y prototipos.
             </p>
           </div>
           <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
         </li>
 
-        <li>
+        <li class="group cursor-pointer">
           <hr
             class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-info to-success"
           />
@@ -95,7 +94,7 @@ import StackIcon from "@components/card/stack-icon.astro";
             <StackIcon icons={[Icons.ASTRO_WEB, Icons.TAILWIND]} size={40} />
           </div>
           <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
           >
             Proximamente
             <br />
@@ -109,28 +108,27 @@ import StackIcon from "@components/card/stack-icon.astro";
           <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
         </li>
 
-        <li>
+        <li class="group cursor-pointer">
           <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
           <div class="timeline-start font-bold">Component Pro</div>
           <div class="timeline-middle">
             <StackIcon icons={[Icons.TYPESCRIPT, Icons.REACT]} size={40} />
           </div>
           <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
           >
             Proximamente
             <br />
             <p
               class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
             >
-              Desarrolla aplicaciones web robustas y tipadas con React y
-              TypeScript.
+              Desarrolla componentes interactivos.
             </p>
           </div>
           <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
         </li>
 
-        <li>
+        <li class="group cursor-pointer">
           <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
           <div class="timeline-start font-bold">Backend Boost</div>
           <div class="timeline-middle">
@@ -140,21 +138,20 @@ import StackIcon from "@components/card/stack-icon.astro";
             />
           </div>
           <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
           >
             Proximamente
             <br />
             <p
               class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
             >
-              Construye APIs y backends escalables con NestJS, FastAPI y
-              Supabase.
+              Construye APIs y backends escalables.
             </p>
           </div>
           <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
         </li>
 
-        <li>
+        <li class="group cursor-pointer">
           <hr
             class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-secondary to-primary"
           />
@@ -166,29 +163,28 @@ import StackIcon from "@components/card/stack-icon.astro";
             />
           </div>
           <div
-            class="timeline-end text-xs px-2 group cursor-pointer overflow-hidden transition-all duration-300 text-center"
+            class="timeline-end text-xs px-2 overflow-hidden transition-all duration-300 text-center"
           >
             Proximamente
             <br />
             <p
               class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
             >
-              Automatiza, despliega y gestiona infraestructura en la nube
-              profesionalmente.
+              Automatiza, y deploya tus proyectos en la nube.
             </p>
           </div>
           <hr class="min-h-[12px] md:min-h-[20px] bg-primary" />
         </li>
       </ul>
-      <div class="hidden lg:flex flex-col items-end gap-5 py-0 md:py-10">
+      <div class="hidden lg:flex flex-col items-end gap-5 py-0 md:py-10 flex-1">
         <p class="text-justify text-accent/90">
           Como grupo de estudio, hemos preparado un roadmap que te guiará en tu
           aprendizaje de desarrollo web. Si ya tienes conocimientos previos, no
           te preocupes: puedes unirte en la etapa que más te interese.
         </p>
 
-        <div class="flex flex-col justify-center gap-4">
-          <div class="card text-neutral bg-info w-full shadow-sm">
+        <div class="flex flex-col justify-center gap-4 flex-1">
+          <div class="card text-info bg-info/30 w-full shadow-sm">
             <div class="card-body">
               <h4 class="card-title"><Iconify icon={Icons.BASIC} />Básico</h4>
               <p>
@@ -199,7 +195,7 @@ import StackIcon from "@components/card/stack-icon.astro";
             </div>
           </div>
 
-          <div class="card text-neutral bg-success w-full shadow-sm">
+          <div class="card text-success bg-success/30 w-full shadow-sm">
             <div class="card-body">
               <h4 class="card-title">
                 <Iconify icon={Icons.INTERMEDIATE} />Intermedio
@@ -213,9 +209,9 @@ import StackIcon from "@components/card/stack-icon.astro";
           </div>
 
           <div
-            class="card text-neutral bg-gradient-to-br from-primary to-secondary w-full shadow-sm"
+            class="card text-neutral bg-gradient-to-br from-primary to-secondary w-full shadow-sm after:bg-gradient-to-br after:from-primary after:to-secondary after:absolute after:top-1.5 after:right-2 after:left-2 after:bottom-2 after:card after:blur-lg after:scale-105 after:-z-10 after:transition-all after:duration-300 after:opacity-80"
           >
-            <div class="card-body">
+            <div class="card-body bg-base-200 text-accent m-1.5 rounded-xl">
               <h4 class="card-title">
                 <Iconify icon={Icons.ADVANCED} />Avanzado
               </h4>
