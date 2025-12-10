@@ -31,12 +31,12 @@
   --color-error: oklch(66.889% 0.21892 20.897);
   --color-error-content: oklch(40.1% 0.219 20.897);
   --radius-selector: 2rem;
-  --radius-field: 0.5rem;
-  --radius-box: 1rem;
-  --size-selector: 0.21875rem;
-  --size-field: 0.21875rem;
-  --border: 2px;
-  --depth: 0;
+  --radius-field: 1rem;
+  --radius-box: 2rem;
+  --size-selector: 0.1875rem;
+  --size-field: 0.1875rem;
+  --border: 0.5px;
+  --depth: 1;
   --noise: 0;
 }
 
@@ -66,12 +66,12 @@
   --color-error: oklch(66.889% 0.21892 20.897);
   --color-error-content: oklch(40.1% 0.219 20.897);
   --radius-selector: 2rem;
-  --radius-field: 0.5rem;
-  --radius-box: 1rem;
-  --size-selector: 0.21875rem;
-  --size-field: 0.21875rem;
-  --border: 2px;
-  --depth: 0;
+  --radius-field: 1rem;
+  --radius-box: 2rem;
+  --size-selector: 0.1875rem;
+  --size-field: 0.1875rem;
+  --border: 0.5px;
+  --depth: 1;
   --noise: 0;
 }
 

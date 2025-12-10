@@ -33,10 +33,12 @@ const base = Astro.site ? Astro.site : "";
       <li><a href=`${base}`>Inicio</a></li>
       <li><a href=`${base}#nosotros`>Nosotros</a></li>
       <li><a href=`${base}#unete`>Cursos</a></li>
-      <li><a href=`${base}#unete`>Únete</a></li>
-      <li>
+      <li class="bg-secondary rounded-2xl">
+        <a href=`${base}#unete`>Únete</a>
+      </li>
+      <li class="bg-accent/10 rounded-2xl">
         <div class="dropdown dropdown-end">
-          <div tabindex="0" role="button" class="">
+          <div tabindex="0" role="button">
             <Iconify class="swap-off" icon={Icons.PALETTE} />
           </div>
           <ul
