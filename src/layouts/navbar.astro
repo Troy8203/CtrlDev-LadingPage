@@ -16,12 +16,42 @@ const base = Astro.site ? Astro.site : "";
       </div>
       <ul
         tabindex="0"
-        class="menu menu-md dropdown-content bg-base-200 rounded-box z-20 mt-5 ml-3 w-52 p-2 shadow-2xl"
+        class="menu menu-md dropdown-content bg-base-200 rounded-box z-20 mt-7 w-56 p-2 shadow-2xl"
       >
         <li><a href=`${base}`>Inicio</a></li>
         <li><a href=`${base}#nosotros`>Nosotros</a></li>
         <li><a href=`${base}#unete`>Cursos</a></li>
         <li><a href=`${base}#unete`>Únete</a></li>
+        <div class="divider my-1"></div>
+        <div class="pb-3 flex flex-col gap-2 items-center">
+          <p class="px-3 font-bold w-full">Tema</p>
+          <div class="join gap-0 flex-1">
+            <input
+              type="radio"
+              name="theme-dropdown"
+              checked="checked"
+              class="theme-controller join-item btn btn-sm"
+              aria-label="Sistema"
+              value="default"
+            />
+
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller join-item btn btn-sm"
+              aria-label="Claro"
+              value="light"
+            />
+
+            <input
+              type="radio"
+              name="theme-dropdown"
+              class="theme-controller join-item btn btn-sm"
+              aria-label="Oscuro"
+              value="dark"
+            />
+          </div>
+        </div>
       </ul>
     </div>
     <Logo class="h-10 w-auto hidden lg:block" />
@@ -37,41 +67,40 @@ const base = Astro.site ? Astro.site : "";
         <a href=`${base}#unete`>Únete</a>
       </li>
       <li class="bg-accent/10 rounded-2xl">
-        <div class="dropdown dropdown-end">
+        <div class="dropdown dropdown-hover dropdown-end">
           <div tabindex="0" role="button">
             <Iconify class="swap-off" icon={Icons.PALETTE} />
           </div>
           <ul
             tabindex="-1"
-            class="dropdown-content bg-base-300 rounded-box z-1 w-32 p-2 shadow-2xl"
+            class="dropdown-content bg-base-300 rounded-3xl z-1 w-36 shadow-2xl"
           >
-            <li>
+            <div class="join join-vertical w-full p-0">
               <input
                 type="radio"
                 name="theme-dropdown"
-                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                checked="checked"
+                class="theme-controller join-item btn btn-sm"
                 aria-label="Sistema"
                 value="default"
               />
-            </li>
-            <li>
+
               <input
                 type="radio"
                 name="theme-dropdown"
-                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                class="theme-controller join-item btn btn-sm"
                 aria-label="Claro"
                 value="light"
               />
-            </li>
-            <li>
+
               <input
                 type="radio"
                 name="theme-dropdown"
-                class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+                class="theme-controller join-item btn btn-sm"
                 aria-label="Oscuro"
                 value="dark"
               />
-            </li>
+            </div>
           </ul>
         </div>
       </li>
