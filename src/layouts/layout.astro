@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navbar from "./navbar.astro";
+import Snow from "@components/weather/snow.astro";
 
 //Favicons
 const base = Astro.site ? Astro.site : "";
@@ -26,6 +27,7 @@ const faviconManifest = `${base}assets/favicon/site.webmanifest`;
     <title>Ctrl + Dev</title>
   </head>
   <body class="h-screen">
+    <Snow />
     <Navbar />
     <slot />
   </body>

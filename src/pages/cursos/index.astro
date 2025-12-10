@@ -2,6 +2,7 @@
 import CardImg from "@components/card/card-img.astro";
 import Iconify from "@components/iconify/iconify.astro";
 import { Icons } from "@components/iconify/icons";
+import Footer from "@layouts/footer.astro";
 import Layout from "@layouts/layout.astro";
 import { coursesAvailable } from "src/constants";
 
@@ -47,4 +48,5 @@ const base = Astro.site ? Astro.site : "";
       </div>
     </div>
   </div>
+  <Footer />
 </Layout>
