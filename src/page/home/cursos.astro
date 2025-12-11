@@ -7,223 +7,173 @@ import StackIcon from "@components/card/stack-icon.astro";
 
 <div
   id="cursos"
-  class="h-svh md:h-screen snap-start w-full px-5 py-20 md:px-10 flex flex-col items-center justify-evenly gap-0 lg:gap-8 overflow-hidden"
+  class="h-svh md:h-screen snap-start w-full px-5 py-20 md:px-10 flex flex-col gap-8 items-center justify-between overflow-hidden"
 >
   <div class="flex flex-col items-center justify-center gap-5">
-    <h2
-      class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold text-5xl md:text-6xl text-center"
-    >
-      Nuestros Cursos
+    <h2 class="text-accent font-bold text-5xl md:text-6xl">
+      Tu Ruta de Aprendizaje
     </h2>
-    <p class="max-w-2xl text-center text-accent/85">
-      Potencia tus habilidades y aprende lo esencial del desarrollo web paso a
-      paso.
+    <p
+      class="max-w-6xl text-left md:text-center text-accent/85 text-sm md:text-base"
+    >
+      Sigue un camino estructurado que va desde los fundamentos hasta temas
+      avanzados. Cada etapa está pensada para ayudarte a crecer paso a paso
+      hasta convertirte en un desarrollador sólido.
     </p>
   </div>
-  <div class="flex flex-col gap-9 w-full max-w-6xl">
-    <div class="flex flex-col-reverse lg:flex-row gap-10">
-      <ul class="timeline timeline-vertical flex-1 [&>li>div]:min-w-28">
-        <li class="group cursor-pointer">
-          <div class="timeline-start font-bold">Commit Master & Dock It</div>
-          <div class="timeline-middle">
-            <StackIcon icons={[Icons.GIT, Icons.DOCKER]} size={40} />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
-          >
-            9 - 11 de Septiembre
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Aprende a versionar y dockerizar tus proyectos.
-            </p>
-          </div>
-          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
-        </li>
-
-        <li class="group cursor-pointer">
-          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
-          <div class="timeline-start font-bold">Web Starter</div>
-          <div class="timeline-middle">
-            <StackIcon
-              icons={[Icons.HTML, Icons.CSS, Icons.JAVASCRIPT]}
-              size={40}
-            />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Construye sitios web interactivos desde cero.
-            </p>
-          </div>
-          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
-        </li>
-
-        <li class="group cursor-pointer">
-          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
-          <div class="timeline-start font-bold">FigMagic</div>
-          <div class="timeline-middle">
-            <CardIcon icon={Icons.FIGMA} />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Diseña interfaces y prototipos.
-            </p>
-          </div>
-          <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
-        </li>
-
-        <li class="group cursor-pointer">
-          <hr
-            class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-info to-success"
-          />
-          <div class="timeline-start font-bold">Frontend Turbo</div>
-          <div class="timeline-middle">
-            <StackIcon icons={[Icons.ASTRO_WEB, Icons.TAILWIND]} size={40} />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Crea sitios web modernos, rápidos y estilizados con Astro y
-              Tailwind.
-            </p>
-          </div>
-          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
-        </li>
-
-        <li class="group cursor-pointer">
-          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
-          <div class="timeline-start font-bold">Component Pro</div>
-          <div class="timeline-middle">
-            <StackIcon icons={[Icons.TYPESCRIPT, Icons.REACT]} size={40} />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Desarrolla componentes interactivos.
-            </p>
-          </div>
-          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
-        </li>
-
-        <li class="group cursor-pointer">
-          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
-          <div class="timeline-start font-bold">Backend Boost</div>
-          <div class="timeline-middle">
-            <StackIcon
-              icons={[Icons.NESTJS, Icons.FAST_API, Icons.SUPABASE]}
-              size={40}
-            />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Construye APIs y backends escalables.
-            </p>
-          </div>
-          <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
-        </li>
-
-        <li class="group cursor-pointer">
-          <hr
-            class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-secondary to-primary"
-          />
-          <div class="timeline-start font-bold">DevUps</div>
-          <div class="timeline-middle">
-            <StackIcon
-              icons={[Icons.GITHUB_ACTIONS, Icons.TERRAFORM, Icons.KUBERNETES]}
-              size={40}
-            />
-          </div>
-          <div
-            class="timeline-end text-xs px-2 overflow-hidden transition-all duration-300 text-center"
-          >
-            Proximamente
-            <br />
-            <p
-              class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
-            >
-              Automatiza, y deploya tus proyectos en la nube.
-            </p>
-          </div>
-          <hr class="min-h-[12px] md:min-h-[20px] bg-primary" />
-        </li>
-      </ul>
-      <div class="hidden lg:flex flex-col items-end gap-5 py-0 md:py-10 flex-1">
-        <p class="text-justify text-accent/90">
-          Como grupo de estudio, hemos preparado un roadmap que te guiará en tu
-          aprendizaje de desarrollo web. Si ya tienes conocimientos previos, no
-          te preocupes: puedes unirte en la etapa que más te interese.
-        </p>
-
-        <div class="flex flex-col justify-center gap-4 flex-1">
-          <div class="card text-info bg-info/30 w-full shadow-sm">
-            <div class="card-body">
-              <h4 class="card-title"><Iconify icon={Icons.BASIC} />Básico</h4>
-              <p>
-                Aprenderás los fundamentos de HTML, CSS y conceptos básicos de
-                JavaScript. Esta etapa es ideal para quienes se inician en el
-                desarrollo web.
-              </p>
-            </div>
-          </div>
-
-          <div class="card text-success bg-success/30 w-full shadow-sm">
-            <div class="card-body">
-              <h4 class="card-title">
-                <Iconify icon={Icons.INTERMEDIATE} />Intermedio
-              </h4>
-              <p>
-                Profundizarás en JavaScript, frameworks como React y buenas
-                prácticas de desarrollo. Aquí aprenderás a crear aplicaciones
-                más complejas y dinámicas.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="card text-neutral bg-gradient-to-br from-primary to-secondary w-full shadow-sm after:bg-gradient-to-br after:from-primary after:to-secondary after:absolute after:top-1.5 after:right-2 after:left-2 after:bottom-2 after:card after:blur-lg after:scale-105 after:-z-10 after:transition-all after:duration-300 after:opacity-80"
-          >
-            <div class="card-body bg-base-200 text-accent m-1.5 rounded-xl">
-              <h4 class="card-title">
-                <Iconify icon={Icons.ADVANCED} />Avanzado
-              </h4>
-              <p>
-                Te enfocarás en optimización, testing, arquitectura y despliegue
-                de aplicaciones web. Esta etapa prepara para proyectos
-                profesionales y trabajo en equipo.
-              </p>
-            </div>
-          </div>
+  <div class="flex-1">
+    <ul class="timeline timeline-vertical [&>li>div]:min-w-28">
+      <li class="group cursor-pointer">
+        <div class="timeline-start font-bold">Commit Master & Dock It</div>
+        <div class="timeline-middle flex align-center justify-center">
+          <StackIcon icons={[Icons.GIT, Icons.DOCKER]} size={40} />
         </div>
-      </div>
-    </div>
+        <div
+          class="timeline-end w-52 text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
+        >
+          9 - 11 de Septiembre
+          <br />
+          <p
+            class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+          >
+            Aprende a versionar y dockerizar tus proyectos.
+          </p>
+        </div>
+        <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
+      </li>
+
+      <li class="group cursor-pointer">
+        <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
+        <div class="timeline-start font-bold">Web Starter</div>
+        <div class="timeline-middle flex align-center justify-center">
+          <StackIcon
+            icons={[Icons.HTML, Icons.CSS, Icons.JAVASCRIPT]}
+            size={40}
+          />
+        </div>
+        <div
+          class="timeline-end w-52 text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
+        >
+          Proximamente
+          <br />
+          <p
+            class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+          >
+            Construye sitios web interactivos desde cero.
+          </p>
+        </div>
+        <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
+      </li>
+
+      <li class="group cursor-pointer">
+        <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
+        <div class="timeline-start font-bold">FigMagic</div>
+        <div class="timeline-middle flex align-center justify-center">
+          <CardIcon icon={Icons.FIGMA} />
+        </div>
+        <div
+          class="timeline-end w-52 text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
+        >
+          Proximamente
+          <br />
+          <p
+            class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+          >
+            Diseña interfaces y prototipos.
+          </p>
+        </div>
+        <hr class="min-h-[12px] md:min-h-[20px] bg-info" />
+      </li>
+
+      <li class="group cursor-pointer">
+        <hr
+          class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-info to-success"
+        />
+        <div class="timeline-start font-bold">Frontend Turbo</div>
+        <div class="timeline-middle flex align-center justify-center">
+          <StackIcon icons={[Icons.ASTRO_WEB, Icons.TAILWIND]} size={40} />
+        </div>
+        <div
+          class="timeline-end w-52 text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
+        >
+          Proximamente
+          <br />
+          <p
+            class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+          >
+            Crea sitios web modernos, rápidos y estilizados con Astro y
+            Tailwind.
+          </p>
+        </div>
+        <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
+      </li>
+
+      <li class="group cursor-pointer">
+        <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
+        <div class="timeline-start font-bold">Component Pro</div>
+        <div class="timeline-middle flex align-center justify-center">
+          <StackIcon icons={[Icons.TYPESCRIPT, Icons.REACT]} size={40} />
+        </div>
+        <div
+          class="timeline-end w-52 text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
+        >
+          Proximamente
+          <br />
+          <p
+            class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+          >
+            Desarrolla componentes interactivos.
+          </p>
+        </div>
+        <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
+      </li>
+
+      <li class="group cursor-pointer">
+        <hr class="min-h-[12px] md:min-h-[20px] bg-success" />
+        <div class="timeline-start font-bold">Backend Boost</div>
+        <div class="timeline-middle flex align-center justify-center">
+          <StackIcon
+            icons={[Icons.NESTJS, Icons.FAST_API, Icons.SUPABASE]}
+            size={40}
+          />
+        </div>
+        <div
+          class="timeline-end w-52 text-xs px-2 group overflow-hidden transition-all duration-300 text-center"
+        >
+          Proximamente
+          <br />
+          <p
+            class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100"
+          >
+            Construye APIs y backends escalables.
+          </p>
+        </div>
+        <hr
+          class="min-h-[12px] md:min-h-[20px] bg-gradient-to-b from-success to-primary"
+        />
+      </li>
+
+      <li class="group cursor-pointer">
+        <hr class="min-h-[12px] md:min-h-[20px] bg-primary" />
+        <div class="timeline-start font-bold">DevUps</div>
+        <div class="timeline-middle flex align-center justify-center">
+          <StackIcon
+            icons={[Icons.GITHUB_ACTIONS, Icons.TERRAFORM, Icons.KUBERNETES]}
+            size={40}
+          />
+        </div>
+        <div
+          class="timeline-end w-52 text-xs px-2 overflow-hidden transition-all duration-300 text-center"
+        >
+          Proximamente
+          <br />
+          <p
+            class="max-h-0 opacity-0 text-left text-accent/60 transition-all duration-300 group-hover:max-h-20"
+          >
+            Automatiza, y deploya tus proyectos en la nube.
+          </p>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
