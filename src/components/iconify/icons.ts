@@ -7,6 +7,11 @@ export enum Icons {
   SUN = "mingcute:sun-line",
   MOON = "mingcute:moon-fill",
   PALETTE = "mingcute:palette-fill",
+  
+  //OTHER
+  COMUNITY = "mingcute:campground-fill",
+  LEARNING = "mingcute:brain-fill",
+  PEOPLE = "mingcute:group-3-fill",
 
   GIT = "skill-icons:git",
   DOCKER = "skill-icons:docker",

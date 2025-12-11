@@ -2,68 +2,62 @@
 import { Icons } from "@components/iconify/icons";
 import Iconify from "@components/iconify/iconify.astro";
 import Logo from "@assets/logo.svg";
+
+type AboutCards = {
+  icon: Icons;
+  title: string;
+  content: string;
+};
+
+const aboutCards: AboutCards[] = [
+  {
+    icon: Icons.PEOPLE,
+    title: "Aprendizaje en Equipo",
+    content:
+      "Colabora con otros miembros y aprende de diferentes habilidades mientras construyen juntos su camino como desarrolladores.",
+  },
+
+  {
+    icon: Icons.COMUNITY,
+    title: "Comunidad Activa",
+    content:
+      "Conecta con otros aprendices, comparte ideas y participa en un entorno colaborativo que te impulsa a mejorar cada día.",
+  },
+
+  {
+    icon: Icons.LEARNING,
+    title: "Aprende Haciendo",
+    content:
+      "Refuerza tus conocimientos mediante ejercicios prácticos y retos semanales que te preparan para afrontar proyectos reales.",
+  },
+];
 ---
 
 <div
   id="nosotros"
-  class="h-svh md:h-screen snap-start w-full px-5 md:px-10 flex flex-col items-center justify-evenly"
+  class="h-svh md:h-screen snap-start w-full px-5 md:px-10 flex flex-col items-center justify-center gap-5 sm:gap-10 md:gap-36"
 >
-  <div class="flex flex-col items-center justify-center gap-5">
-    <h2
-      class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold text-5xl md:text-6xl text-center"
-    >
+  <div class="flex flex-col justify-center gap-5 w-full max-w-6xl">
+    <h2 class="text-accent font-bold text-5xl md:text-6xl">
       Acerca de Nosotros
     </h2>
-    <p class="max-w-2xl text-center text-accent/85">
+    <p class="text-accent/85">
       Aprende Desarrollo Web desde cero con Nosotros. Un grupo de estudio donde
       compartimos conocimientos, practicamos con proyectos reales y nos ayudamos
       a crecer como desarrolladores.
     </p>
   </div>
-  <div class="flex flex-col gap-9 w-full max-w-6xl">
-    <h3 class="text-4xl font-bold">Qué es Ctrl+Dev ?</h3>
-    <div class="flex flex-col lg:flex-row gap-10">
-      <div class="flex-1 flex-grow bg-white rounded-lg card min-h-[200px]">
-        <Logo class="w-full h-full p-5" />
-      </div>
-      <div class="flex-1 flex-grow flex flex-col gap-5">
-        <p class="text-justify text-accent/90">
-          Nuestro objetivo es que cada miembro pueda crecer en <span
-            class="bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent font-bold"
-            >HTML, CSS, JavaScript, frameworks modernos y buenas prácticas <Iconify
-              icon={Icons.ASTRO}
-              color="primary"
-              class="inline p-0 m-0"
-              size={15}
-            /></span
-          >, mientras participa en proyectos reales y se conecta con otros
-          apasionados de la programación.
-        </p>
-        <div class="flex flex-col gap-3">
-          <p class="font-bold text-primary">Nuestros enfoques:</p>
-          <ul
-            class="[&>li]:flex [&>li]:items-center [&>li]:gap-2 [&>li]:w-full grid md:grid-cols-2 gap-2 w-full"
-          >
-            <li>
-              <Iconify
-                class="text-secondary"
-                icon={Icons.ASTRO}
-                color="secondary"
-                size={15}
-              />
-              Buenas prácticas de código
-            </li>
-            <li>
-              <Iconify icon={Icons.ASTRO} color="secondary" size={15} />
-              Desarrollo web basico
-            </li>
-            <li>
-              <Iconify icon={Icons.ASTRO} color="secondary" size={15} />
-              Aprendizaje continuo
-            </li>
-          </ul>
+  <div class="w-full max-w-6xl flex flex-col md:flex-row gap-5">
+    {
+      aboutCards.map((item) => (
+        <div class="card card-body bg-base-200 flex-1">
+          <div class="card-title">
+            <Iconify icon={item.icon} color="primary" />
+            <span class="text-primary">{item.title}</span>
+          </div>
+          <div>{item.content}</div>
         </div>
-      </div>
-    </div>
+      ))
+    }
   </div>
 </div>
