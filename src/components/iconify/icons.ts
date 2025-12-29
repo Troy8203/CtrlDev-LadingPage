@@ -7,7 +7,7 @@ export enum Icons {
   SUN = "mingcute:sun-line",
   MOON = "mingcute:moon-fill",
   PALETTE = "mingcute:palette-fill",
-  
+
   //OTHER
   COMUNITY = "mingcute:campground-fill",
   LEARNING = "mingcute:brain-fill",
@@ -51,6 +51,11 @@ export enum Icons {
   SHARE = "mingcute:share-forward-line",
   INDEX = "mingcute:list-check-3-line",
   COURSES = "mingcute:book-5-line",
+
+  //PHONE
+  PHONE_SIGNAL = "mingcute:signal-line",
+  PHONE_BATTERY = "mingcute:battery-2-line",
+  PHONE_WIFI = "mingcute:wifi-line",
 }
 
 export type IconType = Icons;
