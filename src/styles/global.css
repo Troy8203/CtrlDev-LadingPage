@@ -19,7 +19,7 @@
   --color-secondary: oklch(78.272% 0.16841 66.345);
   --color-secondary-content: oklch(94% 0.028 342.258);
   --color-accent: oklch(25.615% 0.00003 271.152);
-  --color-accent-content: oklch(38% 0.063 188.416);
+  --color-accent-content: oklch(96% 0.007 247.896);
   --color-neutral: oklch(14% 0.005 285.823);
   --color-neutral-content: oklch(92% 0.004 286.32);
   --color-info: oklch(65.202% 0.1902 253.223);
@@ -105,13 +105,13 @@
   /* Lists */
   @apply [&>ul]:list-[square] [&>ul]:list-inside [&>ul>li>ul]:list-[square] [&>ul>li>ul]:list-inside;
   @apply [&>ul,ol]:marker:text-primary;
-  @apply [&>ul>li>a]:underline [&>ul>li>a]:italic!;
+  @apply [&>ul>li>a]:hover:text-accent/60 [&>ul>li>a]:text-accent/80 [&>ul>li>a]:underline [&>ul>li>a]:italic!;
   @apply [&>ul>li>ul>li]:indent-4;
   @apply [&>ol]:list-decimal [&>ol]:list-inside [&>ol>li>ol]:list-decimal [&>ol>li>ol]:list-inside;
   @apply [&>ol>li>ol>li]:indent-4;
 
   /* Links */
-  @apply [&>p>a]:italic [&>p>a]:underline [&>p>a]:hover:text-neutral-400 [&>ul>li,ol>li,p>a]:text-neutral-200;
+  @apply [&>p>a]:italic [&>p>a]:underline [&>p>a]:hover:text-accent/60 [&>ul>li,ol>li,p>a]:text-accent/80;
 
   /* Inline code */
   @apply [&>p>code]:bg-base-100 [&>p>code]:text-primary [&>p>code]:text-sm [&>p>code]:px-1.5 [&>p>code]:py-1 [&>p>code]:rounded-md;
