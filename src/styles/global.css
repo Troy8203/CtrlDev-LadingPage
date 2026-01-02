@@ -84,17 +84,17 @@
 } */
 
 .md-content {
-  @apply text-accent/70 bg-base-200 px-10 py-3 rounded-xl;
+  @apply text-accent/70;
 
   /* Headings */
-  @apply [&>h1]:my-10! [&>h1]:text-accent;
+  @apply [&>h1]:mb-10! [&>h1]:text-accent;
   @apply [&>h2]:text-accent/90;
   @apply [&>h3]:text-accent/80;
   @apply [&>h4]:text-accent/70;
   @apply [&>h5]:text-accent/60;
   @apply [&>h6]:text-accent/50;
   @apply [&>h1,h2]:text-3xl [&>h3]:text-2xl [&>h4]:text-xl [&>h5]:text-lg [&>h6]:text-base;
-  @apply [&>h1,h2,h3,h4,h5,h6]:font-bold [&>h1,h2,h3,h4,h5,h6]:my-4 md:[&>h1,h2,h3,h4,h5,h6]:my-10;
+  @apply [&>h1,h2,h3,h4,h5,h6]:font-bold [&>h1,h2,h3,h4,h5,h6]:mb-4 md:[&>h1,h2,h3,h4,h5,h6]:mb-6;
 
   /* Gradient for H1 */
   @apply [&>h1]:underline;
@@ -117,7 +117,7 @@
   @apply [&>p>code]:bg-base-100 [&>p>code]:text-primary [&>p>code]:text-sm [&>p>code]:px-1.5 [&>p>code]:py-1 [&>p>code]:rounded-md;
 
   /* Code blocks */
-  @apply [&>pre]:mockup-code [&>pre]:p-3 [&>pre]:my-3 [&>pre]:rounded-md [&>pre]:text-xs;
+  @apply [&>pre]:mockup-code [&>pre]:bg-base-200! [&>pre]:p-3 [&>pre]:my-3 [&>pre]:rounded-md [&>pre]:text-xs;
   @apply [&>pre>code]:text-sm;
 
   /* Blockquotes & tables */

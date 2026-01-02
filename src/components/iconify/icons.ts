@@ -7,6 +7,8 @@ export enum Icons {
   SUN = "mingcute:sun-line",
   MOON = "mingcute:moon-fill",
   PALETTE = "mingcute:palette-fill",
+  ARROW_LEFT = "mingcute:left-line",
+  COPY = "mingcute:copy-2-line",
 
   //OTHER
   COMUNITY = "mingcute:campground-fill",
@@ -51,6 +53,7 @@ export enum Icons {
   SHARE = "mingcute:share-forward-line",
   INDEX = "mingcute:list-check-3-line",
   COURSES = "mingcute:book-5-line",
+  POST = "mingcute:upload-line",
 
   //PHONE
   PHONE_SIGNAL = "mingcute:signal-line",
