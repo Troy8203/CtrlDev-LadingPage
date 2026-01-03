@@ -1,5 +1,6 @@
 ---
-import Logo from "../assets/logo-white.svg";
+import Logo from "../assets/logo.svg";
+import LogoWhite from "../assets/logo-white.svg";
 import Iconify from "../components/iconify/iconify.astro";
 import { Icons } from "../components/iconify/icons";
 
@@ -54,7 +55,9 @@ const base = Astro.site ? Astro.site : "";
         </div>
       </ul>
     </div>
-    <Logo class="h-10 w-auto hidden lg:block" />
+    <!-- hidden lg:block -->
+    <Logo class="h-10 w-auto hidden lg:block dark:hidden" />
+    <LogoWhite class="h-10 w-auto hidden lg:dark:block" />
   </div>
   <div class="navbar-end flex">
     <ul
@@ -105,6 +108,7 @@ const base = Astro.site ? Astro.site : "";
         </div>
       </li>
     </ul>
-    <Logo class="h-10 w-auto mx-2 block lg:hidden" />
+    <Logo class="h-10 w-auto mx-2 block lg:hidden dark:hidden" />
+    <LogoWhite class="h-10 w-auto mx-2 hidden dark:block lg:dark:hidden" />
   </div>
 </div>

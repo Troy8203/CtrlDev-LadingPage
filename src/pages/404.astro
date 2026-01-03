@@ -1,0 +1,19 @@
+---
+import Layout from "@layouts/layout.astro";
+import Logo from "../assets/logo.svg";
+import LogoWhite from "../assets/logo-white.svg";
+---
+
+<Layout>
+  <main
+    class="h-screen overflow-y-scroll snap-y snap-mandatory flex flex-col items-center justify-center gap-5"
+  >
+    <LogoWhite class="h-16 lg:h-28 w-auto opacity-70 hidden dark:block" />
+    <Logo class="h-16 lg:h-28 w-auto opacity-80 block dark:hidden" />
+    <h1
+      class="text-xl md:text-2xl lg:text-3xl font-bold text-accent/80 text-center"
+    >
+      Página no encontrada
+    </h1>
+  </main>
+</Layout>
