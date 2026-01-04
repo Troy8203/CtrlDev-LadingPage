@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://troy8203.github.io/CtrlDev-LadingPage/sitemap-index.xml
