@@ -3,8 +3,6 @@ import Logo from "../assets/logo.svg";
 import LogoWhite from "../assets/logo-white.svg";
 import Iconify from "../components/iconify/iconify.astro";
 import { Icons } from "../components/iconify/icons";
-
-const base = Astro.site ? Astro.site : "";
 ---
 
 <div
@@ -19,10 +17,10 @@ const base = Astro.site ? Astro.site : "";
         tabindex="0"
         class="menu menu-md dropdown-content bg-base-200 rounded-box z-20 mt-7 w-56 p-2 shadow-2xl"
       >
-        <li><a href=`${base}`>Inicio</a></li>
-        <li><a href=`${base}#nosotros`>Nosotros</a></li>
-        <li><a href=`${base}#unete`>Cursos</a></li>
-        <li><a href=`${base}#unete`>Únete</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/#nosotros">Nosotros</a></li>
+        <li><a href="/#unete">Cursos</a></li>
+        <li><a href="/#unete">Únete</a></li>
         <div class="divider my-1"></div>
         <div class="pb-3 flex flex-col gap-2 items-center">
           <p class="px-3 font-bold w-full">Tema</p>
@@ -63,11 +61,11 @@ const base = Astro.site ? Astro.site : "";
     <ul
       class="menu menu-horizontal px-1 [&>li>a]:hover:bg-base-300 hidden lg:flex items-center justify-center gap-1"
     >
-      <li><a href=`${base}`>Inicio</a></li>
-      <li><a href=`${base}#nosotros`>Nosotros</a></li>
-      <li><a href=`${base}#unete`>Cursos</a></li>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/#nosotros">Nosotros</a></li>
+      <li><a href="/#unete">Cursos</a></li>
       <li class="bg-secondary rounded-2xl">
-        <a href=`${base}#unete`>Únete</a>
+        <a href="/#unete">Únete</a>
       </li>
       <li class="bg-accent/10 rounded-2xl">
         <div class="dropdown dropdown-hover dropdown-end">

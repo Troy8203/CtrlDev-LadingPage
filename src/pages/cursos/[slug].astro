@@ -23,10 +23,6 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-
-const base = Astro.site?.pathname;
-const site: URL | string = Astro.site ? Astro.site : "";
-
 const { title, date, author, content, colaboration } = Astro.props.frontmatter;
 ---
 

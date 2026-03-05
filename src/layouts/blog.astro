@@ -20,7 +20,7 @@ type Props = {
   colaboration?: Contributor[];
 };
 
-const base = Astro.site ? `${Astro.site.pathname}cursos` : "";
+const base = Astro.site ? `${Astro.site.pathname}cursos` : "/cursos";
 const currentPath = Astro.site ? `${Astro.url}` : "";
 
 const { title, date, author, content, colaboration }: Props = Astro.props;
