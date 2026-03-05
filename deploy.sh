@@ -6,6 +6,9 @@ TAG="latest"
 
 REMOTE_IMAGE="$DOCKER_USER/$IMAGE_NAME:$TAG"
 
+echo "=== Limpiando dist local ==="
+rm -rf dist
+
 echo "=== Paso 1: Construir la imagen local ==="
 docker build --no-cache -t $IMAGE_NAME .
 
