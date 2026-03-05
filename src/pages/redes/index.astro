@@ -1,0 +1,67 @@
+---
+import Iconify from "@components/iconify/iconify.astro";
+import { Icons } from "@components/iconify/icons";
+import Footer from "@layouts/footer.astro";
+import Layout from "@layouts/layout.astro";
+
+import Logo from "../../assets/logo.svg";
+import LogoWhite from "../../assets/logo-white.svg";
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61558464904329&mibextid=ZbWKwL",
+    icon: Icons.FACEBOOK,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/ctrl.dev_",
+    icon: Icons.INSTAGRAM,
+  },
+  {
+    name: "Telegram",
+    href: "https://t.me/+Q7bDD2HZXnUyZTRh",
+    icon: Icons.TELEGRAM,
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@ctrl.dev_",
+    icon: Icons.TIKTOK,
+  },
+];
+---
+
+<Layout>
+  <div
+    class="min-h-svh md:min-h-screen bg-[url(/assets/banner.svg)] bg-no-repeat bg-size-[auto_600px] md:bg-size-[auto_800px] lg:bg-contain bg-top w-full py-10 md:px-10 flex flex-col items-center justify-start gap-8"
+  >
+    <div class="flex flex-col items-center justify-center gap-0 mt-15">
+      <div class="w-auto h-24 md:h-32 flex items-center justify-center">
+        <Logo class="w-full h-full object-contain block dark:hidden" />
+        <LogoWhite class="w-full h-full object-contain hidden dark:block" />
+      </div>
+      
+      <h1 class="text-accent font-bold text-3xl md:text-4xl text-center mt-4">
+        @ctrl.dev_
+      </h1>
+    </div>
+
+    <div
+      class="w-full max-w-md flex flex-col items-center justify-start gap-6 px-5"
+    >
+      {
+        socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            class="btn btn-accent btn-outline backdrop-blur-2xl w-full rounded-full text-lg h-auto py-3 shadow-md flex items-center justify-center gap-4 transition-colors duration-700"
+          >
+            <Iconify icon={link.icon} />
+            {link.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+  <Footer />
+</Layout>
