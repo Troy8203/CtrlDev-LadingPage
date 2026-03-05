@@ -11,14 +11,11 @@ const isDev = import.meta.env.DEV;
 
 // https://astro.build/config
 export default defineConfig({
-  site: !isDev ? "https://troy8203.github.io/CtrlDev-LadingPage/" : undefined,
-  base: !isDev ? "/CtrlDev-LadingPage/" : undefined,
   vite: {
     plugins: [tailwindcss()],
   },
   integrations: [icon(), mdx(), sitemap({
-    filter: (page) =>
-      !page.includes('/404')
+    filter: (page) => !page.includes('/404')
   })
   ],
 });
