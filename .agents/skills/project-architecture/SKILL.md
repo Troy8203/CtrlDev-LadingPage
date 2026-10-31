@@ -9,8 +9,8 @@ When working on this project, you must strictly respect the established director
 
 ## Directory Architecture Rules
 
-1. **`src/pages/` (Main Pages)**: 
-   - Only for routable Astro page components (e.g., `index.astro`, `about.astro`). 
+1. **`src/pages/` (Main Pages)**:
+   - Only for routable Astro page components (e.g., `index.astro`, `about.astro`).
    - Keep logic here minimal; delegate the UI construction to components and sections.
 
 2. **`src/page/` (Page Sections)**:
@@ -35,6 +35,7 @@ When working on this project, you must strictly respect the established director
    - Maintain global CSS rules, resets, and variables in `src/styles/global.css`.
 
 ## Development Constraints
+
 - **File Extensions**: Use `.astro` files by default for all views and components.
 - **Package Manager**: Use `pnpm` for all dependency installations.
 - **Styling**: Component-specific styles should use scoped CSS inside `.astro` files. Use `global.css` only for true global rules.

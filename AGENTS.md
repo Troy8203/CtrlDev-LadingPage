@@ -54,6 +54,7 @@ Use these aliases in all imports; do NOT use relative paths.
 ## Courses & Workshops (MDX)
 
 All courses live in `src/pages/cursos/`. See `.agents/skills/course-creator/SKILL.md` for:
+
 - Single-session vs. multi-session folder structure
 - Required YAML frontmatter (`layout`, `title`, `author`, `date`, optional `content`, `colaboration`)
 - Embedding Google Slides with `<iframe>`
