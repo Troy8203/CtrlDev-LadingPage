@@ -541,8 +541,6 @@ h2 {
   width: 4.5rem;
   aspect-ratio: 1;
   padding: 0.65rem;
-  border: 1px solid var(--gold-line);
-  background: #fff8eb;
 }
 .venue-logo img {
   display: block;
