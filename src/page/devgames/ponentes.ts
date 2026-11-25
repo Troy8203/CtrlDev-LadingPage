@@ -1,7 +1,7 @@
-import ricardo from "@assets/speakers/ricardo-poma.webp";
-import ricardoAlternate from "@assets/speakers/ricardo-poma-alternativa.webp";
-import moises from "@assets/speakers/moises-silva.webp";
-import paulo from "@assets/speakers/paulo-tintaya.webp";
+import ricardo from "@assets/devgames/ricardo-poma.webp";
+import ricardoAlternate from "@assets/devgames/ricardo-poma-alternativa.webp";
+import moises from "@assets/devgames/moises-silva.webp";
+import paulo from "@assets/devgames/paulo-tintaya.webp";
 
 export const speakers = {
   "ricardo-poma": {
