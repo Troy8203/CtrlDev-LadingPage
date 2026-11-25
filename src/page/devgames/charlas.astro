@@ -1,0 +1,60 @@
+---
+import { agenda } from "./programa";
+import { speakers } from "./ponentes";
+---
+
+<section class="section shell" id="charlas" aria-labelledby="talks-title">
+  <h2 id="talks-title">Charlas</h2>
+  <div class="talk-grid">
+    {
+      agenda.map(([start, end, , , , speakerId]) => {
+        if (!speakerId) return null;
+        const { name, role, title, topic, description, bio, photos } =
+          speakers[speakerId];
+        const [photo, alternate] = photos;
+        return (
+          <article
+            class="talk-card"
+            id={speakerId}
+            aria-labelledby={`${speakerId}-title`}
+          >
+            <img
+              class="talk-portrait"
+              src={photo.src}
+              width={photo.width}
+              height={photo.height}
+              alt={`Retrato de ${name}`}
+              loading="lazy"
+            />
+            <div class="talk-content">
+              <p class="talk-meta">
+                <time datetime={start}>{start}</time> –{" "}
+                <time datetime={end}>{end}</time> · {topic}
+              </p>
+              <h3 id={`${speakerId}-title`}>{title}</h3>
+              <p class="talk-byline">
+                <br />
+                {role}
+              </p>
+              <p>{description}</p>
+              <details>
+                <summary>Sobre {name}</summary>
+                <p>{bio}</p>
+                {alternate && (
+                  <img
+                    class="talk-alternate"
+                    src={alternate.src}
+                    width={alternate.width}
+                    height={alternate.height}
+                    alt={`Segundo retrato de ${name}`}
+                    loading="lazy"
+                  />
+                )}
+              </details>
+            </div>
+          </article>
+        );
+      })
+    }
+  </div>
+</section>

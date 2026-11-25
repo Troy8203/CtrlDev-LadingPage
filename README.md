@@ -94,3 +94,10 @@ This will serve the production build locally for testing.
 ## License
 
 Licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## DevGames
+
+- Run `pnpm dev` and open `http://localhost:4321/devgames/`.
+- Run `pnpm build` to generate `dist/devgames/index.html`. The Docker deployment serves the page at `/devgames/` from the domain root.
+- Share the direct link with attendees. The page is public to anyone with the URL and is excluded from navigation, the sitemap, and search indexing.
+- Optionally set `PUBLIC_DEVGAMES_REGISTRATION_URL` before building to replace the default registration form.

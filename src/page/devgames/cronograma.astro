@@ -1,0 +1,67 @@
+---
+import { agenda, categories } from "./programa";
+---
+
+<section class="section shell" id="cronograma" aria-labelledby="agenda-title">
+  <h2 id="agenda-title">Cronograma oficial de la Arena</h2>
+  <div data-agenda>
+    <div class="filters" role="group" aria-label="Filtrar actividades" hidden>
+      <button type="button" data-filter="todos" aria-pressed="true">Todo</button
+      >
+      {
+        Object.entries(categories).map(([key, label]) => (
+          <button type="button" data-filter={key} aria-pressed="false">
+            {label}
+          </button>
+        ))
+      }
+    </div>
+    <p class="sr-only" role="status" data-status></p>
+    <ol class="timeline">
+      {
+        agenda.map(([start, end, title, description, category, speakerId]) => (
+          <li
+            data-category={category}
+            class:list={{ keynote: speakerId === "paulo-tintaya" }}
+          >
+            <span class="time">
+              <time datetime={start}>{start}</time> -{" "}
+              <time datetime={end}>{end}</time>
+            </span>
+            <div>
+              <h3>
+                {speakerId ? <a href={`#${speakerId}`}>{title}</a> : title}
+              </h3>
+              <p>{description}</p>
+            </div>
+            <span class="category">{categories[category]}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<script>
+  const schedule = document.querySelector("[data-agenda]");
+  const filters = schedule?.querySelector<HTMLElement>(".filters");
+  const status = schedule?.querySelector<HTMLElement>("[data-status]");
+  if (schedule && filters && status) {
+    const buttons = filters.querySelectorAll<HTMLButtonElement>("button");
+    const items = schedule.querySelectorAll<HTMLLIElement>("[data-category]");
+    filters.hidden = false;
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        buttons.forEach((filter) =>
+          filter.setAttribute("aria-pressed", String(filter === button)),
+        );
+        items.forEach((item) => {
+          item.hidden =
+            button.dataset.filter !== "todos" &&
+            item.dataset.category !== button.dataset.filter;
+        });
+        status.textContent = `${Array.from(items).filter((item) => !item.hidden).length} actividades visibles.`;
+      });
+    });
+  }
+</script>

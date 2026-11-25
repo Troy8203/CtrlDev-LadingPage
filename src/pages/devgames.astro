@@ -1,0 +1,197 @@
+---
+import { Icon } from "astro-icon/components";
+import arena from "@assets/devgames-arena.webp";
+import titleArt from "@assets/devgames-titulo.webp";
+import logo from "@assets/ctrl-dev-negativo.svg?url";
+import Charlas from "@page/devgames/charlas.astro";
+import Cronograma from "@page/devgames/cronograma.astro";
+import { districts, mechanics } from "@page/devgames/programa";
+import "../styles/devgames.css";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const registrationUrl =
+  import.meta.env.PUBLIC_DEVGAMES_REGISTRATION_URL?.trim() ||
+  "https://docs.google.com/forms/d/e/1FAIpQLSdarfQUxJFpOglbZmzHkyL4TW51_nio3IP5TlfEWZwv2P10pw/viewform?usp=header";
+const districtIcons = [
+  "mingcute:shield-line",
+  "mingcute:chip-line",
+  "mingcute:code-line",
+  "mingcute:cloud-line",
+];
+const instagram = "https://www.instagram.com/ctrl.dev_";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DevGames, una jornada presencial de estrategia, lógica y código organizada por ctrl + dev en Digital Harbor, La Paz."
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#1a0b2e" />
+    <link rel="icon" href={`${base}/favicon.svg`} />
+    <title>DevGames · ctrl + dev</title>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="event-header">
+      <div class="shell topbar">
+        <a
+          class="brand"
+          href="#inicio"
+          aria-label="ctrl + dev · Inicio de DevGames"
+        >
+          <img src={logo} width="373" height="161" alt="" />
+        </a>
+        <nav aria-label="Navegación del evento">
+          <a href="#inicio">Inicio</a>
+          <a href="#mecanica">La Arena</a>
+          <a href="#distritos">Distritos</a>
+          <a href="#cronograma">Agenda oficial</a>
+          <a href="#charlas">Charlas</a>
+        </nav>
+        <a class="nav-register" href={registrationUrl}>Inscripción</a>
+      </div>
+    </header>
+    <main id="contenido">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <img
+          class="hero-art"
+          src={arena.src}
+          width={arena.width}
+          height={arena.height}
+          alt=""
+        />
+        <div class="hero-frame" aria-hidden="true"></div>
+        <div class="shell hero-content">
+          <p class="eyebrow">Comunidad tecnológica ctrl + dev presenta</p>
+          <h1 id="hero-title">
+            <img
+              src={titleArt.src}
+              width={titleArt.width}
+              height={titleArt.height}
+              alt="DevGames"
+              fetchpriority="high"
+            />
+          </h1>
+          <p class="hero-subtitle">Amanecer en la Arena de Código</p>
+          <p class="hook">
+            La arena tecnológica abre sus puertas. Estrategia, lógica y código
+            en una jornada donde solo los mejores tributos sobreviven.
+          </p>
+          <ul class="event-facts" aria-label="Datos del evento">
+            <li>
+              <Icon name="mingcute:calendar-line" aria-hidden="true" /><span
+                >Fecha</span
+              ><strong>Sábado 28 de noviembre</strong>
+            </li>
+            <li>
+              <Icon name="mingcute:time-line" aria-hidden="true" /><span
+                >Horario</span
+              ><strong>09:00 a 15:00 hrs</strong>
+            </li>
+            <li>
+              <Icon name="mingcute:location-line" aria-hidden="true" /><span
+                >Sede</span
+              ><strong>Digital Harbor · La Paz</strong>
+            </li>
+            <li>
+              <Icon name="mingcute:group-line" aria-hidden="true" /><span
+                >Modalidad</span
+              ><strong>Presencial · Cupos limitados</strong>
+            </li>
+          </ul>
+          <div class="hero-actions">
+            <a class="gold-button" href={registrationUrl}
+              >Inscribirme como Tributo</a
+            >
+            <a class="outline-button" href="#cronograma">Ver agenda oficial</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="mecanica" aria-labelledby="game-title">
+        <h2 id="game-title">¿De qué trata el juego?</h2>
+        <div class="mechanics">
+          {
+            mechanics.map(({ icon, title, description }) => (
+              <article class="mechanic">
+                <div class="emblem">
+                  <Icon name={icon} />
+                </div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))
+          }
+        </div>
+        <section
+          class="district-panel"
+          id="distritos"
+          aria-labelledby="district-title"
+        >
+          <h3 id="district-title">Los 4 Distritos de la Arena</h3>
+          <ol class="districts">
+            {
+              districts.map((district, index) => (
+                <li>
+                  <Icon name={districtIcons[index]} aria-hidden="true" />
+                  <strong>Distrito {index + 1}</strong>
+                  <span>{district}</span>
+                </li>
+              ))
+            }
+          </ol>
+        </section>
+      </section>
+
+      <Cronograma />
+      <Charlas />
+
+      <section
+        class="closing shell"
+        id="inscripcion"
+        aria-labelledby="register-title"
+      >
+        <div class="closing-inner">
+          <p class="eyebrow">Inscripción · Cupos limitados</p>
+          <h2 id="register-title">
+            Felices juegos del Desarrollador y Que la suerte esté siempre de tu
+            lado.
+          </h2>
+          <a class="gold-button" href={registrationUrl}>
+            Confirmar mi lugar en la Arena
+          </a>
+        </div>
+      </section>
+      <section class="shell venue" aria-labelledby="venue-title">
+        <Icon name="mingcute:location-line" aria-hidden="true" />
+        <div>
+          <h2 id="venue-title">Digital Harbor</h2>
+          <p>Av. 20 de Octubre, Torre Azul, piso 17 · La Paz, Bolivia</p>
+        </div>
+        <a
+          class="outline-button"
+          href="https://www.google.com/maps/search/?api=1&query=Digital+Harbor+Torre+Azul+La+Paz+Bolivia"
+          >Ver ubicación</a
+        >
+      </section>
+    </main>
+    <footer class="shell event-footer">
+      <a class="brand" href={`${base}/`}
+        ><img src={logo} width="373" height="161" alt="ctrl + dev" /></a
+      >
+      <p>Digital Harbor · La Paz, Bolivia</p>
+      <nav aria-label="Redes sociales de ctrl + dev">
+        <a href={instagram}>Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61558464904329"
+          >Facebook</a
+        >
+        <a href="https://www.tiktok.com/@ctrl.dev_">TikTok</a>
+      </nav>
+    </footer>
+  </body>
+</html>

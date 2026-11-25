@@ -22,8 +22,8 @@ Use two-space indentation and follow the project's strict TypeScript configurati
 
 ## Testing and Verification
 
-The repository has no automated test suite, coverage threshold, or lint script. Run `pnpm build` and preview the affected pages. For UI changes, check narrow and wide viewports and both themes. Verify changed navigation, course links, and assets under the production base path `/CtrlDev-LadingPage/`, which GitHub Pages uses.
+The repository has no automated test suite, coverage threshold, or lint script. Run `pnpm build` and preview the affected pages. For UI changes, check narrow and wide viewports and both themes. Verify changed navigation, course links, and assets from the domain root used by the Docker deployment.
 
 ## Commits and Pull Requests
 
-Follow the recent Git history with a Conventional Commits prefix, an emoji, and a short imperative summary, such as `feat: ✨ add 404 page and black logo`. Describe the change and how you verified it in the PR. Link the relevant issue when available and include screenshots for visible changes. The GitHub Pages workflow deploys on pushes to `main`.
+Follow the recent Git history with a Conventional Commits prefix, an emoji, and a short imperative summary, such as `feat: ✨ add 404 page and black logo`. Describe the change and how you verified it in the PR. Link the relevant issue when available and include screenshots for visible changes. Target `feat/docker-file` for changes to the Docker deployment branch.

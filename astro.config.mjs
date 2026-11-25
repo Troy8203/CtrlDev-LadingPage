@@ -31,6 +31,8 @@ export default defineConfig({
     }
   },
   integrations: [icon(), mdx(), sitemap({
-    filter: (page) => !page.includes('/404')
+    filter: (page) =>
+      !page.includes('/404') &&
+      new URL(page).pathname.replace(/\/$/, '') !== '/devgames'
   })],
 });
