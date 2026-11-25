@@ -5,6 +5,7 @@ import titleArt from "@assets/devgames/devgames-titulo.webp";
 import logo from "@assets/devgames/ctrl-dev-negativo.svg?url";
 import Charlas from "./charlas.astro";
 import Cronograma from "./cronograma.astro";
+import Patrocinadores from "./patrocinadores.astro";
 import { districts, mechanics } from "./programa";
 import "./devgames.css";
 
@@ -52,6 +53,7 @@ const instagram = "https://www.instagram.com/ctrl.dev_";
           <a href="#distritos">Distritos</a>
           <a href="#cronograma">Agenda oficial</a>
           <a href="#charlas">Charlas</a>
+          <a href="#patrocinadores">Patrocinadores</a>
         </nav>
         <a class="nav-register" href={registrationUrl}>Inscripción</a>
       </div>
@@ -150,6 +152,7 @@ const instagram = "https://www.instagram.com/ctrl.dev_";
 
       <Cronograma />
       <Charlas />
+      <Patrocinadores />
 
       <section
         class="closing shell"
