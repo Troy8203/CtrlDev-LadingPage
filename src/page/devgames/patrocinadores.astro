@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import emBusinessGroup from "@assets/devgames/em-business-group.png";
 
 const sponsors = [
@@ -34,7 +33,13 @@ const sponsors = [
       sponsors.map(({ name, logo, links }) => (
         <li class="sponsor-card">
           <div class="sponsor-logo">
-            <Image src={logo} alt="" width={400} />
+            <img
+              src={logo.src}
+              alt=""
+              width={logo.width}
+              height={logo.height}
+              loading="lazy"
+            />
           </div>
           <h3>{name}</h3>
           <div class="sponsor-links">

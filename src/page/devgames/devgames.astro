@@ -1,4 +1,5 @@
 ---
+import digitalHarbor from "@assets/devgames/digital-harbor.png";
 import { Icon } from "astro-icon/components";
 import arena from "@assets/devgames/devgames-arena.webp";
 import titleArt from "@assets/devgames/devgames-titulo.webp";
@@ -171,9 +172,21 @@ const instagram = "https://www.instagram.com/ctrl.dev_";
         </div>
       </section>
       <section class="shell venue" aria-labelledby="venue-title">
-        <Icon name="mingcute:location-line" aria-hidden="true" />
+        <div class="venue-logo">
+          <img
+            src={digitalHarbor.src}
+            alt=""
+            width={digitalHarbor.width}
+            height={digitalHarbor.height}
+            loading="lazy"
+          />
+        </div>
         <div>
-          <h2 id="venue-title">Digital Harbor</h2>
+          <h2 id="venue-title">Gracias, Digital Harbor</h2>
+          <p>
+            Gracias por brindarnos la Arena donde se reúne la comunidad de
+            DevGames.
+          </p>
           <p>Av. 20 de Octubre, Torre Azul, piso 17 · La Paz, Bolivia</p>
         </div>
         <a

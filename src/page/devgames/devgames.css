@@ -534,10 +534,23 @@ h2 {
   border: 1px solid var(--gold-line);
   background: #1b0e1e;
 }
-.venue > svg {
-  color: var(--gold);
-  font-size: 1.8rem;
+.venue-logo {
+  display: grid;
+  place-items: center;
   flex: none;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  padding: 0.65rem;
+  border: 1px solid var(--gold-line);
+  background: #fff8eb;
+}
+.venue-logo img {
+  display: block;
+  width: auto;
+  height: 3rem;
+}
+.venue h2 + p {
+  margin-block: 0.4rem;
 }
 .venue h2 {
   font-size: clamp(1.35rem, 3vw, 2rem);
