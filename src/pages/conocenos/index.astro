@@ -1,0 +1,28 @@
+---
+import CardMiembro from "@components/card/card-miembro.astro";
+import Footer from "@layouts/footer.astro";
+import Layout from "@layouts/layout.astro";
+import { miembros } from "src/constants/miembros";
+---
+
+<Layout title="Conócenos | Ctrl+Dev">
+  <main class="mx-auto w-full max-w-6xl px-5 pt-28 md:px-10 md:pt-36">
+    <header class="mb-10 space-y-4">
+      <h1 class="text-accent font-bold text-5xl md:text-6xl">Conócenos</h1>
+      <p class="text-accent/85">
+        Las personas que forman la comunidad de Ctrl+Dev.
+      </p>
+      <p class="text-sm text-base-content/80">Perfiles de ejemplo.</p>
+    </header>
+    <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        miembros.map((miembro) => (
+          <li class="min-w-0">
+            <CardMiembro miembro={miembro} />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+  <Footer />
+</Layout>

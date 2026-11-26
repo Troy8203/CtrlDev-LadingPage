@@ -3,6 +3,7 @@ import Logo from "../assets/logo.svg";
 import LogoWhite from "../assets/logo-white.svg";
 import Iconify from "../components/iconify/iconify.astro";
 import { Icons } from "../components/iconify/icons";
+const enConocenos = Astro.url.pathname.replace(/\/$/, "") === "/conocenos";
 ---
 
 <div
@@ -19,6 +20,10 @@ import { Icons } from "../components/iconify/icons";
       >
         <li><a href="/">Inicio</a></li>
         <li><a href="/#nosotros">Nosotros</a></li>
+        <li>
+          <a href="/conocenos/" aria-current={enConocenos ? "page" : undefined}
+            >Conócenos</a>
+        </li>
         <li><a href="/#unete">Cursos</a></li>
         <li><a href="/#unete">Únete</a></li>
         <div class="divider my-1"></div>
@@ -63,6 +68,10 @@ import { Icons } from "../components/iconify/icons";
     >
       <li><a href="/">Inicio</a></li>
       <li><a href="/#nosotros">Nosotros</a></li>
+      <li>
+        <a href="/conocenos/" aria-current={enConocenos ? "page" : undefined}
+          >Conócenos</a>
+      </li>
       <li><a href="/#unete">Cursos</a></li>
       <li class="bg-secondary rounded-2xl">
         <a href="/#unete">Únete</a>

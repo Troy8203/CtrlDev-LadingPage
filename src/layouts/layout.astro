@@ -3,6 +3,12 @@ import "../styles/global.css";
 import Navbar from "./navbar.astro";
 import Snow from "@components/weather/snow.astro";
 
+interface Props {
+  title?: string;
+}
+
+const { title = "Ctrl+Dev: Grupo de Estudio de Desarrollo Web" } = Astro.props;
+
 //Favicons
 const base = Astro.site ? Astro.site : "";
 
@@ -29,7 +35,7 @@ const faviconManifest = `${base}assets/favicon/site.webmanifest`;
       name="description"
       content="Un grupo de estudio donde compartimos conocimientos, practicamos con proyectos reales y nos ayudamos a crecer como desarrolladores."
     />
-    <title>Ctrl+Dev: Grupo de Estudio de Desarrollo Web</title>
+    <title>{title}</title>
   </head>
   <body class="h-screen">
     <!-- <Snow /> -->
