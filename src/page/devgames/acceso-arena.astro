@@ -1,0 +1,192 @@
+---
+const opening = "2026-11-28T09:00:00-04:00";
+---
+
+<section class="section shell" id="juego" aria-labelledby="juego-title">
+  <div class="arena-access" data-arena-access data-opening={opening}>
+    <h2 id="juego-title">Entra a la Arena</h2>
+    <p>
+      La app del juego abre el
+      <time datetime={opening}>sábado 28 de noviembre de 2026 a las 09:00</time>
+      (hora de La Paz).
+    </p>
+    <p
+      class="arena-countdown"
+      role="timer"
+      aria-label="Tiempo para la apertura"
+      hidden
+      data-countdown
+    >
+    </p>
+    <button class="gold-button" type="button" data-wait disabled>
+      Entrar al juego
+    </button>
+    <a
+      class="gold-button"
+      href="https://devgames.ctrl4dev.online/"
+      data-enter
+      hidden
+    >
+      Entrar al juego
+    </a>
+    <p class="arena-status" role="status" data-status></p>
+    <div class="arena-invite" data-invite hidden>
+      <p>Invita a tus amigos a unirse a DevGames.</p>
+      <button class="outline-button" type="button" data-share
+        >Compartir DevGames</button
+      >
+      <p class="arena-status" role="status" data-share-status></p>
+      <input
+        type="url"
+        aria-label="Enlace para compartir DevGames"
+        readonly
+        hidden
+        data-share-url
+      />
+    </div>
+    <noscript
+      ><p>
+        Activa JavaScript para ver el contador y acceder desde esta sección.
+      </p></noscript
+    >
+  </div>
+</section>
+
+<script>
+  const arena = document.querySelector<HTMLElement>("[data-arena-access]");
+  const countdown = arena?.querySelector<HTMLElement>("[data-countdown]");
+  const waitButton = arena?.querySelector<HTMLButtonElement>("[data-wait]");
+  const enterLink = arena?.querySelector<HTMLAnchorElement>("[data-enter]");
+  const status = arena?.querySelector<HTMLElement>("[data-status]");
+
+  if (
+    arena?.dataset.opening &&
+    countdown &&
+    waitButton &&
+    enterLink &&
+    status
+  ) {
+    const opensAt = Date.parse(arena.dataset.opening);
+
+    const update = () => {
+      const remaining = Math.ceil((opensAt - Date.now()) / 1000);
+      if (remaining <= 0) {
+        enterLink.hidden = false;
+        if (document.activeElement === waitButton) enterLink.focus();
+        waitButton.hidden = true;
+        countdown.hidden = true;
+        status.textContent = "La Arena ya está abierta.";
+        return true;
+      }
+
+      const days = Math.floor(remaining / 86400);
+      const hours = Math.floor((remaining % 86400) / 3600);
+      const minutes = Math.floor((remaining % 3600) / 60);
+      const seconds = remaining % 60;
+      countdown.textContent = `${days} d · ${hours} h · ${minutes} min · ${seconds} s`;
+      countdown.hidden = false;
+      return false;
+    };
+
+    waitButton.disabled = false;
+    waitButton.addEventListener("click", () => {
+      if (update()) {
+        enterLink.click();
+      } else {
+        status.textContent =
+          "Los juegos aún no han empezado. Podrás entrar a la Arena a partir de las 09:00.";
+      }
+    });
+
+    if (!update()) {
+      const timer = window.setInterval(() => {
+        if (update()) window.clearInterval(timer);
+      }, 250);
+    }
+  }
+
+  const invite = arena?.querySelector<HTMLElement>("[data-invite]");
+  const shareButton = invite?.querySelector<HTMLButtonElement>("[data-share]");
+  const shareStatus = invite?.querySelector<HTMLElement>("[data-share-status]");
+  const shareUrl = invite?.querySelector<HTMLInputElement>("[data-share-url]");
+
+  if (invite && shareButton && shareStatus && shareUrl) {
+    const url = new URL(window.location.pathname, window.location.origin).href;
+    invite.hidden = false;
+    shareButton.addEventListener("click", async () => {
+      shareStatus.textContent = "";
+      shareUrl.hidden = true;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: "DevGames", url });
+          return;
+        } catch (error) {
+          if (error instanceof DOMException && error.name === "AbortError")
+            return;
+        }
+      }
+
+      try {
+        await navigator.clipboard.writeText(url);
+        shareStatus.textContent = "Enlace copiado. ¡Compártelo con tus amigos!";
+      } catch {
+        shareUrl.value = url;
+        shareUrl.hidden = false;
+        shareUrl.select();
+        shareStatus.textContent = "Copia el enlace para compartir DevGames.";
+      }
+    });
+  }
+</script>
+
+<style>
+  .arena-access {
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border: 1px solid var(--gold-line);
+    background: radial-gradient(ellipse at top, var(--plum), #1b0e1e 75%);
+    text-align: center;
+  }
+
+  .arena-access > p {
+    margin: 0.75rem auto 0;
+    color: var(--muted);
+  }
+
+  .arena-access .arena-countdown {
+    color: var(--gold);
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .arena-status:empty {
+    margin: 0;
+  }
+
+  .arena-invite {
+    margin-top: 1.25rem;
+  }
+
+  .arena-invite .outline-button {
+    margin-top: 0.55rem;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  .arena-invite .arena-status:not(:empty),
+  .arena-invite input {
+    margin-top: 0.55rem;
+  }
+
+  .arena-invite input {
+    width: min(100%, 24rem);
+    padding: 0.5rem;
+    font: inherit;
+  }
+
+  button.gold-button,
+  button.outline-button {
+    cursor: pointer;
+  }
+</style>

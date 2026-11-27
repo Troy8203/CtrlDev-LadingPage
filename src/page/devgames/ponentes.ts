@@ -1,9 +1,22 @@
+import eber from "@assets/devgames/eber-uzumaki-lopez.webp";
 import ricardo from "@assets/devgames/ricardo-poma.webp";
 import ricardoAlternate from "@assets/devgames/ricardo-poma-alternativa.webp";
 import moises from "@assets/devgames/moises-silva.webp";
 import paulo from "@assets/devgames/paulo-tintaya.webp";
 
 export const speakers = {
+  "eber-uzumaki-lopez": {
+    name: "Eber Uzumaki Lopez",
+    role: "Software Developer, Builder y Product & AI en Hugs Company",
+    topic: "Inteligencia artificial y programación",
+    title:
+      "Game Over: te quedaste sin tokens. ¿Programar en tiempos de IA es un Pay-to-Win?",
+    description:
+      "¿Se está convirtiendo el desarrollo de software en un Pay-to-Win? Eber explora cómo la IA ha cambiado nuestra forma de programar, qué diferencias hay entre las herramientas gratuitas y de pago y cómo el acceso a esos recursos influye en nuestro trabajo.",
+    bio: "Desarrollador de software con experiencia en desarrollo web y formación en Informática en la UMSA. Experimenta con herramientas, agentes y metodologías de desarrollo asistido por IA. Comparte lo que aprende con la comunidad tecnológica y ha dado charlas sobre IA, agentes y WebMCP.",
+    website: "https://doneber.dev/",
+    photos: [eber],
+  },
   "ricardo-poma": {
     name: "Ricardo Poma",
     role: "Product Designer en BancoSol",

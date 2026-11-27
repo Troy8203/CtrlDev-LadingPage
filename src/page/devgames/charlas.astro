@@ -1,5 +1,7 @@
 ---
-import { agenda } from "./programa";
+import alan from "@assets/devgames/alan-arnez.webp";
+import roy from "@assets/devgames/roy-ayala.webp";
+import { agenda, conversatorio } from "./programa";
 import { speakers } from "./ponentes";
 ---
 
@@ -8,9 +10,9 @@ import { speakers } from "./ponentes";
   <div class="talk-grid">
     {
       agenda.map(([start, end, , , , speakerId]) => {
-        if (!speakerId) return null;
-        const { name, role, title, topic, description, bio, photos } =
-          speakers[speakerId];
+        if (!speakerId || speakerId === conversatorio.id) return null;
+        const speaker = speakers[speakerId];
+        const { name, role, title, topic, description, bio, photos } = speaker;
         const [photo, alternate] = photos;
         return (
           <article
@@ -33,13 +35,23 @@ import { speakers } from "./ponentes";
               </p>
               <h3 id={`${speakerId}-title`}>{title}</h3>
               <p class="talk-byline">
-                <br />
+                <>
+                  <strong>{name}</strong>
+                  <br />
+                </>
                 {role}
               </p>
               <p>{description}</p>
               <details>
                 <summary>Sobre {name}</summary>
                 <p>{bio}</p>
+                {"website" in speaker && (
+                  <p>
+                    <a class="outline-button" href={speaker.website}>
+                      Sitio web de {name}
+                    </a>
+                  </p>
+                )}
                 {alternate && (
                   <img
                     class="talk-alternate"
@@ -57,4 +69,38 @@ import { speakers } from "./ponentes";
       })
     }
   </div>
+  <article
+    class="talk-card conversatorio"
+    id={conversatorio.id}
+    aria-labelledby="conversatorio-title"
+  >
+    <div class="talk-content">
+      <p class="talk-meta">
+        <time datetime={conversatorio.start}>{conversatorio.start}</time> –
+        <time datetime={conversatorio.end}>{conversatorio.end}</time>
+      </p>
+      <h3 id="conversatorio-title">{conversatorio.title}</h3>
+      <p>{conversatorio.question}</p>
+    </div>
+    <ul class="conversation-hosts" aria-label="Anfitriones">
+      {
+        [
+          { name: "Roy Ayala", photo: roy },
+          { name: "Alan Arnez", photo: alan },
+        ].map(({ name, photo }) => (
+          <li>
+            <img
+              src={photo.src}
+              width={photo.width}
+              height={photo.height}
+              alt=""
+              loading="lazy"
+            />
+            <strong>{name}</strong>
+            <span>Anfitrión</span>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
 </section>

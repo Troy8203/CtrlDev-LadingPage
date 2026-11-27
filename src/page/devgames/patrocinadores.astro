@@ -1,0 +1,148 @@
+---
+import emBusinessGroup from "@assets/devgames/em-business-group.png";
+import ensenaPorBolivia from "@assets/devgames/ensena-por-bolivia.png";
+import laOtraRed from "@assets/devgames/la-otra-red.svg?url";
+
+const sponsors = [
+  {
+    name: "EM Business Group",
+    logo: emBusinessGroup,
+    invertLogo: true,
+    links: [
+      {
+        label: "Instagram",
+        url: "https://www.instagram.com/em_business_group/?hl=en",
+      },
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/profile.php?id=61596790267794",
+      },
+    ],
+  },
+  {
+    name: "La Otra Red",
+    logo: { src: laOtraRed, width: 1146, height: 177 },
+    links: [
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/share/1QBSLuDcxt/?mibextid=wwXIfr",
+      },
+    ],
+  },
+  {
+    name: "Enseña por Bolivia",
+    logo: ensenaPorBolivia,
+    links: [
+      {
+        label: "TikTok",
+        url: "https://www.tiktok.com/@ensenaporbolivia",
+      },
+      {
+        label: "Instagram",
+        url: "https://www.instagram.com/ensenaporbolivia/",
+      },
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/share/1Enxa6bmy7/?mibextid=wwXIfr",
+      },
+    ],
+  },
+];
+---
+
+<section
+  class="section shell"
+  id="patrocinadores"
+  aria-labelledby="sponsors-title"
+>
+  <h2 id="sponsors-title">Patrocinadores</h2>
+  <p class="sponsor-thanks">
+    Gracias por apoyar a DevGames y a la comunidad tecnológica de ctrl + dev.
+  </p>
+  <ul class="sponsor-grid" role="list">
+    {
+      sponsors.map(({ name, logo, invertLogo, links }) => (
+        <li class="sponsor-card">
+          <div class="sponsor-logo">
+            <img
+              class:list={{ "sponsor-logo-inverted": invertLogo }}
+              src={logo.src}
+              alt=""
+              width={logo.width}
+              height={logo.height}
+              loading="lazy"
+            />
+          </div>
+          <h3>{name}</h3>
+          <div class="sponsor-links">
+            {links.map(({ label, url }) => (
+              <a
+                class="outline-button"
+                href={url}
+                aria-label={`${name} en ${label}`}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .sponsor-thanks {
+    margin: 0.75rem auto 0;
+    color: var(--muted);
+    text-align: center;
+    max-width: 45ch;
+  }
+
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: 1rem;
+    max-width: 68rem;
+    margin: 1.5rem auto 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sponsor-card {
+    padding: 1rem;
+    border: 1px solid var(--gold-line);
+    background: linear-gradient(145deg, var(--plum), #1b0e1e 75%);
+    text-align: center;
+  }
+
+  .sponsor-logo {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 2 / 1;
+    padding: 1rem;
+  }
+
+  .sponsor-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .sponsor-logo-inverted {
+    filter: brightness(0) invert(1);
+  }
+
+  h3 {
+    margin: 1rem 0 0.75rem;
+    font: 700 1.2rem/1.3 var(--display);
+  }
+
+  .sponsor-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>
