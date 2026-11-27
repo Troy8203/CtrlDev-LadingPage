@@ -44,6 +44,8 @@ export enum Icons {
   FACEBOOK = "mingcute:facebook-fill",
   WHATSAPP = "mingcute:whatsapp-fill",
   GITHUB = "mingcute:github-fill",
+  LINKEDIN = "mingcute:linkedin-fill",
+  WEB = "mingcute:world-2-line",
 
   //INPUT
   SEARCH = "mingcute:search-3-line",

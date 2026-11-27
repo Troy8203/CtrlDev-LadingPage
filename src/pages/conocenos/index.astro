@@ -1,28 +1,34 @@
 ---
-import CardMiembro from "@components/card/card-miembro.astro";
+import CardMember from "@components/card/card-member.astro";
 import Footer from "@layouts/footer.astro";
 import Layout from "@layouts/layout.astro";
-import { miembros } from "src/constants/miembros";
+import { members } from "src/constants/members";
 ---
 
-<Layout title="Conócenos | Ctrl+Dev">
-  <main class="mx-auto w-full max-w-6xl px-5 pt-28 md:px-10 md:pt-36">
-    <header class="mb-10 space-y-4">
-      <h1 class="text-accent font-bold text-5xl md:text-6xl">Conócenos</h1>
-      <p class="text-accent/85">
-        Las personas que forman la comunidad de Ctrl+Dev.
+<Layout>
+  <div
+    class="min-h-svh md:min-h-screen bg-[url(/assets/banner.svg)] bg-no-repeat bg-size-[auto_600px] md:bg-size-[auto_800px] lg:bg-contain bg-top w-full py-20 md:px-10 flex flex-col items-center gap-10"
+  >
+    <div class="flex flex-col items-center justify-center gap-5 min-h-56 mx-7">
+      <h2 class="text-accent font-bold text-5xl md:text-6xl text-center">
+        Conócenos
+      </h2>
+      <p class="max-w-2xl text-center text-accent/85">
+        Las personas que organizan, enseñan y hacen crecer la comunidad
+        Ctrl+Dev.
       </p>
-      <p class="text-sm text-base-content/80">Perfiles de ejemplo.</p>
-    </header>
-    <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    </div>
+    <ul
+      class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-center gap-8 px-5"
+    >
       {
-        miembros.map((miembro) => (
-          <li class="min-w-0">
-            <CardMiembro miembro={miembro} />
+        members.map((member) => (
+          <li class="w-full flex justify-center">
+            <CardMember {...member} />
           </li>
         ))
       }
     </ul>
-  </main>
+  </div>
   <Footer />
 </Layout>

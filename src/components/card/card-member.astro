@@ -1,0 +1,91 @@
+---
+import Iconify from "@components/iconify/iconify.astro";
+import { Icons } from "@components/iconify/icons";
+import type { Member, SocialNetwork } from "@schema/models/member";
+
+type Props = Member;
+
+const socialInfo: Record<SocialNetwork, { icon: Icons; label: string }> = {
+  github: { icon: Icons.GITHUB, label: "GitHub" },
+  linkedin: { icon: Icons.LINKEDIN, label: "LinkedIn" },
+  instagram: { icon: Icons.INSTAGRAM, label: "Instagram" },
+  telegram: { icon: Icons.TELEGRAM, label: "Telegram" },
+  facebook: { icon: Icons.FACEBOOK, label: "Facebook" },
+  tiktok: { icon: Icons.TIKTOK, label: "TikTok" },
+  web: { icon: Icons.WEB, label: "Sitio web" },
+};
+
+const { name, role, phrase, photo, socials = [] }: Props = Astro.props;
+
+const photoSrc = typeof photo === "string" ? photo : photo?.src;
+const initials = name
+  .split(" ")
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((word) => word[0].toUpperCase())
+  .join("");
+---
+
+<article
+  class="card bg-base-200 w-full max-w-sm h-full border border-base-300 transition-transform duration-300 hover:-translate-y-1"
+>
+  <div class="card-body items-center text-center gap-4">
+    <div class:list={["avatar", !photoSrc && "avatar-placeholder"]}>
+      <div
+        class="w-28 rounded-full ring-2 ring-primary ring-offset-4 ring-offset-base-200 bg-neutral text-neutral-content"
+      >
+        {
+          photoSrc ? (
+            <img
+              src={photoSrc}
+              alt={`Foto de ${name}`}
+              loading="lazy"
+              width="112"
+              height="112"
+            />
+          ) : (
+            <span class="text-3xl font-semibold" aria-hidden="true">
+              {initials}
+            </span>
+          )
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center gap-2">
+      <h3 class="text-xl font-bold text-accent">{name}</h3>
+      <span
+        class="badge badge-soft badge-primary text-primary-content h-auto py-1 text-center"
+      >
+        {role}
+      </span>
+    </div>
+
+    {
+      phrase && (
+        <p class="text-sm italic text-accent/70">&laquo;{phrase}&raquo;</p>
+      )
+    }
+
+    {
+      socials.length > 0 && (
+        <ul class="flex flex-wrap justify-center gap-1 mt-auto pt-2">
+          {socials.map((item) => (
+            <li>
+              <a
+                class="btn btn-ghost btn-circle btn-sm hover:text-primary"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${socialInfo[item.network].label} de ${name}`}
+                title={socialInfo[item.network].label}
+              >
+                <Iconify icon={socialInfo[item.network].icon} size={20} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</article>
