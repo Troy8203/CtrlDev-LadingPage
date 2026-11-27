@@ -8,7 +8,24 @@ export const categories = {
 
 type Category = keyof typeof categories;
 
-type AgendaItem = [string, string, string, string, Category, SpeakerId?];
+export const conversatorio = {
+  id: "conversatorio",
+  start: "12:40",
+  end: "13:20",
+  title: "El tributo que desobedeció: ¿se salió de control la IA?",
+  hosts: "Conversatorio con Roy Ayala y Alan Arnez",
+  question:
+    "Si tu asistente cumple el objetivo tomando una decisión que jamás habrías autorizado, ¿dirías que funcionó? ¿Dónde pondrías el límite?",
+} as const;
+
+type AgendaItem = [
+  string,
+  string,
+  string,
+  string,
+  Category,
+  (SpeakerId | typeof conversatorio.id)?,
+];
 
 function talk(start: string, end: string, speakerId: SpeakerId): AgendaItem {
   const { name, title } = speakers[speakerId];
@@ -23,7 +40,7 @@ export const agenda: AgendaItem[] = [
     "La Cosecha y asignación de Distritos",
     "logistica",
   ],
-  ["09:20", "10:00", "Charla 1", "Próximamente", "charla"],
+  talk("09:20", "10:00", "eber-uzumaki-lopez"),
   [
     "10:00",
     "10:15",
@@ -42,7 +59,14 @@ export const agenda: AgendaItem[] = [
   ["11:15", "11:30", "El desafío de la Cornucopia", "Reto especial", "juego"],
   talk("11:30", "12:10", "moises-silva"),
   ["12:10", "12:40", "Refrigerio", "Pausa de suministros", "logistica"],
-  ["12:40", "13:20", "Charla 4", "Próximamente", "charla"],
+  [
+    conversatorio.start,
+    conversatorio.end,
+    conversatorio.title,
+    conversatorio.hosts,
+    "charla",
+    conversatorio.id,
+  ],
   [
     "13:20",
     "13:40",

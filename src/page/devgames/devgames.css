@@ -688,7 +688,7 @@ h2 {
 }
 @media (min-width: 50rem) {
   .talk-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .talk-card,
   .talk-content {
@@ -710,4 +710,43 @@ h2 {
   .talk-content > p:last-of-type {
     margin-bottom: 1rem;
   }
+}
+
+.conversatorio {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.conversatorio .talk-meta {
+  min-height: 0;
+}
+
+.conversation-hosts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0 1rem 1.5rem;
+}
+
+.conversation-hosts li {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+}
+
+.conversation-hosts img {
+  width: clamp(5rem, 18vw, 8rem);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 1px solid var(--gold-line);
+  border-radius: 50%;
+}
+
+.conversation-hosts span {
+  color: var(--muted);
+  font-size: 0.875rem;
 }
