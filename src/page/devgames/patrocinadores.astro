@@ -1,5 +1,7 @@
 ---
 import emBusinessGroup from "@assets/devgames/em-business-group.png";
+import ensenaPorBolivia from "@assets/devgames/ensena-por-bolivia.png";
+import laOtraRed from "@assets/devgames/la-otra-red.svg?url";
 
 const sponsors = [
   {
@@ -14,6 +16,34 @@ const sponsors = [
       {
         label: "Facebook",
         url: "https://www.facebook.com/profile.php?id=61596790267794",
+      },
+    ],
+  },
+  {
+    name: "La Otra Red",
+    logo: { src: laOtraRed, width: 1146, height: 177 },
+    links: [
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/share/1QBSLuDcxt/?mibextid=wwXIfr",
+      },
+    ],
+  },
+  {
+    name: "Enseña por Bolivia",
+    logo: ensenaPorBolivia,
+    links: [
+      {
+        label: "TikTok",
+        url: "https://www.tiktok.com/@ensenaporbolivia",
+      },
+      {
+        label: "Instagram",
+        url: "https://www.instagram.com/ensenaporbolivia/",
+      },
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/share/1Enxa6bmy7/?mibextid=wwXIfr",
       },
     ],
   },
@@ -71,10 +101,10 @@ const sponsors = [
 
   .sponsor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 22rem));
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
     gap: 1rem;
-    margin: 1.5rem 0 0;
+    max-width: 68rem;
+    margin: 1.5rem auto 0;
     padding: 0;
     list-style: none;
   }
